@@ -2,3 +2,4 @@
 Game platform
 
 James Weah
+Tianrui Zhang

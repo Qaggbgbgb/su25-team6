@@ -1,6 +1,6 @@
 # su25-team6
 Game platform
 
-James Weah
-and 
+James Weah 
+ 
 Tianrui Zhang

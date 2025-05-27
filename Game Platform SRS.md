@@ -55,16 +55,16 @@ This product could be used in the gaming market to provide a wide range of servi
 ### 1.3 Definitions, Acronyms and Abbreviations                                                                                         
  SRS stands for software requirement specification.        
  Reference	Definition
-Java	A programming language originally developed by James Gosling at Sun Microsystems. We will be using this language to build Class Connect.
-Postgresql	Open-source relational database management system.
-SpringBoot	An open-source Java-based framework used to create a micro Service. This will be used to create and run our application.
-Spring MVC	Model-View-Controller. This is the architectural pattern that will be used to implement our system.
-Spring Web	Will be used to build our web application by using Spring MVC. This is one of the dependencies of our system.
-API	Application Programming Interface. This will be used to interface the backend and the fronted of our application.
-HTML	Hypertext Markup Language. This is the code that will be used to structure and design the web application and its content.
-CSS	Cascading Style Sheets. Will be used to add styles and appearance to the web app.
-JavaScript	An object-oriented computer programming language commonly used to create interactive effects within web browsers.Will be used in conjuction with HTML and CSS to make the web app.
-VS Code	An integrated development environment (IDE) for Java. This is where our system will be created.
+* Java	A programming language originally developed by James Gosling at Sun Microsystems. We will be using this language to build Class Connect.
+* Postgresql	Open-source relational database management system.
+* SpringBoot	An open-source Java-based framework used to create a micro Service. This will be used to create and run our application.
+* Spring MVC	Model-View-Controller. This is the architectural pattern that will be used to implement our system.
+* Spring Web	Will be used to build our web application by using Spring MVC. This is one of the dependencies of our system.
+* API	Application Programming Interface. This will be used to interface the backend and the fronted of our application.
+* HTML	Hypertext Markup Language. This is the code that will be used to structure and design the web application and its content.
+* CSS	Cascading Style Sheets. Will be used to add styles and appearance to the web app.
+* JavaScript	An object-oriented computer programming language commonly used to create interactive effects within web browsers.Will be used in conjuction with HTML and CSS to make the web app.
+* VS Code	An integrated development environment (IDE) for Java. This is where our system will be created.
                                                                     
 
 ### 1.4 References  
@@ -74,122 +74,84 @@ https://github.com/Qaggbgbgb/su25-team6/blob/main/README.md
 https://github.com/Qaggbgbgb/su25-team6/blob/main/tianruizhang.md  .
 
 ### 1.5 Document Overview
-The rest of this document described the overview of this product and the detailed requirements of this product separately in next two parts.
+The rest of this document described the overview of this product including functions and constraints and then the detailed requirements of this product separately in next two parts. 
 
 ## 2. Product Overview
-Factors that can effect the product include but are not limmited to the Users desires on the websites whether it is to purchase or provide games / services. The technology a user may use could have an effect on the requirements and the performace of the product. 
+This section should describe the general factors that affect the product and its requirements. This section does not state specific requirements. Instead, it provides a background for those requirements, which are defined in detail in Section 3, and makes them easier to understand.
 
 ### 2.1 Product Functions
-The product must allow the customer to purchase games and services as well as allow provider to offer their services. 
-
-             +------------------+
-             |      Website     |
-             | (Game Platform)  |
-             +------------------+
-                     / \
-                    /   \
-                   /     \
-                  /       \
-       +----------+       +-----------+
-       |  Customer|       | Provider  |
-       +----------+       +-----------+
-           |                   |
-    +------+-------+   +-------+------+
-    | Browse games  |   | Offer games |
-    | & services    |   | & services  |
-    +------+-------+   +-------+------+
-           |                   |
-    +------+-------+   +-------+------+
-    |  Purchase     |   | Manage       |
-    |  services &   |   | offerings    |
-    |  games        |   |              |
-    +------+-------+   +-------+------+
-           \                   /
-            \                 /
-             \               /
-              \             /
-               \           /
-             +----------------+
-             |     Chat        |
-             | (Send messages) |
-             +----------------+
-
+Summarize the major functions the product must perform or must let the user perform. Details will be provided in Section 3, so only a high level summary (such as a bullet list) is needed here. Organize the functions to make them understandable to any reader of the SRS. A picture of the major groups of related requirements and how they relate, such as a top level data flow diagram or object class diagram, is often effective.
 
 ### 2.2 Product Constraints
-User will need to login inorder a take advantage of all the functionalities. Not having an account and logging in will lead to a far reduced expierence of the product. The website will be as responsive as possible however very rare screensizes may not be taken into account leading to a less responsive experience.
-Depending on the customer or provider status certain features will be limited as expected. Ex. A user will not be able to provide services.
+This subsection should provide a general description of any other items that will limit the developer’s options. These may include:  
+
+* Interfaces to users, other applications or hardware.  
+* Quality of service constraints.  
+* Standards compliance.  
+* Constraints around design or implementation.
   
 ### 2.3 User Characteristics
-Customer and Provider class
-General Customer - This customer will be a typical user that aims to purchase games/services on a regular bases.
-
-Veteran Customer - This customer invest extensive time on the platform and the chats.
-
-Community Provider - This a single provider aiming to provide games and services to customer usually on a smaller skill. This provider is typically a solo provider.
-
-Professional Provider - This a single account provider under the control of an organisation that provides games and services in scale. This provider typically values the statistics feature more.
+Identify the various user classes that you anticipate will use this product. User classes may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience. Describe the pertinent characteristics of each user class. Certain requirements may pertain only to certain user classes. Distinguish the most important user classes for this product from those who are less important to satisfy.
 
 ### 2.4 Assumptions and Dependencies
-Third party API's (ex. time or location api) may have an effect on the product as its availability status (active or inactive) is not dependent on us. The product will depend on a stable network connection.
+List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).
 
 ## 3. Requirements
 
 ### 3.1 Functional Requirements 
-This section specifies the software product's requirements. Specify all of the software requirements to a level of detail sufficient to enable designers to design a software system to satisfy those requirements, and to enable testers to test that the software system satisfies those requirements.
 
-The specific requirements should:
-* Be uniquely identifiable.
-* State the subject of the requirement (e.g., system, software, etc.) and what shall be done.
-* Optionally state the conditions and constraints, if any.
-* Describe every input (stimulus) into the software system, every output (response) from the software system, and all functions performed by the software system in response to an input or in support of an output.
-* Be verifiable (e.g., the requirement realization can be proven to the customer's satisfaction)
-* Conform to agreed upon syntax, keywords, and terms.
+
+ 
+R0: The system will allow gamers and develpers to Create or Modify Profiles.
+R1: The system will allow gamers to View available games for purchase. 
+R2: The system will allow gamers to View and add input to chat functions.
+R3: The system will allow gamers to Modify views and settings(e.g., dark mode).
+R4: Game players is able to purchase games, add-ons and subscribe to services of the software.
+R5: Users can rate a game based on a star based method, and comments and view them.
+R6: The system will allow developers to Ability to add games.
+R7: The systems will allow game develpers to Create services and allow customers to subscribe to services
+R8: The system can Show game developers what users have subscribed.  
+R9: The game developers has Ability to reply to customers in review chat.
+
+
+
 
 #### 3.1.1 User interfaces
-Define the software components for which a user interface is needed. Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Details of the user interface design should be documented in a separate user interface specification.
-
-Could be further divided into Usability and Convenience requirements.
+A software includes a logging interface and working interface for both developers and players. 
+a logging interface should Including include usename and password. ANd ability to sign up.
+a working interface include libraries for players showing what they bought and allow them to play. It could also include setting button allow users to modify the viewings and log out. 
+It could also include commmunity where people are going to chat. And ability to rate the games they purchased. It includes review button and could let users and developers write reviews and view other reviews.
+It should include a service button. It could let players and developers to subscribe and publish services. And show developers what players have subscribed.
 
 #### 3.1.2 Hardware interfaces
-Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware, and communication protocols to be used.
+Mac and Software Windows
+Updated version
+
 
 #### 3.1.3 Software interfaces
-Describe the connections between this product and other specific software components (name and version), including databases, operating systems, tools, libraries, and integrated commercial components. Identify the data items or messages coming into the system and going out and describe the purpose of each. Describe the services needed and the nature of communications. Refer to documents that describe detailed application programming interface protocols. Identify data that will be shared across software components. If the data sharing mechanism must be implemented in a specific way (for example, use of a global data area in a multitasking operating system), specify this as an implementation constraint.
+Java jdk 21
+PostgreSQL 17
+SpringBoot 3.4.5
 
 ### 3.2 Non Functional Requirements 
 
 #### 3.2.1 Performance
-The platform must be smooth and have short loading times. 
-The platform must be responsive on a varity of screen sizes.
-The platform must be able to handle a large number of users simultaneously.
-The platform must be interactive allowing users to see game/services updates consistant with providers offering.
-User must not experience a number of errors during the process of using the platform.
-
+If there are performance requirements for the product under various circumstances, state them here and explain their rationale, to help the developers understand the intent and make suitable design choices. Specify the timing relationships for real time systems. Make such requirements as specific as possible. You may need to state performance requirements for individual functional requirements or features.
 
 #### 3.2.2 Security
-User must be the only person capable of accessing there information.
-Users that provide games/services may be the only ones capable of making changes to these games and services.
-User session must have a finite duration time.
-
-
+Specify any requirements regarding security or privacy issues surrounding use of the product or protection of the data used or created by the product. Define any user identity authentication requirements. Refer to any external policies or regulations containing security issues that affect the product. Define any security or privacy certifications that must be satisfied.
 
 #### 3.2.3 Reliability
-User must be able experience minimal errors.
-User must be able experience a fast platform.
-User must have a secure experience.
+Specify the factors required to establish the required reliability of the software system at time of delivery.
 
 #### 3.2.4 Availability
-Product prototype must be completed by the 29th of May.
-Product backend api must be completed by the 5th of June.
-Product must be completec by the 18th of June.
+Specify the factors required to guarantee a defined availability level for the entire system such as checkpoint, recovery, and restart.
 
 #### 3.2.5 Compliance
-User must experience a safe evironment in chat.
-User must be notified if personal information is exposed.
+Specify the requirements derived from existing standards or regulations
 
 #### 3.2.6 Cost
-The product will be free to make(with the exception of pre-existing hardware).
-The software will be available to use for free.
+Specify monetary cost of the software product.
 
 #### 3.2.7 Deadline
-User must have access to the product by June 18.
+Specify schedule for delivery of the software product.

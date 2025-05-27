@@ -44,15 +44,28 @@ Table of Contents
 ## 1. Introduction
 
 ### 1.1 Document Purpose
-This game platform is created for people who love to play games and game develpers. They can use this platform to publish their games or download and purchase some interesting game to play. 
+This document is created for users of this porduct including game players and game developers to show the requiremnts and overview of this product. 
 
 ### 1.2 Product Scope
+This game platform is created for people who love to play games and game develpers. They can use this platform to publish their games or download and purchase some interesting game to play. 
 Game Platform 0.0.1.
  This SRS described all the functionality of this product.
 This product could be used in the gaming market to provide a wide range of services to its customers including game players and game developers. It satisfies the requirement of the trading for game develpers and it is useful for game players to find games to play. 
 
 ### 1.3 Definitions, Acronyms and Abbreviations                                                                                         
- SRS stands for software requirement specification.                                                                            
+ SRS stands for software requirement specification.        
+ Reference	Definition
+Java	A programming language originally developed by James Gosling at Sun Microsystems. We will be using this language to build Class Connect.
+Postgresql	Open-source relational database management system.
+SpringBoot	An open-source Java-based framework used to create a micro Service. This will be used to create and run our application.
+Spring MVC	Model-View-Controller. This is the architectural pattern that will be used to implement our system.
+Spring Web	Will be used to build our web application by using Spring MVC. This is one of the dependencies of our system.
+API	Application Programming Interface. This will be used to interface the backend and the fronted of our application.
+HTML	Hypertext Markup Language. This is the code that will be used to structure and design the web application and its content.
+CSS	Cascading Style Sheets. Will be used to add styles and appearance to the web app.
+JavaScript	An object-oriented computer programming language commonly used to create interactive effects within web browsers.Will be used in conjuction with HTML and CSS to make the web app.
+VS Code	An integrated development environment (IDE) for Java. This is where our system will be created.
+                                                                    
 
 ### 1.4 References  
 We don't have any additional documentation except JamesWeah.md, README. md and tianruizhang.md.
@@ -61,7 +74,7 @@ https://github.com/Qaggbgbgb/su25-team6/blob/main/README.md
 https://github.com/Qaggbgbgb/su25-team6/blob/main/tianruizhang.md  .
 
 ### 1.5 Document Overview
-The rest of this document described the overview of this product and the detailed requirements of this product.
+The rest of this document described the overview of this product and the detailed requirements of this product separately in next two parts.
 
 ## 2. Product Overview
 This section should describe the general factors that affect the product and its requirements. This section does not state specific requirements. Instead, it provides a background for those requirements, which are defined in detail in Section 3, and makes them easier to understand.

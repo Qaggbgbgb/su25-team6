@@ -51,13 +51,17 @@ Game Platform 0.0.1.
  This SRS described all the functionality of this product.
 This product could be used in the gaming market to provide a wide range of services to its customers including game players and game developers. It satisfies the requirement of the trading for game develpers and it is useful for game players to find games to play. 
 
-### 1.3 Definitions, Acronyms and Abbreviations                                                                                                                                                                          |
+### 1.3 Definitions, Acronyms and Abbreviations                                                                                         
+ SRS stands for software requirement specification.                                                                            
 
-### 1.4 References
-List any other documents or Web addresses to which this SRS refers. These may include user interface style guides, contracts, standards, system requirements specifications, use case documents, or a vision and scope document. Provide enough information so that the reader could access a copy of each reference, including title, author, version number, date, and source or location.
+### 1.4 References  
+We don't have any additional documentation except JamesWeah.md, README. md and tianruizhang.md.
+See explicitly at https://github.com/Qaggbgbgb/su25-team6/blob/main/JamesWeah.md
+https://github.com/Qaggbgbgb/su25-team6/blob/main/README.md
+https://github.com/Qaggbgbgb/su25-team6/blob/main/tianruizhang.md  .
 
 ### 1.5 Document Overview
-Describe what the rest of the document contains and how it is organized.
+The rest of this document described the overview of this product and the detailed requirements of this product.
 
 ## 2. Product Overview
 This section should describe the general factors that affect the product and its requirements. This section does not state specific requirements. Instead, it provides a background for those requirements, which are defined in detail in Section 3, and makes them easier to understand.

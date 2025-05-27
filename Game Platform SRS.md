@@ -63,6 +63,7 @@ Factors that can effect the product include but are not limmited to the Users de
 
 ### 2.1 Product Functions
 The product must allow the customer to purchase games and services as well as allow provider to offer their services. 
+
              +------------------+
              |      Website     |
              | (Game Platform)  |

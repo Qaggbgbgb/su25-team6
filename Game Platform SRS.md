@@ -55,16 +55,16 @@ This product could be used in the gaming market to provide a wide range of servi
 ### 1.3 Definitions, Acronyms and Abbreviations                                                                                         
  SRS stands for software requirement specification.        
  Reference	Definition
-* Java	A programming language originally developed by James Gosling at Sun Microsystems. We will be using this language to build Class Connect.
-* Postgresql	Open-source relational database management system.
-* SpringBoot	An open-source Java-based framework used to create a micro Service. This will be used to create and run our application.
-* Spring MVC	Model-View-Controller. This is the architectural pattern that will be used to implement our system.
-* Spring Web	Will be used to build our web application by using Spring MVC. This is one of the dependencies of our system.
-* API	Application Programming Interface. This will be used to interface the backend and the fronted of our application.
-* HTML	Hypertext Markup Language. This is the code that will be used to structure and design the web application and its content.
-* CSS	Cascading Style Sheets. Will be used to add styles and appearance to the web app.
-* JavaScript	An object-oriented computer programming language commonly used to create interactive effects within web browsers.Will be used in conjuction with HTML and CSS to make the web app.
-* VS Code	An integrated development environment (IDE) for Java. This is where our system will be created.
+Java	A programming language originally developed by James Gosling at Sun Microsystems. We will be using this language to build Class Connect.
+Postgresql	Open-source relational database management system.
+SpringBoot	An open-source Java-based framework used to create a micro Service. This will be used to create and run our application.
+Spring MVC	Model-View-Controller. This is the architectural pattern that will be used to implement our system.
+Spring Web	Will be used to build our web application by using Spring MVC. This is one of the dependencies of our system.
+API	Application Programming Interface. This will be used to interface the backend and the fronted of our application.
+HTML	Hypertext Markup Language. This is the code that will be used to structure and design the web application and its content.
+CSS	Cascading Style Sheets. Will be used to add styles and appearance to the web app.
+JavaScript	An object-oriented computer programming language commonly used to create interactive effects within web browsers.Will be used in conjuction with HTML and CSS to make the web app.
+VS Code	An integrated development environment (IDE) for Java. This is where our system will be created.
                                                                     
 
 ### 1.4 References  
@@ -74,7 +74,7 @@ https://github.com/Qaggbgbgb/su25-team6/blob/main/README.md
 https://github.com/Qaggbgbgb/su25-team6/blob/main/tianruizhang.md  .
 
 ### 1.5 Document Overview
-The rest of this document described the overview of this product including functions and constraints and then the detailed requirements of this product separately in next two parts. 
+The rest of this document described the overview of this product and the detailed requirements of this product separately in next two parts.
 
 ## 2. Product Overview
 Factors that can effect the product include but are not limmited to the Users desires on the websites whether it is to purchase or provide games / services. The technology a user may use could have an effect on the requirements and the performace of the product. 
@@ -135,39 +135,26 @@ Third party API's (ex. time or location api) may have an effect on the product a
 ## 3. Requirements
 
 ### 3.1 Functional Requirements 
+This section specifies the software product's requirements. Specify all of the software requirements to a level of detail sufficient to enable designers to design a software system to satisfy those requirements, and to enable testers to test that the software system satisfies those requirements.
 
-
- 
-R0: The system will allow gamers and develpers to Create or Modify Profiles.
-R1: The system will allow gamers to View available games for purchase. 
-R2: The system will allow gamers to View and add input to chat functions.
-R3: The system will allow gamers to Modify views and settings(e.g., dark mode).
-R4: Game players is able to purchase games, add-ons and subscribe to services of the software.
-R5: Users can rate a game based on a star based method, and comments and view them.
-R6: The system will allow developers to Ability to add games.
-R7: The systems will allow game develpers to Create services and allow customers to subscribe to services
-R8: The system can Show game developers what users have subscribed.  
-R9: The game developers has Ability to reply to customers in review chat.
-
-
-
+The specific requirements should:
+* Be uniquely identifiable.
+* State the subject of the requirement (e.g., system, software, etc.) and what shall be done.
+* Optionally state the conditions and constraints, if any.
+* Describe every input (stimulus) into the software system, every output (response) from the software system, and all functions performed by the software system in response to an input or in support of an output.
+* Be verifiable (e.g., the requirement realization can be proven to the customer's satisfaction)
+* Conform to agreed upon syntax, keywords, and terms.
 
 #### 3.1.1 User interfaces
-A software includes a logging interface and working interface for both developers and players. 
-a logging interface should Including include usename and password. ANd ability to sign up.
-a working interface include libraries for players showing what they bought and allow them to play. It could also include setting button allow users to modify the viewings and log out. 
-It could also include commmunity where people are going to chat. And ability to rate the games they purchased. It includes review button and could let users and developers write reviews and view other reviews.
-It should include a service button. It could let players and developers to subscribe and publish services. And show developers what players have subscribed.
+Define the software components for which a user interface is needed. Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Details of the user interface design should be documented in a separate user interface specification.
+
+Could be further divided into Usability and Convenience requirements.
 
 #### 3.1.2 Hardware interfaces
-Mac and Software Windows
-Updated version
-
+Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware, and communication protocols to be used.
 
 #### 3.1.3 Software interfaces
-Java jdk 21
-PostgreSQL 17
-SpringBoot 3.4.5
+Describe the connections between this product and other specific software components (name and version), including databases, operating systems, tools, libraries, and integrated commercial components. Identify the data items or messages coming into the system and going out and describe the purpose of each. Describe the services needed and the nature of communications. Refer to documents that describe detailed application programming interface protocols. Identify data that will be shared across software components. If the data sharing mechanism must be implemented in a specific way (for example, use of a global data area in a multitasking operating system), specify this as an implementation constraint.
 
 ### 3.2 Non Functional Requirements 
 

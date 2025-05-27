@@ -59,12 +59,9 @@ List any other documents or Web addresses to which this SRS refers. These may in
 Describe what the rest of the document contains and how it is organized.
 
 ## 2. Product Overview
-This section should describe the general factors that affect the product and its requirements. This section does not state specific requirements. Instead, it provides a background for those requirements, which are defined in detail in Section 3, and makes them easier to understand.
 Factors that can effect the product include but are not limmited to the Users desires on the websites whether it is to purchase or provide games / services. The technology a user may use could have an effect on the requirements and the performace of the product. 
 
 ### 2.1 Product Functions
-Summarize the major functions the product must perform or must let the user perform. Details will be provided in Section 3, so only a high level summary (such as a bullet list) is needed here. Organize the functions to make them understandable to any reader of the SRS. A picture of the major groups of related requirements and how they relate, such as a top level data flow diagram or object class diagram, is often effective.
-
 The product must allow the customer to purchase games and services as well as allow provider to offer their services. 
              +------------------+
              |      Website     |
@@ -100,19 +97,10 @@ The product must allow the customer to purchase games and services as well as al
 
 
 ### 2.2 Product Constraints
-This subsection should provide a general description of any other items that will limit the developer’s options. These may include:  
-
-* Interfaces to users, other applications or hardware.  
-* Quality of service constraints.  
-* Standards compliance.  
-* Constraints around design or implementation.
-
 User will need to login inorder a take advantage of all the functionalities. Not having an account and logging in will lead to a far reduced expierence of the product. The website will be as responsive as possible however very rare screensizes may not be taken into account leading to a less responsive experience.
 Depending on the customer or provider status certain features will be limited as expected. Ex. A user will not be able to provide services.
   
 ### 2.3 User Characteristics
-Identify the various user classes that you anticipate will use this product. User classes may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience. Describe the pertinent characteristics of each user class. Certain requirements may pertain only to certain user classes. Distinguish the most important user classes for this product from those who are less important to satisfy.
-
 Customer and Provider class
 General Customer - This customer will be a typical user that aims to purchase games/services on a regular bases.
 
@@ -123,9 +111,7 @@ Community Provider - This a single provider aiming to provide games and services
 Professional Provider - This a single account provider under the control of an organisation that provides games and services in scale. This provider typically values the statistics feature more.
 
 ### 2.4 Assumptions and Dependencies
-List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).
-
-Third party API's (ex. time or location api) may have an effect on the product as its availability status (active or inactive) is not dependent on us.
+Third party API's (ex. time or location api) may have an effect on the product as its availability status (active or inactive) is not dependent on us. The product will be depend on a stable internet connection. Services will not be able to be used offline.
 
 
 ## 3. Requirements
@@ -155,8 +141,6 @@ Describe the connections between this product and other specific software compon
 ### 3.2 Non Functional Requirements 
 
 #### 3.2.1 Performance
-If there are performance requirements for the product under various circumstances, state them here and explain their rationale, to help the developers understand the intent and make suitable design choices. Specify the timing relationships for real time systems. Make such requirements as specific as possible. You may need to state performance requirements for individual functional requirements or features.
-
 The platform must be smooth and have short loading times. 
 The platform must be responsive on a varity of screen sizes.
 The platform must be able to handle a large number of users simultaneously.
@@ -165,8 +149,6 @@ User must not experience a number of errors during the process of using the plat
 
 
 #### 3.2.2 Security
-Specify any requirements regarding security or privacy issues surrounding use of the product or protection of the data used or created by the product. Define any user identity authentication requirements. Refer to any external policies or regulations containing security issues that affect the product. Define any security or privacy certifications that must be satisfied.
-
 User must be the only person capable of accessing there information.
 Users that provide games/services may be the only ones capable of making changes to these games and services.
 User session must have a finite duration time.
@@ -174,32 +156,22 @@ User session must have a finite duration time.
 
 
 #### 3.2.3 Reliability
-Specify the factors required to establish the required reliability of the software system at time of delivery.
-
 User must be able experience minimal errors.
 User must be able experience a fast platform.
 User must have a secure experience.
 
 #### 3.2.4 Availability
-Specify the factors required to guarantee a defined availability level for the entire system such as checkpoint, recovery, and restart.
-
 Product prototype must be completed by the 29th of May.
 Product backend api must be completed by the 5th of June.
 Product must be completec by the 18th of June.
 
 #### 3.2.5 Compliance
-Specify the requirements derived from existing standards or regulations
-
 User must experience a safe evironment in chat.
 User must be notified if personal information is exposed.
 
 #### 3.2.6 Cost
-Specify monetary cost of the software product.
-
 The product will be free to make(with the exception of pre-existing hardware).
 The software will be available to use for free.
 
 #### 3.2.7 Deadline
-Specify schedule for delivery of the software product.
-
 User must have access to the product by June 18.

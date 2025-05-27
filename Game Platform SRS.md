@@ -47,8 +47,9 @@ Table of Contents
 This game platform is created for people who love to play games and game develpers. They can use this platform to publish their games or download and purchase some interesting game to play. 
 
 ### 1.2 Product Scope
-Identify the product whose software requirements are specified in this document, including the revision or release number. Explain what the product that is covered by this SRS will do, particularly if this SRS describes only part of the system or a single subsystem. 
-Provide a short description of the software being specified and its purpose, including relevant benefits, objectives, and goals. Relate the software to corporate goals or business strategies. If a separate vision and scope document is available, refer to it rather than duplicating its contents here.
+Game Platform 0.0.1.
+ This SRS described all the functionality of this product.
+This product could be used in the gaming market to provide a wide range of services to its customers including game players and game developers. It satisfies the requirement of the trading for game develpers and it is useful for game players to find games to play. 
 
 ### 1.3 Definitions, Acronyms and Abbreviations                                                                                                                                                                          |
 

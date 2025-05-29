@@ -137,16 +137,16 @@ Third party API's (ex. time or location api) may have an effect on the product a
 ## 3. Requirements
 
 ### 3.1 Functional Requirements 
-R0: The system will allow gamers and develpers to Create or Modify Profiles.
-R1: The system will allow gamers to View available games for purchase. 
-R2: The system will allow gamers to View and add input to chat functions.
-R3: The system will allow gamers to Modify views and settings(e.g., dark mode).
-R4: Game players is able to purchase games, add-ons and subscribe to services of the software.
-R5: Users can rate a game based on a star based method, and comments and view them.
-R6: The system will allow developers to Ability to add games.
-R7: The systems will allow game develpers to Create services and allow customers to subscribe to services
-R8: The system can Show game developers what users have subscribed.  
-R9: The game developers has Ability to reply to customers in review chat.
+* R0: The system will allow gamers and develpers to Create or Modify Profiles.
+* R1: The system will allow gamers to View available games for purchase. 
+* R2: The system will allow gamers to View and add input to chat functions.
+* R3: The system will allow gamers to Modify views and settings(e.g., dark mode).
+* R4: Game players is able to purchase games, add-ons and subscribe to services of the software.
+* R5: Users can rate a game based on a star based method, and comments and view them.
+* R6: The system will allow developers to Ability to add games.
+* R7: The systems will allow game develpers to Create services and allow customers to subscribe to services
+* R8: The system can Show game developers what users have subscribed.  
+* R9: The game developers has Ability to reply to customers in review chat.
 
 
 #### 3.1.1 User interfaces

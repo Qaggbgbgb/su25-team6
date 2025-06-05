@@ -79,9 +79,9 @@ public class GameLibraryController {
    * @param gameLibraryId 
    * @return 
    */
-  @DeleteMapping("/gameLibraries/{id}")
+  @DeleteMapping("/gameLibraries/{gameLibraryId}")
   public Object deleteGameLibrary(@PathVariable Long gameLibraryId ) {
-    return gameLibraryService.deleteGameLibrary(gameLibraryId );
+    return gameLibraryService.deleteGameLibrary(gameLibraryId);
   }
 
 

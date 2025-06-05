@@ -1,4 +1,4 @@
-# Class Connect - Software Design 
+# Game Platform- Software Design 
 
 Version 1  
 Prepared by Tianrui Zhang and James Weah\
@@ -31,11 +31,11 @@ This is a game platform made for game players and game developers. It provides a
 This application would be a nice place to gather and enjoy games. Welcome every game developer to publish games and every game player to try playing here.
 ## 2. Use Cases
 ### 2.1 Use Case Model
-![Use Case Model]()
+![Use Case Model](https://github.com/Qaggbgbgb/su25-team6/blob/main/object%20oriented%20design/use-case-diagram.png)
 
 ### 2.2 Use Case Descriptions
 
-#### 2.2.1 Actor: Teacher
+#### 2.2.1 Actor: Customer
 ##### 2.2.1.1 Sign Up
 A teacher can sign up to create their profile with their name, email, password, and bio. Emails must be unique.
 ##### 2.2.1.2 Log In
@@ -47,19 +47,18 @@ The teacher shall be able to create a new class listing. They would provide a cl
 ##### 2.2.1.4 Manage Class Content
 A teacher shall be able to add and remove class assignments and announcements, as well as assign grades to their students.
 
-#### 2.2.2 Actor: Student
-##### 2.2.2.1 Sign Up
-A student can sign up to create their profile with their name, email, password, and bio. Emails must be unique.
-##### 2.2.2.2 Log In
-A teacher shall be able to sign in using their registred email and password. After logging in, the student shall be directed their dashboard where they see an overview of their classes and stats.
-##### 2.2.2.3 Browse Classes
-A student shall be able to view available classes. They can do this from the home page or using a search function. They can also filter classes by name, subject, or teacher. They will also be able to select one class and view more details.
-##### 2.2.1.4 Sign Up for Class
-Upon selecting a class, a student shall be able to sign up for the class usin a one-click action. This class will then appear on their dashboard, and they will be able to participate in the class.
-##### 2.2.1.5 Drop Class
-A student may drop/unregister for a class from the class page.
+#### 2.2.2 Actor: Developer
+##### 2.2.2.1 publish games 
+A game developer can publish games in Game Store.
+##### 2.2.2.2 publish services
+A game developer can publish services in Services.
+##### 2.2.2.3 reply in reviews
+A game developer can write reviews to reply to the users.
+##### 2.2.1.4 sign up for the platform
+A game developer can create an account and log in to view their profile.
+
 
 ## 3. UML Class Diagram
-![UML Class Diagram](https://github.com/uncg-csc340/su25-team0/blob/main/object-oriented-design/class-diagram.png)
+![UML Class Diagram](https://github.com/Qaggbgbgb/su25-team6/blob/main/object%20oriented%20design/class-diagram.png)
 ## 4. Database Schema
-![UML Class Diagram](https://github.com/uncg-csc340/su25-team0/blob/main/object-oriented-design/database-schema.png)
+![Database Schema](https://github.com/Qaggbgbgb/su25-team6/blob/main/object%20oriented%20design/schema1.png)&&(https://github.com/Qaggbgbgb/su25-team6/blob/main/object%20oriented%20design/schema2.png)

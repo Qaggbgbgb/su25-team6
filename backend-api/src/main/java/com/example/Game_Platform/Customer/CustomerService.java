@@ -29,8 +29,8 @@ public class CustomerService {
      * @param customerId
      * @return
      */
-    public Object getCustomerById(@PathVariable long customerId) {
-        return customerRepository.findById(customerId).or(null);
+    public Customer getCustomerById(@PathVariable long customerId) {
+        return customerRepository.findById(customerId).orElse(null);
     }
 
     //Get Customer by UserName
@@ -71,7 +71,7 @@ public class CustomerService {
      * @param customer
      * @return
      */
-        public Object updateCustomer(Customer customer, Long customerId) {
+        public Customer updateCustomer(Long customerId, Customer customer) {
             return customerRepository.save(customer);
         }
 
@@ -85,6 +85,8 @@ public class CustomerService {
         public void deleteCustomer(Long customerId) {
             customerRepository.deleteById(customerId);
         }
+
+    
 
     // //Method to write a Customer ID to a JSON file
     // /**

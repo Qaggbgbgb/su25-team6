@@ -1,7 +1,14 @@
 package com.example.Game_Platform.Game;
 
+import com.example.Game_Platform.GameLibrary.GameLibrary;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity 
@@ -9,23 +16,36 @@ import jakarta.persistence.Table;
 public class Game {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long gameId;
+    
     private String gameName;
-    private String gameGenre;
+
+    @ManyToOne()
+    @JoinColumn(name = "gameLibrary_id")
+    @JsonIgnoreProperties("games")
+    private GameLibrary gameLibrary;
 
     public Game() {
     }
-    public Game(Long gameId, String gameName, String gameGenre) {
+
+    public Game(Long gameId, String gameName, GameLibrary gameLibrary ) {
         this.gameId = gameId;
-        this.gameName = gameName;
-        this.gameGenre = gameGenre; 
+        this.gameName = gameName; 
+        this.gameLibrary = gameLibrary;
     }
 
-     public Game( String gameName, String gameGenre) {
+     public Game( String gameName, GameLibrary gameLibrary) {
         this.gameName = gameName;
-        this.gameGenre = gameGenre; 
+        this.gameLibrary = gameLibrary;
     }
 
+
+
+    public Game( String gameName) {
+        this.gameName = gameName; 
+        
+    }
 
     public Long getGameId() {
         return gameId;
@@ -43,12 +63,12 @@ public class Game {
         this.gameName = gameName;
     }
 
-    public String getGameGenre() {
-        return gameGenre;
+    public GameLibrary getGameLibrary () {
+        return gameLibrary;
     }
 
-    public void setGameGenre(String gameGenre) {
-        this.gameGenre = gameGenre;
+    public void setGameLibrary(GameLibrary gameLibrary) {
+        this.gameLibrary = gameLibrary;
     }
               
 

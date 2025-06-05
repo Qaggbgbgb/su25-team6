@@ -2,13 +2,19 @@ package com.example.Game_Platform.GameLibrary;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
+import com.example.Game_Platform.Customer.Customer;
 import com.example.Game_Platform.Game.Game;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,42 +23,61 @@ public class GameLibrary {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long gameLibId;
-    private ArrayList<Game> games =  new ArrayList<>();
-    private String username;
+    private Long gameLibraryId;
+
+    @OneToMany(mappedBy = "gameLibrary")
+    @JsonIgnoreProperties("gameLibrary")
+    private List<Game> games;
+
+    private String userName;
     
+    @ManyToOne()
+    @JoinColumn(name = "customer", nullable = false)
+    private Customer customer;
+
+
     public GameLibrary() {
     }
 
-    public GameLibrary(Long gameLibId, ArrayList<Game> games, String username) {
-        this.gameLibId = gameLibId;
+    public GameLibrary(Long gameLibraryId, List<Game> games, String userName, Customer customer) {
+        this.gameLibraryId = gameLibraryId;
         this.games = games;
-        this.username = username;
+        this.userName = userName;
+        this.customer = customer;
     }
 
-     public GameLibrary( ArrayList<Game> games, String username) {
+    public GameLibrary( List<Game> games, String userName) {
         this.games = games;
-        this.username = username;
-    }
-    public Long getGameLibId() {
-        return gameLibId;
+        this.userName = userName;
     }
 
-    public ArrayList<Game> getGames() {
+
+    public Long getGameLibraryId() {
+        return gameLibraryId;
+    }
+
+    public List<Game> getGames() {
         return games;
     }
 
-    public void setGames(ArrayList<Game> games) {
+    public void setGames( List<Game> games) {
         this.games = games;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsername(String userName) {
+        this.userName = userName;
     }
 
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
 }

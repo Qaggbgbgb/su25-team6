@@ -14,8 +14,10 @@ import org.springframework.data.jpa.repository.Query;
 public interface CustomerRepository  extends JpaRepository<Customer, Long> {
 
     
-    List<Customer> getCustomerById(Long customerId);
+    List<Customer> findByCustomerId(Long customerId);
     List<Customer> getCustomerByUserName(String userName);
     List<Customer> getCustomerByPassword(String password);
-    List<Customer> getCustomerByGameObject(String gameObject);
+
+    @Query(value = "select * from games c where c.gameLibrary_id= ?1", nativeQuery = true)
+    List<Customer> getCustomerByGameLibrary(String gameLibrary);
 }

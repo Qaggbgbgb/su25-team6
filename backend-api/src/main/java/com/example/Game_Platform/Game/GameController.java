@@ -1,0 +1,113 @@
+package com.example.Game_Platform.Game;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+
+
+
+@RestController
+public class GameController {
+    
+    @Autowired
+    private GameService gameService;
+
+    /**
+     * Enpoint to get all games
+     * 
+     * @return
+     */
+    @GetMapping("/games")
+    public Object getAllGames() {
+        return gameService.getAllGames();
+    }
+
+
+    /**
+     * Endpoint to get game by name
+     * @param name
+     * @return
+     */
+    @GetMapping("/games/name")
+    public Object getGameByName(@RequestParam String name) {
+        if (name != null) {
+            return gameService.getGameByName(name);
+        } else {
+            return gameService.getAllGames();
+        }
+    }
+    
+
+    /**
+     * Endpoint to update Game
+     * @param gameId
+     * @param game
+     * @return
+     */
+    @PutMapping("/games/{gameId}")
+    public Game updateGame(@PathVariable Long gameId, @RequestBody Game game) {
+        game.setGameId(gameId);
+        gameService.updateGame(game);
+        return gameService.getGameById(gameId);
+    }
+
+
+    /**
+     * Enpoint to delete game by ID
+     * @param gameId
+     * @return
+     */
+    @DeleteMapping("/games/{gameId}")
+    public Object deleteGame(@PathVariable Long gameId) {
+        gameService.deleteGameById(gameId);
+        return gameService.getAllGames();
+    }
+
+
+
+    /**
+     * Enpoint to add new games
+     * 
+     * @param game
+     * @return
+     */
+    @PostMapping("/games")
+    public Object addGame(@RequestBody Game game) {
+        return gameService.addGame(game);
+    }
+
+
+    /**
+     * Endpoint to get game by gameId
+     * @param gameId
+     * @return
+     */
+    @GetMapping("/games/{gameId}")
+    public Game getGameById(@PathVariable Long gameId) {
+        return gameService.getGameById(gameId);
+    }
+    
+    
+
+    /**
+     * Enpoint to get games by GameLibrary Id
+     * 
+     * @param gameLibraryId
+     * @return
+     */
+    @GetMapping("/games/gameLibraryId/{gameLibraryId}")
+    public Object getGamesBygameLibraryId(@RequestParam Long gameLibraryId) {
+        return gameService.getGamesByGameLibraryId(gameLibraryId);
+    }
+    
+
+
+
+}

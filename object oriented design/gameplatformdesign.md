@@ -37,15 +37,20 @@ This application would be a nice place to gather and enjoy games. Welcome every 
 
 #### 2.2.1 Actor: Customer
 ##### 2.2.1.1 Sign Up
-A teacher can sign up to create their profile with their name, email, password, and bio. Emails must be unique.
+A customer can sign up to create there account.
 ##### 2.2.1.2 Log In
-A teacher shall be able to sign in using their registred email and password. After logging in, the teacher shall be directed their dashboard where they see an overview of their classes and stats.
+A customer shall be able to log into there account with
+there username and password. They should have a anique
+page of a game library 
 ##### 2.2.1.3 Update Profile
-A teacher shall be to modify their profile by going to their profile page. They can change their email, password, profile picture, and biography.
+A customer shall be able to modify there profile up to there 
+username and password.
 ##### 2.2.1.4 Create Class
-The teacher shall be able to create a new class listing. They would provide a class name, code, description, and schedule. This class will be created to be associated with only this teacher.
+A customer shall be able to create a new library of games
+when they begin selecting games.
 ##### 2.2.1.4 Manage Class Content
-A teacher shall be able to add and remove class assignments and announcements, as well as assign grades to their students.
+A customer shall be able to add and delete games from there
+game library.
 
 #### 2.2.2 Actor: Developer
 ##### 2.2.2.1 publish games 

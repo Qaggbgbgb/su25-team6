@@ -3,6 +3,8 @@ package com.example.Game_Platform.GameLibrary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.Game_Platform.Game.Game;
+
 @Service
 public class GameLibraryService {
 
@@ -41,10 +43,12 @@ public class GameLibraryService {
   /**
    * Update gameLibrary
    *
-   * @param gameLibrary 
+   *
+   * @param gameLibrary
    * @return 
    */
-  public Object updateGameLibrary(GameLibrary gameLibrary) {
+  
+  public GameLibrary updateGameLibrary( GameLibrary gameLibrary) {
     return gameLibraryRepository.save(gameLibrary);
   }
 

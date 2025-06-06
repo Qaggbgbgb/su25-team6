@@ -62,16 +62,7 @@ public class GameLibraryController {
      return gameLibraryService.addGameLibrary(gameLibrary);
   }
 
-    /**
-   * Endpoint to update game Library
-   *
-   * @param gameLibrary 
-   * @return 
-   */
-    @PutMapping("/gameLibraries")
-    public Object updateGameLibrary(@RequestBody GameLibrary gameLibrary) {
-    return gameLibraryService.updateGameLibrary(gameLibrary);
-}
+
 
   /**
    * Endpoint to delete a game library by ID
@@ -84,5 +75,19 @@ public class GameLibraryController {
     return gameLibraryService.deleteGameLibrary(gameLibraryId);
   }
 
-
+  /**
+   * Enppoint to update game Library 
+   * 
+   * @param gameLibraryId
+   * @param gameLibrary
+   * @return
+   * 
+   */
+  @PutMapping("/gameLibraries/{gameLibraryId}")
+  public Object updateGameLibray(@PathVariable Long gameLibraryId, @RequestBody GameLibrary gameLibrary) {
+      gameLibrary.setGameLibraryId(gameLibraryId);
+      gameLibraryService.updateGameLibrary(gameLibrary);
+      return gameLibraryService.getGameLibraryById(gameLibraryId);    
+  }
+  
 }

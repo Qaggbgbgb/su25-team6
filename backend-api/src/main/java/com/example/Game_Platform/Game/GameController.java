@@ -107,7 +107,10 @@ public class GameController {
         return gameService.getGamesByGameLibraryId(gameLibraryId);
     }
     
-
+    @GetMapping("/games/gameStore/{storeId}")
+  public Object getGamesByStoreId(@PathVariable Long storeId) {
+    return gameService.getGamesByStoreId(storeId);
+  }
 
 
 }

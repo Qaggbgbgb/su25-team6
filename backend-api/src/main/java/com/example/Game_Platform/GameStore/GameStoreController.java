@@ -1,5 +1,7 @@
 package com.example.Game_Platform.GameStore;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,17 +17,18 @@ public class GameStoreController {
 
 @Autowired
 private GameStoreService gameStoreService;
-@GetMapping("/gamestore")
+
+@GetMapping("/gameStore")
   public Object getAllGameStores() {
     return gameStoreService.getAllGameStores();
   }
-@GetMapping("/gamestore/{id}")
+@GetMapping("/gameStore/{id}")
   public GameStore getGameStoreById(@PathVariable long storeId) {
     return gameStoreService.getGameStoreById(storeId);
   }
 
-@PostMapping("/gamestore")
-  public void publishGame(@RequestBody Game game,Developer developer) {
+@PostMapping("/gameStore")
+  public void publishGame(@RequestBody Game game,List<Developer> developer) {
     gameStoreService.publishGames(developer,game);
   }
 

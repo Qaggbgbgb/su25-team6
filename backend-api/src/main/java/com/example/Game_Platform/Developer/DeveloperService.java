@@ -1,8 +1,12 @@
 package com.example.Game_Platform.Developer;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
+
+import com.example.Game_Platform.Game.Game;
 
 @Service
 public class DeveloperService {
@@ -29,10 +33,12 @@ public Developer updateDeveloper(Long developer_id,Developer developer) {
     return developerRepository.save(developer);
   }
 
-  public void deleteDeveloper(Long developer_id) {
+public void deleteDeveloper(Long developer_id) {
     developerRepository.deleteById(developer_id);
   }
 
-
+public List<Developer> getDevelopersByStoreId(Long storeId){
+        return developerRepository.getDevelopersByStoreId(storeId);
+    }
 
 }

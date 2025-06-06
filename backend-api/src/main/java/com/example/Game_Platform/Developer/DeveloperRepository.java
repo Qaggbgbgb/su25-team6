@@ -11,8 +11,8 @@ import com.example.Game_Platform.Game.Game;
 public interface DeveloperRepository extends JpaRepository<Developer, Long>{
 
 
-// @Query(value = "select * from Developers s where s.name like %?1% ", nativeQuery = true)
-//     List<Developer> getDevelopersByUsername(String username);
+@Query(value = "select * from Developers s where s.name like %?1% ", nativeQuery = true)
+    List<Developer> getDevelopersByUsername(String username);
 
 
 @Query(value = "select * from gameStores r where r.storeId= ?1", nativeQuery = true)

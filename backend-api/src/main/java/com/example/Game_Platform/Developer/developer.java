@@ -13,7 +13,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "developers")
+@Table(name = "Developers")
 public class Developer {
 
 @Id
@@ -28,7 +28,7 @@ private String password;
 
 @ManyToOne()
   @JoinColumn(name = "storeId", nullable = false)
-  @JsonIgnoreProperties("developers")
+  @JsonIgnoreProperties("Developers")
   private GameStore gameStore;
 
 

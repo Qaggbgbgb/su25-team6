@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class DeveloperController {
     @Autowired
 private DeveloperService developerService;
-@GetMapping("/developer")
+@GetMapping("/Developer")
   public Object getAllStudents() {
     return developerService.getAllDevelopers();
   }
 
-@GetMapping("/developers/{id}")
+@GetMapping("/Developers/{id}")
   public Developer getDeveloperById(@PathVariable long developer_id) {
     return developerService.getDeveloperById(developer_id);
   }
 
-@GetMapping("/developers/username")
+@GetMapping("/Developers/username")
   public Object getDevelopersByUsername(@RequestParam String key) {
     if (key != null) {
       return developerService.getDevelopersByUsername(key);
@@ -35,23 +35,23 @@ private DeveloperService developerService;
   }
 
 
-@PostMapping("/developers")
+@PostMapping("/Developers")
   public Object addDeveloper(@RequestBody Developer developer) {
     return developerService.addDeveloper(developer);
   }
 
-@PutMapping("/developers/{id}")
+@PutMapping("/Developers/{id}")
   public Developer updateDeveloper(@PathVariable Long developer_id, @RequestBody Developer developer) {
     developerService.updateDeveloper(developer_id, developer);
     return developerService.getDeveloperById(developer_id);
   }
 
-@DeleteMapping("/developers/{id}")
+@DeleteMapping("/Developers/{id}")
   public Object deleteDeveloper(@PathVariable Long developer_id) {
     developerService.deleteDeveloper(developer_id);
     return developerService.getAllDevelopers();
   }
-@GetMapping("/developers/gameStore/{storeId}")
+@GetMapping("/Developers/gameStore/{storeId}")
   public Object getDevelopersByStoreId(@PathVariable Long storeId) {
     return developerService.getDevelopersByStoreId(storeId);
 

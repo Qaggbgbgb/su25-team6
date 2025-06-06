@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 // import com.example.Game_Platform.Developer.Developer;
 // import com.example.Game_Platform.Game.Game;
 
-
 @Service
 public class GameStoreService {
     
@@ -42,5 +41,13 @@ public Object addGameStore(GameStore gameStore) {
     return gameStoreRepository.save(gameStore);
   }
 
+public List<Game> viewPublishedGames(List<Developer> developer){
+    for (int i=0;i<gameStoreRepository.getGameStoreByDeveloper(developer).size();i++){
+    return gameStoreRepository.getGameStoreByDeveloper(developer).get(i).getGames();}
+    return null;
+}
+public Object addGameStore(GameStore gameStore) {
+    return gameStoreRepository.save(gameStore);
+  }
 
 // }

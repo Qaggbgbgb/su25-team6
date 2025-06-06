@@ -42,5 +42,7 @@ public Object addGameStore(GameStore gameStore) {
     return gameStoreRepository.save(gameStore);
   }
 
+public GameStoreService(){
 
+}
 }

@@ -67,7 +67,7 @@ public class CustomerController {
     }
 
     /**
-     * Enpoint to update a customer
+     * Endpoint to update a customer
      * 
      * @param id
      * @param customer

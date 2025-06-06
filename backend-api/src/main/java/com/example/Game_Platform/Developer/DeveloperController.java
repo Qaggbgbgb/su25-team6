@@ -51,6 +51,12 @@ private DeveloperService developerService;
     developerService.deleteDeveloper(developer_id);
     return developerService.getAllDevelopers();
   }
+@GetMapping("/developers/gameStore/{storeId}")
+  public Object getDevelopersByStoreId(@PathVariable Long storeId) {
+    return developerService.getDevelopersByStoreId(storeId);
 
 
+
+
+}
 }

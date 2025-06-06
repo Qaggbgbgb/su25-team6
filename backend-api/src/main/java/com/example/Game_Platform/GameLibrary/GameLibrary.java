@@ -52,6 +52,10 @@ public class GameLibrary {
     }
 
 
+    public void setGameLibraryId(Long gameLibraryId) {
+        this.gameLibraryId = gameLibraryId;
+    }
+
     public Long getGameLibraryId() {
         return gameLibraryId;
     }

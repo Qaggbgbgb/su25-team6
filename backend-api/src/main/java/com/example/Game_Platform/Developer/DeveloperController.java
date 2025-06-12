@@ -14,43 +14,49 @@
 // public class DeveloperController {
 //     @Autowired
 // private DeveloperService developerService;
-// @GetMapping("/developer")
+// @GetMapping("/Developer")
 //   public Object getAllStudents() {
 //     return developerService.getAllDevelopers();
 //   }
 
-// @GetMapping("/developers/{id}")
-//   public Developer getDeveloperById(@PathVariable long developer_id) {
-//     return developerService.getDeveloperById(developer_id);
-//   }
+@GetMapping("/Developers/{id}")
+  public Developer getDeveloperById(@PathVariable long developer_id) {
+    return developerService.getDeveloperById(developer_id);
+  }
 
-// @GetMapping("/developers/username")
-//   public Object getDevelopersByUsername(@RequestParam String key) {
-//     if (key != null) {
-//       return developerService.getDevelopersByUsername(key);
-//     } else {
-//       return developerService.getAllDevelopers();
-//     }
+@GetMapping("/Developers/username")
+  public Object getDevelopersByUsername(@RequestParam String key) {
+    if (key != null) {
+      return developerService.getDevelopersByUsername(key);
+    } else {
+      return developerService.getAllDevelopers();
+    }
 
-//   }
-
-
-// @PostMapping("/developers")
-//   public Object addDeveloper(@RequestBody Developer developer) {
-//     return developerService.addDeveloper(developer);
-//   }
-
-// @PutMapping("/developers/{id}")
-//   public Developer updateDeveloper(@PathVariable Long developer_id, @RequestBody Developer developer) {
-//     developerService.updateDeveloper(developer_id, developer);
-//     return developerService.getDeveloperById(developer_id);
-//   }
-
-// @DeleteMapping("/developers/{id}")
-//   public Object deleteDeveloper(@PathVariable Long developer_id) {
-//     developerService.deleteDeveloper(developer_id);
-//     return developerService.getAllDevelopers();
 //   }
 
 
-// }
+@PostMapping("/Developers")
+  public Object addDeveloper(@RequestBody Developer developer) {
+    return developerService.addDeveloper(developer);
+  }
+
+@PutMapping("/Developers/{id}")
+  public Developer updateDeveloper(@PathVariable Long developer_id, @RequestBody Developer developer) {
+    developerService.updateDeveloper(developer_id, developer);
+    return developerService.getDeveloperById(developer_id);
+  }
+
+@DeleteMapping("/Developers/{id}")
+  public Object deleteDeveloper(@PathVariable Long developer_id) {
+    developerService.deleteDeveloper(developer_id);
+    return developerService.getAllDevelopers();
+  }
+@GetMapping("/Developers/gameStore/{storeId}")
+  public Object getDevelopersByStoreId(@PathVariable Long storeId) {
+    return developerService.getDevelopersByStoreId(storeId);
+
+
+
+
+}
+}

@@ -1,4 +1,4 @@
-// package com.example.Game_Platform.GameStore;
+package com.example.Game_Platform.GameStore;
 
 // import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.web.bind.annotation.GetMapping;
@@ -13,21 +13,22 @@
 // @RestController
 // public class GameStoreController {
 
-// @Autowired
-// private GameStoreService gameStoreService;
-// @GetMapping("/gamestore")
-//   public Object getAllGameStores() {
-//     return gameStoreService.getAllGameStores();
-//   }
-// @GetMapping("/gamestore/{id}")
-//   public GameStore getGameStoreById(@PathVariable long storeId) {
-//     return gameStoreService.getGameStoreById(storeId);
-//   }
+@Autowired
+private GameStoreService gameStoreService;
 
-// @PostMapping("/gamestore")
-//   public void publishGame(@RequestBody Game game,Developer developer) {
-//     gameStoreService.publishGames(developer,game);
-//   }
+@GetMapping("/gameStore")
+  public Object getAllGameStores() {
+    return gameStoreService.getAllGameStores();
+  }
+@GetMapping("/gameStore/{id}")
+  public GameStore getGameStoreById(@PathVariable long storeId) {
+    return gameStoreService.getGameStoreById(storeId);
+  }
+
+@PostMapping("/gameStore")
+  public void publishGame(@RequestBody Game game,List<Developer> developer) {
+    gameStoreService.publishGames(developer,game);
+  }
 
 
     

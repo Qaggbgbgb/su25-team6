@@ -78,4 +78,10 @@ public class GameService {
     public List<Game> getGamesByGameLibraryId(Long gameLibraryId) {
         return gameRepository.getGamesByGameLibraryId(gameLibraryId);
     }
+
+    public List<Game> getGamesByStoreId(Long storeId){
+        return gameRepository.getGamesByStoreId(storeId);
+    }
+
+
 }

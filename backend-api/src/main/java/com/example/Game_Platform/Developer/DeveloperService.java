@@ -1,13 +1,17 @@
-// package com.example.Game_Platform.Developer;
+package com.example.Game_Platform.Developer;
 
-// import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.stereotype.Service;
-// import org.springframework.web.bind.annotation.PathVariable;
+import java.util.List;
 
-// @Service
-// public class DeveloperService {
-//     @Autowired
-//     private DeveloperRepository developerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.example.Game_Platform.Game.Game;
+
+@Service
+public class DeveloperService {
+    @Autowired
+    private DeveloperRepository developerRepository;
 
 // public Object getAllDevelopers() {
 //     return developerRepository.findAll();
@@ -29,10 +33,12 @@
 //     return developerRepository.save(developer);
 //   }
 
-//   public void deleteDeveloper(Long developer_id) {
-//     developerRepository.deleteById(developer_id);
-//   }
+public void deleteDeveloper(Long developer_id) {
+    developerRepository.deleteById(developer_id);
+  }
 
-
+public List<Developer> getDevelopersByStoreId(Long storeId){
+        return developerRepository.getDevelopersByStoreId(storeId);
+    }
 
 // }

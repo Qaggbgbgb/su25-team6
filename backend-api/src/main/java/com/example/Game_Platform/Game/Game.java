@@ -3,6 +3,7 @@ package com.example.Game_Platform.Game;
 import java.util.List;
 
 import com.example.Game_Platform.GameLibrary.GameLibrary;
+import com.example.Game_Platform.GameStore.GameStore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
@@ -26,6 +27,11 @@ public class Game {
     
     private String gameName;
 
+
+    @ManyToOne()
+  @JoinColumn(name = "storeId")
+  @JsonIgnoreProperties("games")
+  private GameStore gameStore;
 
     @ManyToMany(mappedBy = "games")
     @JsonIgnoreProperties("games")

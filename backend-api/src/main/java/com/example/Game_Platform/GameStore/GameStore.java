@@ -19,61 +19,62 @@
 // import jakarta.persistence.Table;
 
 // @Entity
-// @Table(name = "gamestore")
+// @Table(name = "gameStore")
 // public class GameStore {
 
-//  @Id
-//     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//     private Long StoreId;
+ @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long storeId;
 
 
-// @OneToMany(mappedBy = "gamestore")
+@OneToMany(mappedBy = "gameStore")
     
-//     @JsonIgnoreProperties("gamestore")
-//     private List<Game> games;
-//  @JsonIgnoreProperties("gamestore")   
-//     private Developer developer;
+    @JsonIgnoreProperties("gameStore")
+    private List<Game> games;
+@OneToMany(mappedBy = "gameStore")    
+ @JsonIgnoreProperties("gameStore")   
+    private List<Developer> developer;
 
 // public GameStore(){
 
-// }
-// public GameStore(List<Game> games,Developer developer)
-// {
-//     this.games=games;
-//     this.developer=developer;
+}
+public GameStore(List<Game> games,List<Developer> developer)
+{
+    this.games=games;
+    this.developer=developer;
     
-// }
-// public GameStore(Long storeId, List<Game> games,Developer developer)
-// {
-//     this.games=games;
-//     this.developer=developer;
-//     this.StoreId=storeId;
-// }
+}
+public GameStore(Long storeId, List<Game> games,List<Developer> developer)
+{
+    this.games=games;
+    this.developer=developer;
+    this.storeId=storeId;
+}
 
 // public List<Game> getGames(){
 //     return this.games;
 // }
 
-// public Developer getDeveloper(){
-//     return this.developer;
-// }
+public List<Developer> getDeveloper(){
+    return this.developer;
+}
 
 // public void setGames(List<Game> games){
 //     this.games=games;
 // }
 
-// public void setDeveloper(Developer developer){
-//     this.developer=developer;
+public void setDeveloper(List<Developer> developer){
+    this.developer=developer;
 
 // }
 
-// public Long getId(){
-//     return this.StoreId;
-// }
+public Long getId(){
+    return this.storeId;
+}
 
-// public void setStoreId(Long storeId){
-//     this.StoreId=storeId;
-// }
+public void setStoreId(Long storeId){
+    this.storeId=storeId;
+}
 
 
 // }

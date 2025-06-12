@@ -10,9 +10,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
-
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity 
@@ -28,29 +28,28 @@ public class Game {
     private String gameName;
 
 
-
-    //@ManyToMany(mappedBy = "games")
-   // @JsonIgnoreProperties("games")
-    //private List<GameLibrary> gameLibrary;
-
+    @ManyToMany(mappedBy = "games")
+    @JsonIgnoreProperties("games")
+    private List<GameLibrary> gameLibrary;
 
 
-     @ManyToMany(mappedBy = "games")
-     @JsonIgnoreProperties("games")
-     private List<GameLibrary> gameLibrary;
+
+    // @ManyToMany(mappedBy = "games")
+    // @JsonIgnoreProperties("games")
+    // private List<GameLibrary> gameLibrary;
 
 
     public Game() {
     }
 
-    public Game(Long gameId, String gameName, List<GameLibrary> gameLibrary, String profilePicturePath) {
+    public Game(Long gameId, String gameName, List<GameLibrary> gameLibrary ) {
         this.gameId = gameId;
         this.gameName = gameName; 
         this.gameLibrary = gameLibrary;
         this.profilePicturePath = profilePicturePath;
     }
 
-     public Game( String gameName, List<GameLibrary> gameLibrary, String profilePicturePath) {
+     public Game( String gameName, List<GameLibrary> gameLibrary) {
         this.gameName = gameName;
         this.gameLibrary = gameLibrary;
         this.profilePicturePath = profilePicturePath;
@@ -98,3 +97,7 @@ public class Game {
 }
 
 
+// @ManyToOne()
+//     @JoinColumn(name = "gameLibrary_id")
+//     @JsonIgnoreProperties("games")
+//     private GameLibrary gameLibrary;

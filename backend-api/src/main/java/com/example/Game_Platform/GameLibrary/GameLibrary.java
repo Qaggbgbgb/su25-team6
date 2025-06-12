@@ -30,7 +30,7 @@ public class GameLibrary {
     private Long gameLibraryId;
     
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
     @JoinTable(
     name = "game_library_games",
     joinColumns = @JoinColumn(name = "game_library_id"),
@@ -44,9 +44,9 @@ public class GameLibrary {
   
     private String userName;
     
-   //  @ManyToOne()
-   //  @JoinColumn(name = "customer", nullable = false)
-   //  private Customer customer;
+    // @ManyToOne()
+    // @JoinColumn(name = "customer", nullable = false)
+    // private Customer customer;
 
 
     @OneToOne(optional = true)
@@ -111,3 +111,9 @@ public class GameLibrary {
   //   private List<Game> games;
 
 }
+
+
+  
+    // @OneToMany(mappedBy = "gameLibrary")
+    // @JsonIgnoreProperties("gameLibrary")
+    // private List<Game> games;

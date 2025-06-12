@@ -1,6 +1,8 @@
 package com.example.Game_Platform.Customer;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,21 +15,23 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 
 
-@RestController
+@Controller
 public class CustomerController {
     
     @Autowired
     private CustomerService customerService;
 
-    /**
-     * Enpoint to get all customers
-     * 
-     * @return
-     */
-    @GetMapping("/customers")
-    public Object getAllCustomers() {
-         return customerService.getAllCustomers();
-    }
+    // /**
+    //  * Enpoint to get all customers
+    //  * 
+    //  * @return
+    //  */
+    // @GetMapping("/customers")
+    // public Object getAllCustomers( Model model) {
+    //      model.addAttribute("customerList", customerService.getAllCustomers());
+    //      model.addAttribute("title", "All Customers");
+    //      return "customer-home";
+    // }
 
     /**
      * Enpoint to get a customer by ID
@@ -40,16 +44,43 @@ public class CustomerController {
         return customerService.getCustomerById(id);
     }
     
+    // /**
+    //  * Endpoint to add new Customer
+    //  * 
+    //  * @param customer
+    //  * @return
+    //  */
+    // @PostMapping("/customers")
+    // public Object addCustomer(@RequestBody Customer customer) {
+    //     return customerService.addCustomer(customer);
+    // }
+
+    //Enpoint to create customer form
     /**
-     * Endpoint to add new Customer
+     * 
+     * @param model
+     * @return
+     */
+    @GetMapping("/customers/signUp")
+    public Object showSignUpForm(Model model) {
+        Customer customer = new Customer();
+        model.addAttribute("customer", customer);
+        model.addAttribute("title", "Create New Customer");
+        return "customer-create";
+    }
+    
+    //Enpoint for customer to sign up 
+    /**
      * 
      * @param customer
      * @return
      */
-    @PostMapping("/customers")
-    public Object addCustomer(@RequestBody Customer customer) {
-        return customerService.addCustomer(customer);
+    @PostMapping("/customers/signUp")
+    public Object addCustomer(Customer customer) {
+        customerService.addCustomer(customer);
+        return "redirect:/customers";
     }
+    
     
     /**
      * Enpoint to get customer by name

@@ -58,9 +58,9 @@ public class CustomerService {
      /**
       * 
       * @param customer
-      * @return
+      * 
       */
-        public Object addCustomer(Customer customer) {
+        public Customer addCustomer(Customer customer) { 
         return customerRepository.save(customer);
         }
 

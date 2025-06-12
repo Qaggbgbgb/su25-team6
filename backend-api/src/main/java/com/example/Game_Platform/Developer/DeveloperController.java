@@ -1,23 +1,23 @@
-package com.example.Game_Platform.Developer;
+// package com.example.Game_Platform.Developer;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.web.bind.annotation.DeleteMapping;
+// import org.springframework.web.bind.annotation.GetMapping;
+// import org.springframework.web.bind.annotation.PathVariable;
+// import org.springframework.web.bind.annotation.PostMapping;
+// import org.springframework.web.bind.annotation.PutMapping;
+// import org.springframework.web.bind.annotation.RequestBody;
+// import org.springframework.web.bind.annotation.RequestParam;
+// import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-public class DeveloperController {
-    @Autowired
-private DeveloperService developerService;
-@GetMapping("/Developer")
-  public Object getAllStudents() {
-    return developerService.getAllDevelopers();
-  }
+// @RestController
+// public class DeveloperController {
+//     @Autowired
+// private DeveloperService developerService;
+// @GetMapping("/Developer")
+//   public Object getAllStudents() {
+//     return developerService.getAllDevelopers();
+//   }
 
 @GetMapping("/Developers/{id}")
   public Developer getDeveloperById(@PathVariable long developer_id) {
@@ -32,7 +32,7 @@ private DeveloperService developerService;
       return developerService.getAllDevelopers();
     }
 
-  }
+//   }
 
 
 @PostMapping("/Developers")

@@ -1,29 +1,29 @@
-package com.example.Game_Platform.GameStore;
+// package com.example.Game_Platform.GameStore;
 
-import java.util.List;
+// import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.example.Game_Platform.Developer.Developer;
-import com.example.Game_Platform.Game.Game;
+// import com.example.Game_Platform.Developer.Developer;
+// import com.example.Game_Platform.Game.Game;
 
 
 @Service
 public class GameStoreService {
     
 
-    @Autowired
-    private GameStoreRepository gameStoreRepository;
+//     @Autowired
+//     private GameStoreRepository gameStoreRepository;
 
-public Object getAllGameStores() {
-    return gameStoreRepository.findAll();
-  }
+// public Object getAllGameStores() {
+//     return gameStoreRepository.findAll();
+//   }
 
-public GameStore getGameStoreById(@PathVariable long storeId) {
-    return gameStoreRepository.findById(storeId).orElse(null);
-  }
+// public GameStore getGameStoreById(@PathVariable long storeId) {
+//     return gameStoreRepository.findById(storeId).orElse(null);
+//   }
 
 public Object getGameStoreByDeveloper(List<Developer> developer) {
     return gameStoreRepository.getGameStoreByDeveloper(developer);

@@ -1,6 +1,6 @@
-package com.example.Game_Platform.Developer;
+// package com.example.Game_Platform.Developer;
 
-import java.util.List;
+// import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

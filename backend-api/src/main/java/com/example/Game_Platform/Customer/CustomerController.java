@@ -44,16 +44,43 @@ public class CustomerController {
         return customerService.getCustomerById(id);
     }
     
+    // /**
+    //  * Endpoint to add new Customer
+    //  * 
+    //  * @param customer
+    //  * @return
+    //  */
+    // @PostMapping("/customers")
+    // public Object addCustomer(@RequestBody Customer customer) {
+    //     return customerService.addCustomer(customer);
+    // }
+
+    //Enpoint to create customer form
     /**
-     * Endpoint to add new Customer
+     * 
+     * @param model
+     * @return
+     */
+    @GetMapping("/customers/signUp")
+    public Object showSignUpForm(Model model) {
+        Customer customer = new Customer();
+        model.addAttribute("customer", customer);
+        model.addAttribute("title", "Create New Customer");
+        return "customer-create";
+    }
+    
+    //Enpoint for customer to sign up 
+    /**
      * 
      * @param customer
      * @return
      */
-    @PostMapping("/customers")
-    public Object addCustomer(@RequestBody Customer customer) {
-        return customerService.addCustomer(customer);
+    @PostMapping("/customers/signUp")
+    public Object addCustomer(Customer customer) {
+        customerService.addCustomer(customer);
+        return "redirect:/customers";
     }
+    
     
     /**
      * Enpoint to get customer by name

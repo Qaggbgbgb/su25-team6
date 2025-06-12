@@ -31,7 +31,7 @@
             <a class="nav-link active" aria-current="page" href="">Game Library</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="">Login/SignUp</a>
+            <a class="nav-link active" aria-current="page" href="/customers/signUp">Login/SignUp</a>
           </li>
 
         </ul>
@@ -42,7 +42,7 @@
   <section class="welcome">
     <h1>Available Games</h1>
     
-    <form action="/games/name" class="d-flex mt-3 mt-lg-0" role="search">
+    <form action="/games/name" class="d-flex mt-3 mt-lg-0" role="search" style="margin-left: 2rem;">
       <input name="name" class="form-control me-2" type="text" placeholder="Search by Name" aria-label="Search"> <button
         class="btn btn-outline-success" type="submit">Search</button>
     </form>
@@ -50,7 +50,7 @@
   </section>
   <section class="animal-list position-relative">
 <#list gamesList as games>
-      <div class="card" style="width: 18rem;">
+      <div class="card mx-auto" style="width: 18rem;">
 <img src="${games.profilePicturePath}" class="card-img-top" alt="..." style="height: 200px; object-fit: cover;">
 
   <div class="card-body">
@@ -65,13 +65,13 @@
   </section>
   <footer>
     <h4>Follow Us</h4>
-    <div class="icon-list">
+    <!-- <div class="icon-list">
       <img class="icon" src="instagram.png">
       <img class="icon" src="facebook.png">
       <img class="icon" src="linkedin.png">
       <img class="icon" src="twitter.png">
 
-    </div>
+    </div> -->
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"

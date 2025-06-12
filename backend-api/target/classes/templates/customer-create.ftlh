@@ -12,19 +12,22 @@
 <body>
     <section class="container">
         <div class="left-side">
-            <form>
-            <h1>Customer Login</h1>
+            <form action="/customers/signUp" method="post" >
+            <h1>Customer Sign Up</h1>
             <span class="please">Please login to continue to your account.</span>
-            <input placeholder="  Email" type="email">
-            <input placeholder="  Password" type="password">
+           <input placeholder="  UserName" name="userName" type="text">
+            <input placeholder="  Password" name="password" type="password">
+             <input placeholder="  Game Library Name" type="text">
             <button class="dev-change">Switch to Developer</button>
-            <button class="sign-button">Sign in</button>
-            <div class="do"><hr><span class="or-span">or</span><hr></div>
-            <span class="need">Need an account? <span class="create-span">Create one</span></span>
+            <button type="submit" class="sign-button">Sign Up</button>
+           
+            <!-- <div class="do"><hr><span class="or-span">or</span><hr></div>
+            <span class="need">Already Hav an Account? <span class="create-span">SignIn</span></span> -->
             </form>
+            <a href="/"> <button class="sign-button">Cancel</button></a>
         </div>
         <div class="right-side">
-            <div><img src="game1.png"></div>
+            <div><img src="/game1.png"></div>
             
         </div>
     </section>

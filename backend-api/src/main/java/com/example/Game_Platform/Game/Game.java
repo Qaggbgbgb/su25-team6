@@ -22,6 +22,8 @@ public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long gameId;
+    private String profilePicturePath;
+
     
     private String gameName;
 
@@ -40,15 +42,17 @@ public class Game {
     public Game() {
     }
 
-    public Game(Long gameId, String gameName, List<GameLibrary> gameLibrary ) {
+    public Game(Long gameId, String gameName, List<GameLibrary> gameLibrary, String profilePicturePath) {
         this.gameId = gameId;
         this.gameName = gameName; 
         this.gameLibrary = gameLibrary;
+        this.profilePicturePath = profilePicturePath;
     }
 
-     public Game( String gameName, List<GameLibrary> gameLibrary) {
+     public Game( String gameName, List<GameLibrary> gameLibrary, String profilePicturePath) {
         this.gameName = gameName;
         this.gameLibrary = gameLibrary;
+        this.profilePicturePath = profilePicturePath;
     }
 
 
@@ -91,11 +95,15 @@ public class Game {
     }
 
 
+     
+    public String getProfilePicturePath() {
+        return profilePicturePath;
+    }
+
+    public void setProfilePicturePath(String profilePicturePath) {
+        this.profilePicturePath = profilePicturePath;
+    }
 
 }
 
 
-// @ManyToOne()
-//     @JoinColumn(name = "gameLibrary_id")
-//     @JsonIgnoreProperties("games")
-//     private GameLibrary gameLibrary;

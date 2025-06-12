@@ -1,7 +1,8 @@
 package com.example.Game_Platform.Game;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 
-@RestController
+@Controller
 public class GameController {
     
     @Autowired
@@ -24,26 +25,61 @@ public class GameController {
      * 
      * @return
      */
-    @GetMapping("/games")
-    public Object getAllGames() {
-        return gameService.getAllGames();
+    @GetMapping("/customers")
+    public Object getAllGames(Model model) {
+        model.addAttribute("gamesList", gameService.getAllGames());
+        model.addAttribute("title", "All Games");
+        return "customer-home";
     }
 
 
+    // /**
+    //  * Enpoint to get all games
+    //  * 
+    //  * @return
+    //  */
+    // @GetMapping("/games")
+    // public Object getAllGames() {
+    //     return gameService.getAllGames();
+    // }
+
+
+
+    // /**
+    //  * Endpoint to get game by name
+    //  * @param name
+    //  * @return
+    //  */
+    // @GetMapping("/games/name")
+    // public Object getGameByName(@RequestParam String name) {
+    //     if (name != null) {
+    //         return gameService.getGameByName(name);
+    //     } else {
+    //         return gameService.getAllGames();
+    //     }
+    // }
+    
+
     /**
-     * Endpoint to get game by name
+     * 
+     * 
      * @param name
      * @return
      */
     @GetMapping("/games/name")
-    public Object getGameByName(@RequestParam String name) {
+    public Object getGameByGameName(@RequestParam String name, Model model) {
         if (name != null) {
-            return gameService.getGameByName(name);
+            model.addAttribute("gamesList", gameService.getGameByName(name));
+            return "customer-home";
         } else {
-            return gameService.getAllGames();
+            return "redirect:/customers/";
         }
+        
     }
     
+
+
+
 
     /**
      * Endpoint to update Game

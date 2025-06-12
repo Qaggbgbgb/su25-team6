@@ -1,4 +1,4 @@
-package com.example.Game_Platform.Developer;
+// package com.example.Game_Platform.Developer;
 
 import java.util.List;
 
@@ -13,25 +13,25 @@ public class DeveloperService {
     @Autowired
     private DeveloperRepository developerRepository;
 
-public Object getAllDevelopers() {
-    return developerRepository.findAll();
-  }
+// public Object getAllDevelopers() {
+//     return developerRepository.findAll();
+//   }
 
-public Developer getDeveloperById(@PathVariable long developer_id) {
-    return developerRepository.findById(developer_id).orElse(null);
-  }
+// public Developer getDeveloperById(@PathVariable long developer_id) {
+//     return developerRepository.findById(developer_id).orElse(null);
+//   }
 
-public Object getDevelopersByUsername(String username) {
-    return developerRepository.getDevelopersByUsername(username);
-  }
+// public Object getDevelopersByUsername(String username) {
+//     return developerRepository.getDevelopersByUsername(username);
+//   }
 
-public Developer addDeveloper(Developer developer) {
-    return developerRepository.save(developer);
-  }
+// public Developer addDeveloper(Developer developer) {
+//     return developerRepository.save(developer);
+//   }
 
-public Developer updateDeveloper(Long developer_id,Developer developer) {
-    return developerRepository.save(developer);
-  }
+// public Developer updateDeveloper(Long developer_id,Developer developer) {
+//     return developerRepository.save(developer);
+//   }
 
 public void deleteDeveloper(Long developer_id) {
     developerRepository.deleteById(developer_id);
@@ -41,4 +41,4 @@ public List<Developer> getDevelopersByStoreId(Long storeId){
         return developerRepository.getDevelopersByStoreId(storeId);
     }
 
-}
+// }

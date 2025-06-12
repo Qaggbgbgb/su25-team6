@@ -5,12 +5,13 @@ import java.util.List;
 import com.example.Game_Platform.GameLibrary.GameLibrary;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -27,22 +28,27 @@ public class Customer {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany(mappedBy = "customer")
+    
+    @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL, optional = false)
     @JsonIgnoreProperties("customer")
-    private List<GameLibrary> gameLibrary;
+    private GameLibrary gameLibrary;
+    
+    // @OneToOne(mappedBy = "customer")
+    // @JsonIgnoreProperties("customer")
+    // private List<GameLibrary> gameLibrary;
    
 
     public Customer() {
     }
 
-    public Customer(Long customerId, String userName, List<GameLibrary> gameLibray, String password) {
+    public Customer(Long customerId, String userName, GameLibrary gameLibray, String password) {
         this.customerId = customerId;
         this.userName = userName;
         this.gameLibrary = gameLibray;
         this.password = password;
     }
 
-    public Customer( String userName, List<GameLibrary> gameLibray, String password) {
+    public Customer( String userName, GameLibrary gameLibray, String password) {
         this.userName = userName;
         this.gameLibrary = gameLibray;
         this.password = password;
@@ -69,10 +75,10 @@ public class Customer {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    public List<GameLibrary> getGameLibrary() {
+    public GameLibrary getGameLibrary() {
         return gameLibrary;
     }
-    public void setGameLibrary(List<GameLibrary> gameLibrary) {
+    public void setGameLibrary(GameLibrary gameLibrary) {
         this.gameLibrary = gameLibrary;   
     }
     public String getPassword() {

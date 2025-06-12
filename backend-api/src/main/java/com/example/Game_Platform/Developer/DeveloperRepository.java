@@ -9,7 +9,8 @@ import org.springframework.stereotype.Repository;
 public interface DeveloperRepository extends JpaRepository<Developer, Long>{
 
 
-@Query(value = "select * from developers s where s.name like %?1% ", nativeQuery = true)
+@Query(value = "select * from Developers s where s.name like %?1% ", nativeQuery = true)
     List<Developer> getDevelopersByUsername(String username);
 
 }
+

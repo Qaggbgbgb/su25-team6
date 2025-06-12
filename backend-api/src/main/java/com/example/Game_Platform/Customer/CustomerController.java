@@ -44,7 +44,6 @@ public class CustomerController {
     //  * 
     //  * @return
     //  */
-<<<<<<< HEAD
     @GetMapping("/customers")
      public Object getAllCustomers( Model model) {
           model.addAttribute("customerList", customerService.getAllCustomers());
@@ -76,14 +75,6 @@ public class CustomerController {
     model.addAttribute("title", "All Customers");
     return "customer-home";
 }
-=======
-    // @GetMapping("/customers")
-    // public Object getAllCustomers( Model model) {
-    //      model.addAttribute("customerList", customerService.getAllCustomers());
-    //      model.addAttribute("title", "All Customers");
-    //      return "customer-home";
-    // }
->>>>>>> fe04742 (Added search by game name functionality and rendered games)
 
  
     // /**
@@ -127,9 +118,34 @@ public class CustomerController {
         return "customer-create";
     }
     
-    // Enpoint for customer to sign up 
+    // /**
+    //  * Endpoint to add new Customer
+    //  * 
+    //  * @param customer
+    //  * @return
+    //  */
+    // @PostMapping("/customers")
+    // public Object addCustomer(@RequestBody Customer customer) {
+    //     return customerService.addCustomer(customer);
+    // }
+
+    //Enpoint to create customer form
     /**
-     * @param gameLibrary
+     * 
+     * @param model
+     * @return
+     */
+    @GetMapping("/customers/signUp")
+    public Object showSignUpForm(Model model) {
+        Customer customer = new Customer();
+        model.addAttribute("customer", customer);
+        model.addAttribute("title", "Create New Customer");
+        return "customer-create";
+    }
+    
+    //Enpoint for customer to sign up 
+    /**
+     * 
      * @param customer
      * @return
      */
@@ -179,6 +195,7 @@ public class CustomerController {
             customer.getGameLibrary().getGames());
     return "customer-library";
     }
+    
     
     /**
      * @param gameId

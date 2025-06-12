@@ -44,6 +44,7 @@ public class CustomerController {
     //  * 
     //  * @return
     //  */
+<<<<<<< HEAD
     @GetMapping("/customers")
      public Object getAllCustomers( Model model) {
           model.addAttribute("customerList", customerService.getAllCustomers());
@@ -75,6 +76,14 @@ public class CustomerController {
     model.addAttribute("title", "All Customers");
     return "customer-home";
 }
+=======
+    // @GetMapping("/customers")
+    // public Object getAllCustomers( Model model) {
+    //      model.addAttribute("customerList", customerService.getAllCustomers());
+    //      model.addAttribute("title", "All Customers");
+    //      return "customer-home";
+    // }
+>>>>>>> fe04742 (Added search by game name functionality and rendered games)
 
  
     // /**

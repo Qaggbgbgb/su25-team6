@@ -1,3 +1,4 @@
+// package com.example.Game_Platform.GameStore;
 
  import java.util.List;
 
@@ -34,7 +35,7 @@ import jakarta.persistence.Table;
  @JsonIgnoreProperties("gameStore")   
     private List<Developer> developer;
 
-public GameStore(){
+// public GameStore(){
 
 }
 public GameStore(List<Game> games,List<Developer> developer)
@@ -50,22 +51,22 @@ public GameStore(Long storeId, List<Game> games,List<Developer> developer)
     this.storeId=storeId;
 }
 
-public List<Game> getGames(){
-    return this.games;
-}
+// public List<Game> getGames(){
+//     return this.games;
+// }
 
 public List<Developer> getDeveloper(){
     return this.developer;
 }
 
-public void setGames(List<Game> games){
-    this.games=games;
-}
+// public void setGames(List<Game> games){
+//     this.games=games;
+// }
 
 public void setDeveloper(List<Developer> developer){
     this.developer=developer;
 
-}
+// }
 
 public Long getId(){
     return this.storeId;
@@ -76,4 +77,4 @@ public void setStoreId(Long storeId){
 }
 
 
-}
+// }

@@ -40,7 +40,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
       return developerService.getAllDevelopers();
     }
 
-  }
+//   }
 
 
 @PostMapping("/Developers")

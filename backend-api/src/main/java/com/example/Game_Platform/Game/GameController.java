@@ -28,12 +28,12 @@ public class GameController {
      * 
      * @return
      */
-   // @GetMapping("/customers")
-   // public Object getAllGames(Model model) {
-   //     model.addAttribute("gamesList", gameService.getAllGames());
-   //     model.addAttribute("title", "All Games");
-   //     return "customer-home";
-  //  }
+    @GetMapping("/customers")
+    public Object getAllGames(Model model) {
+        model.addAttribute("gamesList", gameService.getAllGames());
+        model.addAttribute("title", "All Games");
+        return "customer-home";
+    }
 
 
     // /**
@@ -59,16 +59,36 @@ public class GameController {
     //  * @param name
     //  * @return
     //  */
-     @GetMapping("/games/name")
-     public Object getGameByName(@RequestParam String key) {
-        if (key != null) {
-          return gameService.getGameByName(key);
-            
-         } else {
-             return gameService.getAllGames();
-         }
-     }
+    // @GetMapping("/games/name")
+    // public Object getGameByName(@RequestParam String name) {
+    //     if (name != null) {
+    //         return gameService.getGameByName(name);
+    //     } else {
+    //         return gameService.getAllGames();
+    //     }
+    // }
     
+
+    /**
+     * 
+     * 
+     * @param name
+     * @return
+     */
+    @GetMapping("/games/name")
+    public Object getGameByGameName(@RequestParam String name, Model model) {
+        if (name != null) {
+            model.addAttribute("gamesList", gameService.getGameByName(name));
+            return "customer-home";
+        } else {
+            return "redirect:/customers/";
+        }
+        
+    }
+    
+
+
+
 
     /**
      * 

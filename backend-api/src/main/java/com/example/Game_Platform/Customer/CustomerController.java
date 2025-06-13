@@ -16,12 +16,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.Game_Platform.Game.Game;
-import com.example.Game_Platform.Game.GameRepository;
 import com.example.Game_Platform.Game.GameService;
 import com.example.Game_Platform.GameLibrary.GameLibrary;
-import com.example.Game_Platform.GameLibrary.GameLibraryRepository;
-import com.example.Game_Platform.GameLibrary.GameLibraryService;
 
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,17 +35,8 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    // /**
-    //  * Enpoint to get all customers
-    //  * 
-    //  * @return
-    //  */
-    @GetMapping("/customers")
-     public Object getAllCustomers( Model model) {
-          model.addAttribute("customerList", customerService.getAllCustomers());
-         model.addAttribute("title", "All Customers");
-          return "customer-home";
-     }
+    @Autowired
+    private GameService gameService;
 
     @Autowired
     private GameLibraryRepository gameLibraryRepository;
@@ -94,13 +81,10 @@ public class CustomerController {
     //  * @param customer
     //  * @return
     //  */
-   //  @PostMapping("/customers")
-   //  public Object addCustomer(@RequestBody Customer customer) {
-   //      return customerService.addCustomer(customer);
-   //  }
-
-
-    
+    // @PostMapping("/customers")
+    // public Object addCustomer(@RequestBody Customer customer) {
+    //     return customerService.addCustomer(customer);
+    // }
 
     //Enpoint to create customer form
     /**
@@ -118,39 +102,14 @@ public class CustomerController {
         return "customer-create";
     }
     
-    // /**
-    //  * Endpoint to add new Customer
-    //  * 
-    //  * @param customer
-    //  * @return
-    //  */
-    // @PostMapping("/customers")
-    // public Object addCustomer(@RequestBody Customer customer) {
-    //     return customerService.addCustomer(customer);
-    // }
-
-    //Enpoint to create customer form
+    // Enpoint for customer to sign up 
     /**
-     * 
-     * @param model
-     * @return
-     */
-    @GetMapping("/customers/signUp")
-    public Object showSignUpForm(Model model) {
-        Customer customer = new Customer();
-        model.addAttribute("customer", customer);
-        model.addAttribute("title", "Create New Customer");
-        return "customer-create";
-    }
-    
-    //Enpoint for customer to sign up 
-    /**
-     * 
+     * @param gameLibrary
      * @param customer
      * @return
      */
     @PostMapping("/customers/signUp")
-    public Object addCustomer(@ModelAttribute Customer customer, Model model) {
+    public Object addCustomer(@ModelAttribute Customer customer) {
         GameLibrary gameLibrary = new GameLibrary();
 
         gameLibrary.setCustomer(customer);

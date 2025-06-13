@@ -114,6 +114,4 @@ public class GameLibrary {
 
 
   
-    // @OneToMany(mappedBy = "gameLibrary")
-    // @JsonIgnoreProperties("gameLibrary")
-    // private List<Game> games;
+   

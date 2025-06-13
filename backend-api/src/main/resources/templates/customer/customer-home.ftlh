@@ -49,7 +49,7 @@
           </ul>
 =======
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="">Game Library</a>
+            <a class="nav-link active" aria-current="page" href="/customers/library">Game Library</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/customers/signUp">Login/SignUp</a>
@@ -125,8 +125,10 @@
 
   <div class="card-body">
     <h5 class="card-title" >${games.gameName}</h5>
-    
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <a href="" class="btn btn-primary">Add Game</a>
+
+
+
   </div>
 </div>
 </#list>

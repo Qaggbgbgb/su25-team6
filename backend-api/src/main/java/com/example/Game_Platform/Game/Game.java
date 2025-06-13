@@ -28,10 +28,6 @@ public class Game {
     private String gameName;
 
 
-    @ManyToOne()
-  @JoinColumn(name = "storeId")
-  @JsonIgnoreProperties("games")
-  private GameStore gameStore;
 
     @ManyToMany(mappedBy = "games")
     @JsonIgnoreProperties("games")
@@ -39,10 +35,7 @@ public class Game {
 
 
 
-    // @ManyToMany(mappedBy = "games")
-    // @JsonIgnoreProperties("games")
-    // private List<GameLibrary> gameLibrary;
-
+   
 
     public Game() {
     }

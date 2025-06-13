@@ -20,17 +20,17 @@ public class GameController {
     @Autowired
     private GameService gameService;
 
-    /**
-     * Enpoint to get all games
-     * 
-     * @return
-     */
-    @GetMapping("/customers")
-    public Object getAllGames(Model model) {
-        model.addAttribute("gamesList", gameService.getAllGames());
-        model.addAttribute("title", "All Games");
-        return "customer-home";
-    }
+    // /**
+    //  * Enpoint to get all games
+    //  * 
+    //  * @return
+    //  */
+    // @GetMapping("/games")
+    // public Object getAllGames(Model model) {
+    //     model.addAttribute("gamesList", gameService.getAllGames());
+    //     model.addAttribute("title", "All Games");
+    //     return "customer-home";
+    // }
 
 
     // /**
@@ -81,30 +81,30 @@ public class GameController {
 
 
 
-    /**
-     * Endpoint to update Game
-     * @param gameId
-     * @param game
-     * @return
-     */
-    @PutMapping("/games/{gameId}")
-    public Game updateGame(@PathVariable Long gameId, @RequestBody Game game) {
-        game.setGameId(gameId);
-        gameService.updateGame(game);
-        return gameService.getGameById(gameId);
-    }
+    // /**
+    //  * Endpoint to update Game
+    //  * @param gameId
+    //  * @param game
+    //  * @return
+    //  */
+    // @PutMapping("/games/{gameId}")
+    // public Game updateGame(@PathVariable Long gameId, @RequestBody Game game) {
+    //     game.setGameId(gameId);
+    //     gameService.updateGame(game);
+    //     return gameService.getGameById(gameId);
+    // }
 
 
-    /**
-     * Enpoint to delete game by ID
-     * @param gameId
-     * @return
-     */
-    @DeleteMapping("/games/{gameId}")
-    public Object deleteGame(@PathVariable Long gameId) {
-        gameService.deleteGameById(gameId);
-        return gameService.getAllGames();
-    }
+    // /**
+    //  * Enpoint to delete game by ID
+    //  * @param gameId
+    //  * @return
+    //  */
+    // @DeleteMapping("/games/{gameId}")
+    // public Object deleteGame(@PathVariable Long gameId) {
+    //     gameService.deleteGameById(gameId);
+    //     return gameService.getAllGames();
+    // }
 
 
 
@@ -120,33 +120,30 @@ public class GameController {
     }
 
 
-    /**
-     * Endpoint to get game by gameId
-     * @param gameId
-     * @return
-     */
-    @GetMapping("/games/{gameId}")
-    public Game getGameById(@PathVariable Long gameId) {
-        return gameService.getGameById(gameId);
-    }
+    // /**
+    //  * Endpoint to get game by gameId
+    //  * @param gameId
+    //  * @return
+    //  */
+    // @GetMapping("/games/{gameId}")
+    // public Game getGameById(@PathVariable Long gameId) {
+    //     return gameService.getGameById(gameId);
+    // }
     
     
 
-    /**
-     * Enpoint to get games by GameLibrary Id
-     * 
-     * @param gameLibraryId
-     * @return
-     */
-    @GetMapping("/games/gameLibraryId/{gameLibraryId}")
-    public Object getGamesBygameLibraryId(@RequestParam Long gameLibraryId) {
-        return gameService.getGamesByGameLibraryId(gameLibraryId);
-    }
+//     /**
+//      * Enpoint to get games by GameLibrary Id
+//      * 
+//      * @param gameLibraryId
+//      * @return
+//      */
+//     @GetMapping("/games/gameLibraryId/{gameLibraryId}")
+//     public Object getGamesBygameLibraryId(@RequestParam Long gameLibraryId) {
+//         return gameService.getGamesByGameLibraryId(gameLibraryId);
+//     }
     
-    @GetMapping("/games/gameStore/{storeId}")
-  public Object getGamesByStoreId(@PathVariable Long storeId) {
-    return gameService.getGamesByStoreId(storeId);
-  }
+
 
 
 }

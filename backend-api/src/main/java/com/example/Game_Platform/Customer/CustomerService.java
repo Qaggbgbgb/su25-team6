@@ -6,13 +6,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.example.Game_Platform.Game.Game;
+import com.example.Game_Platform.Game.GameRepository;
+import com.example.Game_Platform.GameLibrary.GameLibrary;
+import com.example.Game_Platform.GameLibrary.GameLibraryRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 @Service
 public class CustomerService {
     
     @Autowired
     private CustomerRepository customerRepository;
+
+    @Autowired
+    private GameRepository gameRepository;
+
+    @Autowired
+    private GameLibraryRepository gameLibraryRepository;
 
    //Endpoint to get all customers
    /**
@@ -86,36 +97,21 @@ public class CustomerService {
             customerRepository.deleteById(customerId);
         }
 
-    
+    /**
+     * @param gameId
+     * @param customerId
+     */
+    //Add Game to Library
+    public void addGameToLibrary(Long customerId, Long gameId){
+        Customer customer = customerRepository.findById(customerId).orElseThrow();
+        Game game = gameRepository.findById(gameId).orElseThrow();
 
-    // //Method to write a Customer ID to a JSON file
-    // /**
-    //  * @param customer
-    //  */
+        GameLibrary gameLibrary = customer.getGameLibrary();
 
-    //  public String writeJson(Customer customer) {
-    //     ObjectMapper objectMapper = new ObjectMapper();
-    //       try {
-    //         objectMapper.writeValue(new File("customers.json"), customer);
-    //         return "Customers written to JSON file successfully";
-    //     } catch (IOException e) {
-    //         e.printStackTrace();
-    //         return "Error writing student to JSON file";
-    //     }
-    //  }
+        gameLibrary.getGames().add(game);
+        gameLibraryRepository.save(gameLibrary);
+    }
 
-    //    /**
-    //  * 
-    //  * @return
-    //  */
-    // public Object readJson() {
-    //     ObjectMapper objectMapper = new ObjectMapper();
-    //     try {
-    //         return objectMapper.readValue(new File("customers.json"), Customer.class);
-    //     } catch (IOException e) {
-    //         e.printStackTrace();
-    //         return null;
-    //     }
-    // }
+ 
 
 }

@@ -1,6 +1,5 @@
 package com.example.Game_Platform.Customer;
 
-import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +9,8 @@ import com.example.Game_Platform.Game.Game;
 import com.example.Game_Platform.Game.GameRepository;
 import com.example.Game_Platform.GameLibrary.GameLibrary;
 import com.example.Game_Platform.GameLibrary.GameLibraryRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 
 @Service
@@ -21,6 +21,9 @@ public class CustomerService {
 
     @Autowired
     private GameRepository gameRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
     private GameLibraryRepository gameLibraryRepository;
@@ -72,9 +75,12 @@ public class CustomerService {
       * 
       */
         public Customer addCustomer(Customer customer) { 
-        return customerRepository.save(customer);
+        Customer newCustomer = customerRepository.save(customer);
+        newCustomer.setPassword(passwordEncoder.encode(customer.getPassword()));
+        return customerRepository.save(newCustomer);
         }
 
+        
     //Update Customer 
     /**
      * 

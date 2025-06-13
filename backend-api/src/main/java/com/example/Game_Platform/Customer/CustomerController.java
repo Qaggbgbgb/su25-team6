@@ -86,6 +86,9 @@ public class CustomerController {
     //     return customerService.addCustomer(customer);
     // }
 
+
+    
+
     //Enpoint to create customer form
     /**
      * 
@@ -109,7 +112,7 @@ public class CustomerController {
      * @return
      */
     @PostMapping("/customers/signUp")
-    public Object addCustomer(@ModelAttribute Customer customer) {
+    public Object addCustomer(@ModelAttribute Customer customer, Model model) {
         GameLibrary gameLibrary = new GameLibrary();
 
         gameLibrary.setCustomer(customer);
@@ -132,29 +135,12 @@ public class CustomerController {
         return "customer-login";
     }
 
-    //Show customer library page
-    /**
-     * @param customer
-     * @param model
-     * @return
-     */
-    @GetMapping("/customers/library")
-    public String showLibrary(Model model, Principal principal) {
-      value = true;
-        String username = principal.getName();
-
-        
-
-    Customer customer = customerRepository.getCustomerByUserName(username)
-            .orElseThrow(() -> new RuntimeException("Customer not found"));
-
     
-    model.addAttribute("value", value);
-    model.addAttribute("customersGames", 
-            customer.getGameLibrary().getGames());
-    return "customer-library";
-    }
     
+
+
+
+
     
     /**
      * @param gameId

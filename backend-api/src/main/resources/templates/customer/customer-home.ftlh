@@ -51,16 +51,32 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/customers/library">Game Library</a>
           </li>
+          <#if Session.SPRING_SECURITY_CONTEXT??>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/customers/signUp">Login/SignUp</a>
+            <a class="nav-link active" aria-current="page" href="/logout">Log Out</a>
           </li>
+<<<<<<< HEAD:backend-api/src/main/resources/templates/customer/customer-home.ftlh
 
 >>>>>>> 8620326 (some changes)
+=======
+          <#else>
+           <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/customers/Login">Login</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/customers/signUp">Sign Up</a>
+          </li>
+          </#if> 
+       
+          
+          </ul>
+>>>>>>> cedca4e (Added auth for customer):backend-api/target/classes/templates/customer-home.ftlh
         </ul>
 
       </div>
     </div>
   </nav>
+<<<<<<< HEAD:backend-api/src/main/resources/templates/customer/customer-home.ftlh
 <<<<<<< HEAD
  <section class="welcome">
   <h1>Available Games</h1>
@@ -122,12 +138,31 @@
 <#list gamesList as games>
       <div class="card mx-auto" style="width: 18rem;">
 <img src="${games.profilePicturePath}" class="card-img-top" alt="..." style="height: 200px; object-fit: cover;">
+=======
+ <section class="welcome">
+  <h1>Available Games</h1>
+>>>>>>> cedca4e (Added auth for customer):backend-api/target/classes/templates/customer-home.ftlh
 
-  <div class="card-body">
-    <h5 class="card-title" >${games.gameName}</h5>
-    <a href="" class="btn btn-primary">Add Game</a>
+  <form action="/games/name" class="d-flex mt-3 justify-content-center" role="search" style="gap: 2rem;">
+    <input name="name" class="form-control" type="text" placeholder="Search by Name" aria-label="Search" style="max-width: 300px;">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+</section>
+
+<section class="animal-list">
+  <#list gamesList as games>
+    <div class="card" style="width: 18rem; margin: auto;">
+      <img src="${games.profilePicturePath}" class="card-img-top" alt="..." style="height: 200px; object-fit: cover;">
+      <div class="card-body text-center">
+        <h5 class="card-title">${games.gameName}</h5>
+        <a href="" class="btn btn-primary">Add Game</a>
+      </div>
+    </div>
+  </#list>
+</section>
 
 
+<<<<<<< HEAD:backend-api/src/main/resources/templates/customer/customer-home.ftlh
 
   </div>
 </div>
@@ -136,6 +171,8 @@
 
   </section>
 >>>>>>> 8620326 (some changes)
+=======
+>>>>>>> cedca4e (Added auth for customer):backend-api/target/classes/templates/customer-home.ftlh
   <footer>
     <h4>Follow Us</h4>
     <!-- <div class="icon-list">

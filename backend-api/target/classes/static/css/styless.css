@@ -1,0 +1,142 @@
+<<<<<<< HEAD
+=======
+* {
+    box-sizing: border-box;
+    font-family: "Roboto";
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    margin-right: 0;
+}
+
+
+/*Left Side*/
+.left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-align: center;
+    width: 50%;
+   
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: .6rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.please {
+   color: grey;
+   font-size: .9rem;
+   margin-bottom: 1.3rem;
+   font-weight: 300;
+}
+
+input[type="email"] {
+    margin-bottom: .4rem;
+}
+
+
+
+input, button, select {
+    height: 2.7rem;
+    width: 19rem;
+    border-radius: 8px;
+    border-width: .1px;
+    border-color: grey;
+    background-color: white;
+}
+
+
+
+
+.dev-change {
+    font-weight: 500;
+}
+
+.need {
+    font-weight: 350;
+    font-size: .9rem;
+    color: grey;
+}
+
+.sign-button {
+    background-color: #0065F8;
+    color: white;
+    font-weight: 500;
+    margin-bottom: .5rem;
+}
+
+.do {
+    display: flex;
+}
+hr {
+    width: 80%;
+    height: .5px;
+    background-color: grey;
+    border: 1px;
+}
+
+.or-span {
+    margin: 0rem .5rem;
+    color: grey;
+    font-size: .8;
+    font-weight: 300;
+    
+}
+
+.create-span {
+    color: #0065F8;
+    text-decoration: underline;
+    
+}
+
+
+/*Right Side*/
+.right-side {
+  background-color: #59e191;
+  background-image: radial-gradient(white 10%, transparent 11%);
+  background-size: 30px 30px;
+  background-repeat: repeat;
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* Changed from center to flex-end */
+  align-items: center;
+  padding-right: 0rem; /* Optional: space from edge */
+  margin-right: 0rem;
+}
+
+
+img {
+    height: 20rem;
+    width: 20rem;
+    border-radius: 18px;
+    
+}
+
+@media only screen and (max-width: 650px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .right-side {
+        display: none;
+    }
+}
+>>>>>>> cedca4e (Added auth for customer)

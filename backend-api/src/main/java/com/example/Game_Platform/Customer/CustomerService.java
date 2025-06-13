@@ -9,7 +9,8 @@ import com.example.Game_Platform.Game.Game;
 import com.example.Game_Platform.Game.GameRepository;
 import com.example.Game_Platform.GameLibrary.GameLibrary;
 import com.example.Game_Platform.GameLibrary.GameLibraryRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 
 @Service
@@ -20,6 +21,9 @@ public class CustomerService {
 
     @Autowired
     private GameRepository gameRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
     private GameLibraryRepository gameLibraryRepository;

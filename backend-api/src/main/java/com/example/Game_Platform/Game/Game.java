@@ -3,16 +3,16 @@ package com.example.Game_Platform.Game;
 import java.util.List;
 
 import com.example.Game_Platform.GameLibrary.GameLibrary;
-import com.example.Game_Platform.GameStore.GameStore;
+// import com.example.Game_Platform.GameStore.GameStore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
+
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+
 import jakarta.persistence.Table;
 
 @Entity 

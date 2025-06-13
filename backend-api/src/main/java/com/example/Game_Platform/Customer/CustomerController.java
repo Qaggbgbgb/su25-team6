@@ -15,7 +15,6 @@ import com.example.Game_Platform.GameLibrary.GameLibrary;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.PutMapping;
 
 
 
@@ -64,6 +63,9 @@ public class CustomerController {
     //     return customerService.addCustomer(customer);
     // }
 
+
+    
+
     //Enpoint to create customer form
     /**
      * 
@@ -87,15 +89,35 @@ public class CustomerController {
      * @return
      */
     @PostMapping("/customers/signUp")
-    public Object addCustomer(@ModelAttribute Customer customer) {
+    public Object addCustomer(@ModelAttribute Customer customer, Model model) {
         GameLibrary gameLibrary = new GameLibrary();
 
         gameLibrary.setCustomer(customer);
         customer.setGameLibrary(gameLibrary);
         customerService.addCustomer(customer);
-        return "redirect:/customers";
+        model.addAttribute("Title", "Customer Sign Up");
+        model.addAttribute("signUpPhrase", "Please sign up to create your account");
+
+        return "redirect:/customers/Login";
     }
     
+    //User Login
+    /**
+     * 
+     * @param model
+     * @return
+     */
+    @GetMapping("/customers/Login")
+    public String loginPage() {    
+        return "customer-login";
+    }
+
+    
+    
+
+
+
+
     
 
 

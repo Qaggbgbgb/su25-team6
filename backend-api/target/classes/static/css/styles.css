@@ -13,13 +13,12 @@ nav {
 
 /*Home page*/
 .animal-list {
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+    justify-items: center; 
 }
 
 .welcome {
@@ -27,24 +26,18 @@ nav {
     margin-top: 2rem;
 }
 
-@media ((max-width: 1010px)) {
+
+@media (max-width: 1010px) {
     .animal-list {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-
-@media ((max-width: 650px)) {
+@media (max-width: 650px) {
     .animal-list {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    }
-    .animal-list {
-       
     }
 }
-
 /*Detail Page*/
 .animal-box {
     display: flex;

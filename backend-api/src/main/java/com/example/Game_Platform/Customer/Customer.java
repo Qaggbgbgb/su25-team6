@@ -28,6 +28,8 @@ public class Customer {
     @Column(nullable = false)
     private String password;
 
+    private String role;
+
     
     @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL, optional = false)
     @JsonIgnoreProperties("customer")
@@ -37,17 +39,19 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Long customerId, String userName, GameLibrary gameLibray, String password) {
+    public Customer(Long customerId, String userName, GameLibrary gameLibray, String password, String role) {
         this.customerId = customerId;
         this.userName = userName;
         this.gameLibrary = gameLibray;
         this.password = password;
+        this.role = role;
     }
 
-    public Customer( String userName, GameLibrary gameLibray, String password) {
+    public Customer( String userName, GameLibrary gameLibray, String password, String role) {
         this.userName = userName;
         this.gameLibrary = gameLibray;
         this.password = password;
+        this.role = role;
     }
 
 
@@ -55,6 +59,7 @@ public class Customer {
         this.customerId = customerId;
         this.userName = userName;
         this.password = password;
+        this.role = role;
     }
 
    
@@ -84,4 +89,11 @@ public class Customer {
         this.password = password;   
     }
    
+    public String getRole() {
+        return this.role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 }

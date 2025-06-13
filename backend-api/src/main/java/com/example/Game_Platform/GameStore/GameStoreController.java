@@ -1,9 +1,5 @@
 // package com.example.Game_Platform.GameStore;
 
-import java.util.List;
-
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,11 +7,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-// import com.example.Game_Platform.Developer.Developer;
-// import com.example.Game_Platform.Game.Game;
+import com.example.Game_Platform.Developer.Developer;
+import com.example.Game_Platform.Game.Game;
 
-// @RestController
-// public class GameStoreController {
+@RestController
+public class GameStoreController {
 
 @Autowired
 private GameStoreService gameStoreService;
@@ -36,4 +32,4 @@ private GameStoreService gameStoreService;
 
 
     
-// }
+}

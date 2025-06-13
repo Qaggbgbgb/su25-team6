@@ -33,11 +33,7 @@ public class Customer {
     @JsonIgnoreProperties("customer")
     private GameLibrary gameLibrary;
     
-    // @OneToOne(mappedBy = "customer")
-    // @JsonIgnoreProperties("customer")
-    // private List<GameLibrary> gameLibrary;
-   
-
+    
     public Customer() {
     }
 

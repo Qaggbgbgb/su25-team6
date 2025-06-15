@@ -23,17 +23,20 @@ public class GameController {
     @Autowired
     private GameService gameService;
 
-    /**
-     * Enpoint to get all games
-     * 
-     * @return
-     */
-    @GetMapping("/customers")
-    public Object getAllGames(Model model) {
-        model.addAttribute("gamesList", gameService.getAllGames());
-        model.addAttribute("title", "All Games");
-        return "customer-home";
-    }
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    // /**
+    //  * Enpoint to get all games
+    //  * 
+    //  * @return
+    //  */
+    // @GetMapping("/games")
+    // public Object getAllGames(Model model) {
+    //     model.addAttribute("gamesList", gameService.getAllGames());
+    //     model.addAttribute("title", "All Games");
+    //     return "customer-home";
+    // }
 
 
     // /**
@@ -85,7 +88,7 @@ public class GameController {
         }
         
     }
-    
+
 
 
 

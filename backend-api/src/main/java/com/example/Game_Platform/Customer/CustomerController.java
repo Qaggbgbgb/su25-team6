@@ -1,8 +1,10 @@
 package com.example.Game_Platform.Customer;
 
+import java.lang.ProcessBuilder.Redirect.Type;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +53,8 @@ public class CustomerController {
 
     @Autowired
     private GameRepository gameRepository;
-
+     boolean value = false;
+    
     /**
      * Enpoint to get all customers
      * 
@@ -144,6 +147,7 @@ public class CustomerController {
      */
     @GetMapping("/customers/library")
     public String showLibrary(Model model, Principal principal) {
+      value = true;
         String username = principal.getName();
 
         
@@ -151,17 +155,8 @@ public class CustomerController {
     Customer customer = customerRepository.getCustomerByUserName(username)
             .orElseThrow(() -> new RuntimeException("Customer not found"));
 
-    System.out.println("Customer's games:");
-    if (customer.getGameLibrary() != null && customer.getGameLibrary().getGames() != null) {
-        customer.getGameLibrary().getGames().forEach(g -> System.out.println(g.getGameName()));
-    } else {
-        System.out.println("No game library or games found.");
-    }
-    System.out.println("Games list size: " + customer.getGameLibrary().getGames().size());
-    System.out.println("Testing");
-    System.out.println(customer.getUserName());
-    System.out.println(customer.getGameLibrary());
-    System.out.println(customer.getGameLibrary().getGames());
+    
+    model.addAttribute("value", value);
     model.addAttribute("customersGames", 
             customer.getGameLibrary().getGames());
     return "customer-library";
@@ -193,6 +188,18 @@ public class CustomerController {
         return "redirect:/customers";
     }
      
+    //Filter games of customer by name
+    /**
+     * @param name
+     * @param model
+     * @return
+     */
+    @GetMapping("/games/name/customer")
+    public Object getCustomerGames(@RequestParam String name, Model model, Principal principal) {
+        String username = principal.getName();
+       
+        Customer customer = customerRepository.getCustomerByUserName(username).orElse(null);
+        GameLibrary gameLibrary = customer.getGameLibrary();
 
         return "redirect:/customers";
     }

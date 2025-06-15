@@ -83,11 +83,11 @@ public class GameLibraryController {
    * @return
    * 
    */
-  @PutMapping("/gameLibraries/{gameLibraryId}")
-  public Object updateGameLibray(@PathVariable Long gameLibraryId, @RequestBody GameLibrary gameLibrary) {
-      gameLibrary.setGameLibraryId(gameLibraryId);
-      gameLibraryService.updateGameLibrary(gameLibrary);
-      return gameLibraryService.getGameLibraryById(gameLibraryId);    
-  }
+  // @PutMapping("/gameLibraries/{gameLibraryId}")
+  // public Object updateGameLibray(@PathVariable Long gameLibraryId, @RequestBody GameLibrary gameLibrary) {
+  //     gameLibrary.setGameLibraryId(gameLibraryId);
+  //     gameLibraryService.updateGameLibrary(gameLibrary);
+  //     return gameLibraryService.getGameLibraryById(gameLibraryId);    
+  // }
   
 }

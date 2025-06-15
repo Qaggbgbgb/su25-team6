@@ -6,6 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.Game_Platform.Customer.CustomerRepository;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -19,6 +22,9 @@ public class GameController {
     
     @Autowired
     private GameService gameService;
+
+    @Autowired
+    private CustomerRepository customerRepository;
 
     // /**
     //  * Enpoint to get all games
@@ -76,7 +82,7 @@ public class GameController {
         }
         
     }
-    
+
 
 
 

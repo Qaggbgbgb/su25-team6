@@ -1,5 +1,10 @@
 package com.example.Game_Platform.Customer;
 
+import java.security.Principal;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,8 +14,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.Game_Platform.Game.Game;
+import com.example.Game_Platform.Game.GameRepository;
 import com.example.Game_Platform.Game.GameService;
 import com.example.Game_Platform.GameLibrary.GameLibrary;
+import com.example.Game_Platform.GameLibrary.GameLibraryRepository;
+import com.example.Game_Platform.GameLibrary.GameLibraryService;
 
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,7 +35,19 @@ public class CustomerController {
     private CustomerService customerService;
 
     @Autowired
+    private CustomerRepository customerRepository;
+
+    @Autowired
+    private GameLibraryRepository gameLibraryRepository;
+
+    // @Autowired
+    // private GameLibraryService gameLibraryService;
+
+    @Autowired
     private GameService gameService;
+
+    @Autowired
+    private GameRepository gameRepository;
 
     /**
      * Enpoint to get all customers
@@ -112,18 +133,63 @@ public class CustomerController {
         return "customer-login";
     }
 
+    //Show customer library page
+    /**
+     * @param customer
+     * @param model
+     * @return
+     */
+    @GetMapping("/customers/library")
+    public String showLibrary(Model model, Principal principal) {
+        String username = principal.getName();
+
+        
+
+    Customer customer = customerRepository.getCustomerByUserName(username)
+            .orElseThrow(() -> new RuntimeException("Customer not found"));
+
+    System.out.println("Customer's games:");
+    if (customer.getGameLibrary() != null && customer.getGameLibrary().getGames() != null) {
+        customer.getGameLibrary().getGames().forEach(g -> System.out.println(g.getGameName()));
+    } else {
+        System.out.println("No game library or games found.");
+    }
+    System.out.println("Games list size: " + customer.getGameLibrary().getGames().size());
+    System.out.println("Testing");
+    System.out.println(customer.getUserName());
+    System.out.println(customer.getGameLibrary());
+    System.out.println(customer.getGameLibrary().getGames());
+    model.addAttribute("customersGames", 
+            customer.getGameLibrary().getGames());
+    return "customer-library";
+    }
     
-    
+    /**
+     * @param gameId
+     */
+    @GetMapping("/customers/add-game/{gameId}")
+    public String addGameToLibrary(@PathVariable Long gameId, Principal principal) {
+        String username = principal.getName();
 
+        Customer customer = customerRepository.getCustomerByUserName(username).orElse(null);
 
+        GameLibrary gameLibrary = customer.getGameLibrary();
 
+        Game addGame = gameRepository.findById(gameId).orElse(null);
+        
+        if (gameLibrary.getGames() == null) {
+            gameLibrary.setGames(new ArrayList<>());
+        } 
 
-    
+        if (!gameLibrary.getGames().contains(addGame)) {
+            gameLibrary.getGames().add(addGame);
+        }
 
+        gameLibraryRepository.save(gameLibrary);
 
-
-
-
+        return "redirect:/customers";
+    }
+     
 
 
 }

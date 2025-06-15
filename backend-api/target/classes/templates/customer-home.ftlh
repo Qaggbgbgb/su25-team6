@@ -27,10 +27,11 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/customers">Home</a>
           </li>
+           <#if Session.SPRING_SECURITY_CONTEXT??>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/customers/library">Game Library</a>
           </li>
-          <#if Session.SPRING_SECURITY_CONTEXT??>
+         
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/logout">Log Out</a>
           </li>
@@ -59,13 +60,13 @@
   </form>
 </section>
 
-<section class="animal-list">
+<section class="games-list">
   <#list gamesList as games>
     <div class="card" style="width: 18rem; margin: auto;">
       <img src="${games.profilePicturePath}" class="card-img-top" alt="..." style="height: 200px; object-fit: cover;">
       <div class="card-body text-center">
         <h5 class="card-title">${games.gameName}</h5>
-        <a href="" class="btn btn-primary">Add Game</a>
+        <a href="/customers/add-game/${games.gameId}" class="btn btn-primary">Add Game</a>
       </div>
     </div>
   </#list>
@@ -85,7 +86,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
     crossorigin="anonymous"></script>
-  <script src="script.js" defer></script>
+  <!-- <script src="script.js" defer></script> -->
 </body>
 
 </html>

@@ -3,6 +3,7 @@ package com.example.Game_Platform.GameLibrary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.Game_Platform.Customer.CustomerRepository;
 import com.example.Game_Platform.Game.Game;
 
 @Service
@@ -11,6 +12,8 @@ public class GameLibraryService {
     @Autowired
     private GameLibraryRepository gameLibraryRepository;
     
+    @Autowired
+    private CustomerRepository customerRepository;
     /**
      * Get all Libraries
      * @return
@@ -62,6 +65,10 @@ public class GameLibraryService {
     gameLibraryRepository.deleteById(gameLibraryId);
     return gameLibraryRepository.findAll();
   }
+
+  /**
+   * 
+   */
 
 
 }

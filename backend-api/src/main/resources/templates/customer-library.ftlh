@@ -40,24 +40,25 @@
   <section class="welcome">
     <h1>Customer Games</h1>
     
-    <form action="/games/name" class="d-flex mt-3 mt-lg-0" role="search" style="margin-left: 2rem;">
+    <form action="/games/name/customer" class="d-flex mt-3 mt-lg-0" role="search" style="margin-left: 2rem;">
       <input name="name" class="form-control me-2" type="text" placeholder="Search by Name" aria-label="Search"> <button
         class="btn btn-outline-success" type="submit">Search</button>
     </form>
     
   </section>
-  <section class="animal-list position-relative">
-<#list gamesList as games>
+  <section class="games-list position-relative">
+<#list customersGames as customerGames>
       <div class="card mx-auto" style="width: 18rem;">
-<img src="${games.profilePicturePath}" class="card-img-top" alt="..." style="height: 200px; object-fit: cover;">
+<img src="${customerGames.profilePicturePath}" class="card-img-top" alt="..." style="height: 200px; object-fit: cover;">
 
   <div class="card-body">
-    <h5 class="card-title" >${games.gameName}</h5>
+    <h5 class="card-title" >${customerGames.gameName}</h5>
     
-    <a href="#" class="btn btn-primary">Game Added</a>
+    <a href="" class="btn btn-primary">Game Added</a>
   </div>
 </div>
-</#list>
+</#list> 
+
   
 
   </section>

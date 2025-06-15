@@ -6,6 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.Game_Platform.Customer.CustomerRepository;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -20,17 +23,20 @@ public class GameController {
     @Autowired
     private GameService gameService;
 
-    /**
-     * Enpoint to get all games
-     * 
-     * @return
-     */
-    @GetMapping("/customers")
-    public Object getAllGames(Model model) {
-        model.addAttribute("gamesList", gameService.getAllGames());
-        model.addAttribute("title", "All Games");
-        return "customer-home";
-    }
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    // /**
+    //  * Enpoint to get all games
+    //  * 
+    //  * @return
+    //  */
+    // @GetMapping("/games")
+    // public Object getAllGames(Model model) {
+    //     model.addAttribute("gamesList", gameService.getAllGames());
+    //     model.addAttribute("title", "All Games");
+    //     return "customer-home";
+    // }
 
 
     // /**
@@ -76,7 +82,7 @@ public class GameController {
         }
         
     }
-    
+
 
 
 

@@ -30,7 +30,7 @@ public class GameLibrary {
     private Long gameLibraryId;
     
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
     name = "game_library_games",
     joinColumns = @JoinColumn(name = "game_library_id"),

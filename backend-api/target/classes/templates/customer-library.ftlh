@@ -47,6 +47,8 @@
     
   </section>
   <section class="games-list position-relative">
+
+<#if value>
 <#list customersGames as customerGames>
       <div class="card mx-auto" style="width: 18rem;">
 <img src="${customerGames.profilePicturePath}" class="card-img-top" alt="..." style="height: 200px; object-fit: cover;">
@@ -55,9 +57,13 @@
     <h5 class="card-title" >${customerGames.gameName}</h5>
     
     <a href="" class="btn btn-primary">Game Added</a>
+   
   </div>
 </div>
 </#list> 
+<#else>
+  <h2>${noGames}</h2>
+</#if>
 
   
 

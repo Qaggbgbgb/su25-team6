@@ -34,10 +34,6 @@ public class Game {
 
 
 
-     @ManyToMany(mappedBy = "games")
-     @JsonIgnoreProperties("games")
-     private List<GameLibrary> gameLibrary;
-
 
     public Game() {
     }
@@ -96,13 +92,7 @@ public class Game {
 
 
      
-    public String getProfilePicturePath() {
-        return profilePicturePath;
-    }
-
-    public void setProfilePicturePath(String profilePicturePath) {
-        this.profilePicturePath = profilePicturePath;
-    }
+   
 
 }
 

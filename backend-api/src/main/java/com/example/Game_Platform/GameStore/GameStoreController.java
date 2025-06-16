@@ -40,8 +40,3 @@ private GameStoreService gameStoreService;
   
 
     
-<<<<<<< HEAD
-}
-=======
- }
->>>>>>> 8620326 (some changes)

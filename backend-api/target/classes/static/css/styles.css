@@ -21,6 +21,7 @@ nav {
     margin-top: 2rem;
     padding: 0 1rem;
     justify-items: center; 
+    margin-bottom: 15rem;
 }
 
 .welcome {
@@ -92,7 +93,7 @@ footer {
     align-items: center;
     background-color: #81E7AF;
     border-radius: 8px;
-    margin-top: 3rem;
+    margin-top: 10rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
     position: fixed;

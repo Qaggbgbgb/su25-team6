@@ -114,10 +114,29 @@ public class CustomerService {
 
         GameLibrary gameLibrary = customer.getGameLibrary();
 
-        gameLibrary.getGames().add(game);
-        gameLibraryRepository.save(gameLibrary);
-    }
+   //   public String writeJson(Customer customer) {
+   //      ObjectMapper objectMapper = new ObjectMapper();
+   //    try {
+   //         objectMapper.writeValue(new File("customers.json"), customer);
+   //          return "Customers written to JSON file successfully";
+   //     } catch (IOException e) {
+   //          e.printStackTrace();
+   //          return "Error writing student to JSON file";
+   //      }
+    //  }
 
- 
+    //    /**
+    //  * 
+    //  * @return
+    //  */
+  //   public Object readJson() {
+   //     ObjectMapper objectMapper = new ObjectMapper();
+   //      try {
+   //          return objectMapper.readValue(new File("customers.json"), Customer.class);
+   //      } catch (IOException e) {
+   //          e.printStackTrace();
+   //          return null;
+   //      }
+   //  }
 
 }

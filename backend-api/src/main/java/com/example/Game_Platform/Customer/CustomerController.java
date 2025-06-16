@@ -39,8 +39,17 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    @Autowired
-    private CustomerRepository customerRepository;
+    // /**
+    //  * Enpoint to get all customers
+    //  * 
+    //  * @return
+    //  */
+    @GetMapping("/customers")
+     public Object getAllCustomers( Model model) {
+          model.addAttribute("customerList", customerService.getAllCustomers());
+         model.addAttribute("title", "All Customers");
+          return "customer-home";
+     }
 
     @Autowired
     private GameLibraryRepository gameLibraryRepository;
@@ -85,10 +94,10 @@ public class CustomerController {
     //  * @param customer
     //  * @return
     //  */
-    // @PostMapping("/customers")
-    // public Object addCustomer(@RequestBody Customer customer) {
-    //     return customerService.addCustomer(customer);
-    // }
+   //  @PostMapping("/customers")
+   //  public Object addCustomer(@RequestBody Customer customer) {
+   //      return customerService.addCustomer(customer);
+   //  }
 
 
     

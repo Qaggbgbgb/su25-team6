@@ -60,6 +60,7 @@
   </form>
 </section>
 
+
 <section class="games-list">
   <#list gamesList as games>
     <div class="card" style="width: 18rem; margin: auto;">
@@ -70,8 +71,31 @@
       </div>
     </div>
   </#list>
-</section>
+  <div class="container mt-4">
+  <div class="card" style="width: 30rem;">
+    <div class="card-header">
+      <h5 class="mb-0">Chat Box</h5> 
+    </div>
+    <form action="/chat/update" method="post" >
+    <div class="card-body">
+      
+      <div class="border p-2 mb-3" style="height: 200px; overflow-y: auto; background-color: #f8f9fa; white-space: pre-wrap;">
+        ${allChats!""}
+      </div>
+      <textarea class="form-control mb-2" name="input" rows="3" placeholder="Type your message here..." required></textarea>
 
+      <input type="hidden" name="chatId" value="2">
+       <button type="submit" class="btn btn-primary" style="width: 10rem;">Send Chat</button>
+    
+    </div>
+    </form>
+  </div>
+</div>
+</section>
+<section>
+  
+
+</section>
 
   <footer>
     <h4>Follow Us</h4>

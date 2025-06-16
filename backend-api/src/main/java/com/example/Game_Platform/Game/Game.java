@@ -29,13 +29,16 @@ public class Game {
 
 
 
-    @ManyToMany(mappedBy = "games")
-    @JsonIgnoreProperties("games")
-    private List<GameLibrary> gameLibrary;
+    //@ManyToMany(mappedBy = "games")
+   // @JsonIgnoreProperties("games")
+    //private List<GameLibrary> gameLibrary;
 
 
 
-   
+     @ManyToMany(mappedBy = "games")
+     @JsonIgnoreProperties("games")
+     private List<GameLibrary> gameLibrary;
+
 
     public Game() {
     }

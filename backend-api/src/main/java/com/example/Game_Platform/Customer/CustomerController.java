@@ -99,9 +99,6 @@ public class CustomerController {
    //      return customerService.addCustomer(customer);
    //  }
 
-
-    
-
     //Enpoint to create customer form
     /**
      * 

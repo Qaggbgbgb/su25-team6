@@ -34,7 +34,7 @@ public class SecurityConfig {
             .dispatcherTypeMatchers(DispatcherType.FORWARD,
                 DispatcherType.ERROR)
             .permitAll()
-            .requestMatchers("/", "/customers", "/home", "/customers/signUp","/customers/Login","/games/name").permitAll()
+            .requestMatchers("/", "/customers", "/home", "/customers/signUp","/customers/Login","/games/name","/chat","/chat/*","/chat/**").permitAll()
             .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**").permitAll()
             .requestMatchers(HttpMethod.POST, "/customers").permitAll()
              .requestMatchers("/customers/library","/customers/library/**").hasAuthority("customer")

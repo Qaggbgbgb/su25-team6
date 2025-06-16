@@ -1,5 +1,6 @@
 package com.example.Game_Platform.ChatCommunity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,6 +14,8 @@ public class ChatCommunity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long chatId;
     private String userName;
+
+    @Column(length = 5000)
     private String input;
 
     public ChatCommunity() {

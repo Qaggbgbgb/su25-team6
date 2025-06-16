@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-package com.example.Game_Platform.GameStore;
 
  import java.util.List;
 
@@ -13,20 +11,22 @@ import com.example.Game_Platform.Developer.Developer;
 import java.util.List;
 
 import com.example.Game_Platform.Developer.Developer;
-import com.example.Game_Platform.Game.Game;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+ import com.example.Game_Platform.Game.Game;
+ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+ import jakarta.persistence.Entity;
+ import jakarta.persistence.GeneratedValue;
+ import jakarta.persistence.GenerationType;
+ import jakarta.persistence.Id;
+ import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "gameStore")
-public class GameStore {
+ @Entity
+ @Table(name = "gameStore")
+ public class GameStore {
+
 
  @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

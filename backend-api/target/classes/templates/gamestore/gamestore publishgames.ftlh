@@ -24,11 +24,19 @@
   <div style="width: 609px; height: 442px; left: 152px; top: 293px; position: absolute; overflow: hidden">
     <div style="width: 716px; height: 211px; left: 0px; top: -32px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">Game profile:</div>
     <div style="padding: 10px; left: 0px; top: 250px; position: absolute; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+<<<<<<< HEAD
       <div style="width: 588px; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">name:</div>
     </div>
   </div>
   <div style="width: 525px; height: 192px; left: 168px; top: 664px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">id:</div>
   <div style="width: 552px; height: 120px; left: 168px; top: 856px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">profilePicturePath:</div>
+=======
+      <div style="width: 588px; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">Game name:</div>
+    </div>
+  </div>
+  <div style="width: 525px; height: 192px; left: 168px; top: 664px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">price:</div>
+  <div style="width: 552px; height: 120px; left: 168px; top: 856px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">Document:</div>
+>>>>>>> 8620326 (some changes)
 </div>
 </body>
 </html>

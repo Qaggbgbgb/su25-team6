@@ -2,8 +2,11 @@
 <html lang="en">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a469a9e (some changes)
+=======
+>>>>>>> a6048c4 (some changes)
 
 <head>
     <meta charset="UTF-8">
@@ -35,6 +38,9 @@
                 <button type="submit" class="sign-button">Sign Up</button>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a6048c4 (some changes)
 =======
 <head>
     <meta charset="UTF-8">
@@ -60,16 +66,22 @@
             <!-- <div class="do"><hr><span class="or-span">or</span><hr></div>
             <span class="need">Already Hav an Account? <span class="create-span">SignIn</span></span> -->
 >>>>>>> 8620326 (some changes)
+<<<<<<< HEAD
 =======
 >>>>>>> a469a9e (some changes)
+=======
+>>>>>>> a6048c4 (some changes)
             </form>
             <a href="/"> <button class="sign-button">Cancel</button></a>
         </div>
         <div class="right-side">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a469a9e (some changes)
+=======
+>>>>>>> a6048c4 (some changes)
             <img src="/images/game1.png" alt="Game Image">
 
 
@@ -79,6 +91,9 @@
 </body>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a6048c4 (some changes)
 =======
             <div><img src="/game1.png"></div>
             
@@ -86,6 +101,9 @@
     </section>
 </body>
 >>>>>>> 8620326 (some changes)
+<<<<<<< HEAD
 =======
 >>>>>>> a469a9e (some changes)
+=======
+>>>>>>> a6048c4 (some changes)
 </html>

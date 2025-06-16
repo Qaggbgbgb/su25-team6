@@ -1,38 +1,4 @@
-<<<<<<< HEAD
-
- import java.util.List;
-
-import org.hibernate.annotations.ManyToAny;
-
-import com.example.Game_Platform.Developer.Developer;
- import com.example.Game_Platform.Game.Game;
- import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-=======
- package com.example.Game_Platform.GameStore;
->>>>>>> 8620326 (some changes)
-
-
- import jakarta.persistence.Entity;
- import jakarta.persistence.GeneratedValue;
- import jakarta.persistence.GenerationType;
- import jakarta.persistence.Id;
- import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
-
- @Entity
- @Table(name = "gameStore")
- public class GameStore {
-
-<<<<<<< HEAD
-=======
- import java.util.List;
-
-import org.hibernate.annotations.ManyToAny;
-
-import com.example.Game_Platform.Developer.Developer;
- import com.example.Game_Platform.Game.Game;
- import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+package com.example.Game_Platform.GameStore;
 
 
 import java.util.List;
@@ -50,13 +16,12 @@ import com.example.Game_Platform.Developer.Developer;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
- @Entity
- @Table(name = "gameStore")
- public class GameStore {
->>>>>>> 8620326 (some changes)
+@Entity
+@Table(name = "gameStore")
+public class GameStore {
 
  @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long storeId;
 
 
@@ -110,4 +75,4 @@ public void setStoreId(Long storeId){
 }
 
 
-}
+ }

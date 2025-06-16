@@ -57,10 +57,7 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> cedca4e (Added auth for customer)
+
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
@@ -76,14 +73,14 @@
     <artifactId>spring-boot-starter-security</artifactId>
 </dependency> 
 
-<<<<<<< HEAD
-=======
+
+<dependency>
+	
+
     		<groupId>org.springframework.boot</groupId>
   		    <artifactId>spring-boot-starter-freemarker</artifactId>
   		</dependency>
->>>>>>> fe04742 (Added search by game name functionality and rendered games)
-=======
->>>>>>> cedca4e (Added auth for customer)
+
 	</dependencies>
 
 	<build>

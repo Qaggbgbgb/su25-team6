@@ -44,9 +44,9 @@ public class GameLibrary {
   
     private String userName;
     
-    // @ManyToOne()
-    // @JoinColumn(name = "customer", nullable = false)
-    // private Customer customer;
+   //  @ManyToOne()
+   //  @JoinColumn(name = "customer", nullable = false)
+   //  private Customer customer;
 
 
     @OneToOne(optional = true)
@@ -114,4 +114,8 @@ public class GameLibrary {
 
 
   
-   
+   //  @OneToMany(mappedBy = "gameLibrary")
+   //  @JsonIgnoreProperties("gameLibrary")
+  //   private List<Game> games;
+
+}

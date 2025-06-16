@@ -29,7 +29,7 @@ private String password;
 @ManyToOne()
   @JoinColumn(name = "storeId", nullable = false)
   @JsonIgnoreProperties("Developers")
-  private GameStore gameStore;
+  private  GameStore gameStore;
 
 @ManyToOne()
   @JoinColumn(name = "storeId", nullable = false)

@@ -28,6 +28,9 @@
             <a class="nav-link active" aria-current="page" href="/customers">Home</a>
           </li>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a469a9e (some changes)
            <#if Session.SPRING_SECURITY_CONTEXT??>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/customers/library">Game Library</a>
@@ -47,6 +50,7 @@
        
           
           </ul>
+<<<<<<< HEAD
 =======
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/customers/library">Game Library</a>
@@ -71,13 +75,18 @@
           
           </ul>
 >>>>>>> cedca4e (Added auth for customer):backend-api/target/classes/templates/customer-home.ftlh
+=======
+>>>>>>> a469a9e (some changes)
         </ul>
 
       </div>
     </div>
   </nav>
+<<<<<<< HEAD
 <<<<<<< HEAD:backend-api/src/main/resources/templates/customer/customer-home.ftlh
 <<<<<<< HEAD
+=======
+>>>>>>> a469a9e (some changes)
  <section class="welcome">
   <h1>Available Games</h1>
 
@@ -124,6 +133,7 @@
 
 </section>
 
+<<<<<<< HEAD
 =======
   <section class="welcome">
     <h1>Available Games</h1>
@@ -173,6 +183,8 @@
 >>>>>>> 8620326 (some changes)
 =======
 >>>>>>> cedca4e (Added auth for customer):backend-api/target/classes/templates/customer-home.ftlh
+=======
+>>>>>>> a469a9e (some changes)
   <footer>
     <h4>Follow Us</h4>
     <!-- <div class="icon-list">
@@ -187,10 +199,14 @@
     integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
     crossorigin="anonymous"></script>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <!-- <script src="script.js" defer></script> -->
 =======
   <script src="script.js" defer></script>
 >>>>>>> 8620326 (some changes)
+=======
+  <!-- <script src="script.js" defer></script> -->
+>>>>>>> a469a9e (some changes)
 </body>
 
 </html>

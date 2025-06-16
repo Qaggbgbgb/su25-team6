@@ -46,7 +46,7 @@ public class GameService {
      * @param game
      * @return
      */
-    public Object addGame(Game game) {
+    public Game addGame(Game game) {
         return gameRepository.save(game);
     }
 

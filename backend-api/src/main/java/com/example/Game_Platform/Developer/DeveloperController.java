@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.example.Game_Platform.Developer;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,11 @@ private DeveloperService developerService;
   }
 
 @GetMapping("/Developers/{id}")
-  public Developer getDeveloperById(@PathVariable long developer_id) {
-    return developerService.getDeveloperById(developer_id);
+  public Object getDeveloperById(@PathVariable long developer_id, Model model) {
+    
+    
+    model.addAttribute("developer",developerService.getDeveloperById(developer_id));
+    return "developer/developer-details";
   }
 
 @GetMapping("/Developers/username")

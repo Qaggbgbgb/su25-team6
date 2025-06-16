@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.example.Game_Platform.GameStore;
 
 

@@ -17,19 +17,31 @@ public class GameStoreController {
 private GameStoreService gameStoreService;
 
 @GetMapping("/gameStore")
-  public Object getAllGameStores() {
-    return gameStoreService.getAllGameStores();
+  public Object getAllGameStores(Model model) {
+    model.addAttribute("gamestores",gameStoreService.getAllGameStores());
+    return "gamestore/gamestore-list";
   }
 @GetMapping("/gameStore/{id}")
-  public GameStore getGameStoreById(@PathVariable long storeId) {
-    return gameStoreService.getGameStoreById(storeId);
+  public Object getGameStoreById(@PathVariable long storeId, Model model) {
+    model.addAttribute("gamestore", gameStoreService.getGameStoreById(storeId));
+    return  "gamestore/gamestore basic";
   }
 
-@PostMapping("/gameStore")
-  public void publishGame(@RequestBody Game game,List<Developer> developer) {
-    gameStoreService.publishGames(developer,game);
+
+
+ @GetMapping("/gameStore/createForm")
+  public Object showCreateForm(Model model) {
+    Game game = new Game();
+    model.addAttribute("game", game);
+    model.addAttribute("title", "publish new games");
+    return "gamestore/gamestore publishgames";
   }
 
+  
 
     
+<<<<<<< HEAD
 }
+=======
+ }
+>>>>>>> 8620326 (some changes)

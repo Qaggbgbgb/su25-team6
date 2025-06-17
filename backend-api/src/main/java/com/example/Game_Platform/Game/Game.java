@@ -67,8 +67,16 @@ public class Game {
         this.gameLibrary = gameLibrary;
         this.profilePicturePath = profilePicturePath;
     }
-
-
+    public Game( String gameName, GameStore gameStore, String profilePicturePath) {
+        this.gameName = gameName;
+        this.gameStore = gameStore;
+        this.profilePicturePath = profilePicturePath;
+    }
+    public Game( String gameName, Long gameId, String profilePicturePath) {
+        this.gameName = gameName;
+        this.gameId = gameId;
+        this.profilePicturePath = profilePicturePath;
+    }
 
     public Game( String gameName) {
         this.gameName = gameName; 

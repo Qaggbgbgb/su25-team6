@@ -183,7 +183,7 @@ public class GameController {
   }
 
 
-@PostMapping("/game")
+@PostMapping("/games")
   public Object publishGames(Game game) {
     // return studentService.addStudent(student, picture);
     Game newGame = gameService.addGame(game);

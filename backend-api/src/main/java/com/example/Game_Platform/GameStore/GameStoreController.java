@@ -34,7 +34,7 @@ private GameStoreService gameStoreService;
     Game game = new Game();
     model.addAttribute("game", game);
     model.addAttribute("title", "publish new games");
-    return "gamestore/gamestore publishgames";
+    return "developer/developer publishgames";
   }
 
   

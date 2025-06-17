@@ -39,23 +39,12 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    // /**
-    //  * Enpoint to get all customers
-    //  * 
-    //  * @return
-    //  */
-    @GetMapping("/customers")
-     public Object getAllCustomers( Model model) {
-          model.addAttribute("customerList", customerService.getAllCustomers());
-         model.addAttribute("title", "All Customers");
-          return "customer-home";
-     }
+    @Autowired
+    private CustomerRepository customerRepository;
 
     @Autowired
     private GameLibraryRepository gameLibraryRepository;
 
-    // @Autowired
-    // private GameLibraryService gameLibraryService;
 
     @Autowired
     private GameService gameService;
@@ -64,6 +53,19 @@ public class CustomerController {
     private GameRepository gameRepository;
      boolean value = false;
     
+
+    // // /**
+    // //  * Enpoint to get all customers
+    // //  * 
+    // //  * @return
+    // //  */
+    // @GetMapping("/customers")
+    //  public Object getAllCustomers( Model model) {
+    //       model.addAttribute("customerList", customerService.getAllCustomers());
+    //      model.addAttribute("title", "All Customers");
+    //       return "customer-home";
+    //  }
+
     /**
      * Enpoint to get all customers
      * 
@@ -194,21 +196,21 @@ public class CustomerController {
         return "redirect:/customers";
     }
      
-    //Filter games of customer by name
-    /**
-     * @param name
-     * @param model
-     * @return
-     */
-    @GetMapping("/games/name/customer")
-    public Object getCustomerGames(@RequestParam String name, Model model, Principal principal) {
-        String username = principal.getName();
+    // //Filter games of customer by name
+    // /**
+    //  * @param name
+    //  * @param model
+    //  * @return
+    //  */
+    // @GetMapping("/games/name/customer")
+    // public Object getCustomerGames(@RequestParam String name, Model model, Principal principal) {
+    //     String username = principal.getName();
        
-        Customer customer = customerRepository.getCustomerByUserName(username).orElse(null);
-        GameLibrary gameLibrary = customer.getGameLibrary();
+    //     Customer customer = customerRepository.getCustomerByUserName(username).orElse(null);
+    //     GameLibrary gameLibrary = customer.getGameLibrary();
 
-        return "redirect:/customers";
-    }
+    //     return "redirect:/customers";
+    // }
      
     //Filter games of customer by name
     /**

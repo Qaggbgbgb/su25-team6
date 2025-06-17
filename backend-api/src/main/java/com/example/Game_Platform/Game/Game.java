@@ -3,7 +3,8 @@ package com.example.Game_Platform.Game;
 import java.util.List;
 
 import com.example.Game_Platform.GameLibrary.GameLibrary;
-import com.example.Game_Platform.GameStore.GameStore;
+//Commented out becuase GameStore is not ready
+// import com.example.Game_Platform.GameStore.GameStore;
 // import com.example.Game_Platform.GameStore.GameStore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -32,46 +33,56 @@ public class Game {
     @ManyToMany(mappedBy = "games")
     @JsonIgnoreProperties("games")
     private List<GameLibrary> gameLibrary;
-@ManyToOne
-@JoinColumn(name = "storeId", nullable = false)
-    @JsonIgnoreProperties("games")
-    private GameStore gameStore;
+
+    // @ManyToOne
+    // @JoinColumn(name = "storeId", nullable = false)
+    // @JsonIgnoreProperties("games")
+    // private GameStore gameStore;
 
 
 
     public Game() {
     }
 
-   public Game(Long gameId, String gameName, List<GameLibrary> gameLibrary,GameStore gameStore, String profilePicturePath) {
-        this.gameId = gameId;
-        this.gameName = gameName; 
-        this.gameLibrary = gameLibrary;
-        this.profilePicturePath = profilePicturePath;
-        this.gameStore=gameStore;
-    }
-    public Game(Long gameId, String gameName, GameStore gameStore, String profilePicturePath) {
-        this.gameId = gameId;
-        this.gameName = gameName; 
-        this.gameStore = gameStore;
-        this.profilePicturePath = profilePicturePath;
-    }
-    public Game(Long gameId, String gameName, List<GameLibrary> gameLibrary, String profilePicturePath) {
+    // GameStore gameStore, Game Store 
+     public Game(Long gameId, String gameName, List<GameLibrary> gameLibrary, String profilePicturePath) {
         this.gameId = gameId;
         this.gameName = gameName; 
         this.gameLibrary = gameLibrary;
         this.profilePicturePath = profilePicturePath;
     }
 
+    /*
+     * //This method is commented out because it includes
+     * GameStore whiched has been commented out Also the other
+     * method below is simply a duplicate method.
+     */
+
+    // public Game(Long gameId, String gameName, GameStore gameStore, String profilePicturePath) {
+    //     this.gameId = gameId;
+    //     this.gameName = gameName; 
+    //     this.gameStore = gameStore;
+    //     this.profilePicturePath = profilePicturePath;
+    // }
+    // public Game(Long gameId, String gameName, List<GameLibrary> gameLibrary, String profilePicturePath) {
+    //     this.gameId = gameId;
+    //     this.gameName = gameName; 
+    //     this.gameLibrary = gameLibrary;
+    //     this.profilePicturePath = profilePicturePath;
+    // }
+
      public Game( String gameName, List<GameLibrary> gameLibrary, String profilePicturePath) {
         this.gameName = gameName;
         this.gameLibrary = gameLibrary;
         this.profilePicturePath = profilePicturePath;
     }
-    public Game( String gameName, GameStore gameStore, String profilePicturePath) {
-        this.gameName = gameName;
-        this.gameStore = gameStore;
-        this.profilePicturePath = profilePicturePath;
-    }
+
+    // public Game( String gameName, GameStore gameStore, String profilePicturePath) {
+    //     this.gameName = gameName;
+    //     this.gameStore = gameStore;
+    //     this.profilePicturePath = profilePicturePath;
+    // }
+
     public Game( String gameName, Long gameId, String profilePicturePath) {
         this.gameName = gameName;
         this.gameId = gameId;
@@ -115,13 +126,13 @@ public class Game {
         this.profilePicturePath = profilePicturePath;
     }
 
-    public GameStore getGameStore(){
-        return this.gameStore;
-    }
+    // public GameStore getGameStore(){
+    //     return this.gameStore;
+    // }
     
-    public void setGameStore(GameStore gameStore){
-        this.gameStore=gameStore;
-    }
+    // public void setGameStore(GameStore gameStore){
+    //     this.gameStore=gameStore;
+    // }
    
 
 }

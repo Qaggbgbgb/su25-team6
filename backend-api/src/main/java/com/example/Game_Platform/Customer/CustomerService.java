@@ -104,6 +104,7 @@ public class CustomerService {
         }
 
     /**
+    /**
      * @param gameId
      * @param customerId
      */
@@ -113,6 +114,10 @@ public class CustomerService {
         Game game = gameRepository.findById(gameId).orElseThrow();
 
         GameLibrary gameLibrary = customer.getGameLibrary();
+
+        gameLibrary.getGames().add(game);
+        gameLibraryRepository.save(gameLibrary);
+    }
 
    //   public String writeJson(Customer customer) {
    //      ObjectMapper objectMapper = new ObjectMapper();

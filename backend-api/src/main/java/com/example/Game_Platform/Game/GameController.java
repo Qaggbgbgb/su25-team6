@@ -179,7 +179,7 @@ public class GameController {
     @GetMapping("/games/gameStore/{storeId}")
   public Object getGamesByStoreId(@PathVariable Long storeId, Model model) {
     model.addAttribute("games",gameService.getGamesByStoreId(storeId));
-    return "gamestore/gamestore viewpublishedgames";
+    return "developer/developer viewpublishedgames";
   }
 
 
@@ -187,7 +187,7 @@ public class GameController {
   public Object publishGames(Game game) {
     // return studentService.addStudent(student, picture);
     Game newGame = gameService.addGame(game);
-    return "redirect:/gamestore/ view publishedgames" + newGame.getGameId();
+    return "redirect:/developer/developer viewpublishedgames" + newGame.getGameId();
   }
 
 

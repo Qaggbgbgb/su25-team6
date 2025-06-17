@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -28,4 +28,4 @@
   <div style="width: 525px; height: 216px; left: 822px; top: 500px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">view your published games</div>
 </div>
 </body>
-</html>
+</html> -->

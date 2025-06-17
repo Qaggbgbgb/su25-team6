@@ -1,3 +1,4 @@
+
 package com.example.Game_Platform.Game;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,17 +24,20 @@ public class GameController {
     @Autowired
     private GameService gameService;
 
-    /**
-     * Enpoint to get all games
-     * 
-     * @return
-     */
-   // @GetMapping("/customers")
-   // public Object getAllGames(Model model) {
-   //     model.addAttribute("gamesList", gameService.getAllGames());
-   //     model.addAttribute("title", "All Games");
-   //     return "customer-home";
-  //  }
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    // /**
+    //  * Enpoint to get all games
+    //  * 
+    //  * @return
+    //  */
+    // @GetMapping("/games")
+    // public Object getAllGames(Model model) {
+    //     model.addAttribute("gamesList", gameService.getAllGames());
+    //     model.addAttribute("title", "All Games");
+    //     return "customer-home";
+    // }
 
 
     // /**
@@ -41,17 +45,11 @@ public class GameController {
     //  * 
     //  * @return
     //  */
-     @GetMapping("/games")
-     public Object getAllGames(Model model) {
-         model.addAttribute("games", gameService.getAllGames());
-         return "gamestore/gamestore viewpubishedgames";
-     }
+    // @GetMapping("/games")
+    // public Object getAllGames() {
+    //     return gameService.getAllGames();
+    // }
 
-    @GetMapping("/games/{gameId}")
-     public Object getGameById(@PathVariable Long gameId, Model model) {
-        model.addAttribute("game", gameService.getGameById(gameId));
-        return "games/game-details";
-     }
 
 
     // /**
@@ -59,15 +57,14 @@ public class GameController {
     //  * @param name
     //  * @return
     //  */
-     @GetMapping("/games/name")
-     public Object getGameByName(@RequestParam String key) {
-        if (key != null) {
-          return gameService.getGameByName(key);
-            
-         } else {
-             return gameService.getAllGames();
-         }
-     }
+    // @GetMapping("/games/name")
+    // public Object getGameByName(@RequestParam String name) {
+    //     if (name != null) {
+    //         return gameService.getGameByName(name);
+    //     } else {
+    //         return gameService.getAllGames();
+    //     }
+    // }
     
 
     /**
@@ -76,39 +73,16 @@ public class GameController {
      * @param name
      * @return
      */
-    //@GetMapping("/games/name")
-    //public Object getGameByGameName(@RequestParam String name, Model model) {
-    //   if (name != null) {
-    //        model.addAttribute("gamesList", gameService.getGameByName(name));
-     //       return "customer-home";
-    //    } else {
-    //        return "redirect:/customers/";
-    //   }
+    @GetMapping("/games/name")
+    public Object getGameByGameName(@RequestParam String name, Model model) {
+        if (name != null) {
+            model.addAttribute("gamesList", gameService.getGameByName(name));
+            return "customer-home";
+        } else {
+            return "redirect:/customers/";
+        }
         
-   // }
-    
-
-
-
-
-
-    /**
-     * 
-     * 
-     * @param name
-     * @return
-     */
-    //@GetMapping("/games/name")
-    //public Object getGameByGameName(@RequestParam String name, Model model) {
-    //   if (name != null) {
-    //        model.addAttribute("gamesList", gameService.getGameByName(name));
-     //       return "customer-home";
-    //    } else {
-    //        return "redirect:/customers/";
-    //   }
-        
-   // }
-    
+    }
 
 
 
@@ -153,15 +127,15 @@ public class GameController {
     }
 
 
-    /**
-     * Endpoint to get game by gameId
-     * @param gameId
-     * @return
-     */
-    //@GetMapping("/games/{gameId}")
-    //public Game getGameById(@PathVariable Long gameId) {
-    //    return gameService.getGameById(gameId);
-    //}
+    // /**
+    //  * Endpoint to get game by gameId
+    //  * @param gameId
+    //  * @return
+    //  */
+    // @GetMapping("/games/{gameId}")
+    // public Game getGameById(@PathVariable Long gameId) {
+    //     return gameService.getGameById(gameId);
+    // }
     
     
 
@@ -176,20 +150,4 @@ public class GameController {
 //         return gameService.getGamesByGameLibraryId(gameLibraryId);
 //     }
     
-    @GetMapping("/games/gameStore/{storeId}")
-  public Object getGamesByStoreId(@PathVariable Long storeId, Model model) {
-    model.addAttribute("games",gameService.getGamesByStoreId(storeId));
-    return "developer/developer viewpublishedgames";
-  }
-
-
-@PostMapping("/games")
-  public Object publishGames(Game game) {
-    // return studentService.addStudent(student, picture);
-    Game newGame = gameService.addGame(game);
-    return "redirect:/developer/developer viewpublishedgames" + newGame.getGameId();
-  }
-
-
-
 }

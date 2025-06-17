@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Figma Export</title>
+  <title>gamestore pb</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
     </div>
   </div>
   <div style="width: 525px; height: 192px; left: 168px; top: 664px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">id:</div>
-  <div style="width: 552px; height: 120px; left: 168px; top: 856px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">profilePicturePath:</div>
+  <div style="width: 552px; height: 120px; left: 168px; top: 856px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">profilePicturePath</div>
 </div>
 </body>
 </html>

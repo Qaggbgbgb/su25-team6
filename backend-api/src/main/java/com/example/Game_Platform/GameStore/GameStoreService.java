@@ -25,19 +25,19 @@ public GameStore getGameStoreById(@PathVariable long storeId) {
     return gameStoreRepository.findById(storeId).orElse(null);
   }
 
-public Object getGameStoreByDeveloper(List<Developer> developer) {
+public Object getGameStoreByDeveloper(Developer developer) {
     return gameStoreRepository.getGameStoreByDeveloper(developer);
   }
-public void publishGames(List<Developer> developer,Game game){
-    for (int i=0;i<gameStoreRepository.getGameStoreByDeveloper(developer).size();i++){
-    gameStoreRepository.getGameStoreByDeveloper(developer).get(i).getGames().add(game);
-}}
-
-public List<Game> viewPublishedGames(List<Developer> developer){
-    for (int i=0;i<gameStoreRepository.getGameStoreByDeveloper(developer).size();i++){
-    return gameStoreRepository.getGameStoreByDeveloper(developer).get(i).getGames();}
-    return null;
+public void publishGames(Developer developer,Game game){
+   
+    gameStoreRepository.getGameStoreByDeveloper(developer).getGames().add(game);
 }
+
+public List<Game> viewPublishedGames(Developer developer){
+    
+    return gameStoreRepository.getGameStoreByDeveloper(developer).getGames();}
+    
+
 public Object addGameStore(GameStore gameStore) {
     return gameStoreRepository.save(gameStore);
   }

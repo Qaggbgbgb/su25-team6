@@ -3,6 +3,7 @@ package com.example.Game_Platform.Game;
 import java.util.List;
 
 import com.example.Game_Platform.GameLibrary.GameLibrary;
+import com.example.Game_Platform.GameStore.GameStore;
 // import com.example.Game_Platform.GameStore.GameStore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -10,9 +11,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
-
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity 
@@ -31,13 +32,29 @@ public class Game {
     @ManyToMany(mappedBy = "games")
     @JsonIgnoreProperties("games")
     private List<GameLibrary> gameLibrary;
-
+@ManyToOne
+@JoinColumn(name = "storeId", nullable = false)
+    @JsonIgnoreProperties("games")
+    private GameStore gameStore;
 
 
 
     public Game() {
     }
 
+   public Game(Long gameId, String gameName, List<GameLibrary> gameLibrary,GameStore gameStore, String profilePicturePath) {
+        this.gameId = gameId;
+        this.gameName = gameName; 
+        this.gameLibrary = gameLibrary;
+        this.profilePicturePath = profilePicturePath;
+        this.gameStore=gameStore;
+    }
+    public Game(Long gameId, String gameName, GameStore gameStore, String profilePicturePath) {
+        this.gameId = gameId;
+        this.gameName = gameName; 
+        this.gameStore = gameStore;
+        this.profilePicturePath = profilePicturePath;
+    }
     public Game(Long gameId, String gameName, List<GameLibrary> gameLibrary, String profilePicturePath) {
         this.gameId = gameId;
         this.gameName = gameName; 
@@ -90,8 +107,13 @@ public class Game {
         this.profilePicturePath = profilePicturePath;
     }
 
-
-     
+    public GameStore getGameStore(){
+        return this.gameStore;
+    }
+    
+    public void setGameStore(GameStore gameStore){
+        this.gameStore=gameStore;
+    }
    
 
 }

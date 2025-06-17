@@ -121,10 +121,10 @@ public class GameController {
      * @param game
      * @return
      */
-    @PostMapping("/games")
-    public Object addGame(@RequestBody Game game) {
-        return gameService.addGame(game);
-    }
+    // @PostMapping("/games")
+    // public Object addGame(@RequestBody Game game) {
+    //     return gameService.addGame(game);
+    // }
 
 
     // /**
@@ -150,4 +150,22 @@ public class GameController {
 //         return gameService.getGamesByGameLibraryId(gameLibraryId);
 //     }
     
+
+
+  @GetMapping("/games/gameStore/{storeId}")
+   public Object getGamesByStoreId(@PathVariable Long storeId, Model model) {
+     model.addAttribute("games",gameService.getGamesByStoreId(storeId));
+     return "developer/developer viewpublishedgames";
+   }
+
+
+ @PostMapping("/games")
+   public Object publishGames(Game game) {
+     // return studentService.addStudent(student, picture);
+     Game newGame = gameService.addGame(game);
+     return "redirect:/developer/developer viewpublishedgames" + newGame.getGameId();
+   }
+
+
 }
+

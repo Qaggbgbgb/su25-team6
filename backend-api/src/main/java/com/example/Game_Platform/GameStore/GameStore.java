@@ -29,20 +29,20 @@ public class GameStore {
     
     @JsonIgnoreProperties("gameStore")
     private List<Game> games;
-@OneToMany(mappedBy = "gameStore")    
+@OneToOne(mappedBy = "gameStore")    
  @JsonIgnoreProperties("gameStore")   
-    private List<Developer> developer;
+    private Developer developer;
 
 public GameStore(){
 
 }
-public GameStore(List<Game> games,List<Developer> developer)
+public GameStore(List<Game> games,Developer developer)
 {
     this.games=games;
     this.developer=developer;
     
 }
-public GameStore(Long storeId, List<Game> games,List<Developer> developer)
+public GameStore(Long storeId, List<Game> games, Developer developer)
 {
     this.games=games;
     this.developer=developer;
@@ -53,7 +53,7 @@ public List<Game> getGames(){
     return this.games;
 }
 
-public List<Developer> getDeveloper(){
+public Developer getDeveloper(){
     return this.developer;
 }
 
@@ -61,7 +61,7 @@ public void setGames(List<Game> games){
     this.games=games;
 }
 
-public void setDeveloper(List<Developer> developer){
+public void setDeveloper(Developer developer){
     this.developer=developer;
 
 }

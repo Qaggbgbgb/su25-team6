@@ -22,13 +22,25 @@
     <div style="left: 80px; top: 67px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word">Game Platform</div>
   </div>
   <div style="width: 609px; height: 442px; left: 152px; top: 293px; position: absolute; overflow: hidden">
-    <div style="width: 716px; height: 211px; left: 0px; top: -32px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">Game profile:</div>
-    <div style="padding: 10px; left: 0px; top: 250px; position: absolute; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
-      <div style="width: 588px; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">name:</div>
-    </div>
-  </div>
-  <div style="width: 525px; height: 192px; left: 168px; top: 664px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">id:</div>
-  <div style="width: 552px; height: 120px; left: 168px; top: 856px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">profilePicturePath</div>
+    
+    <form action="/students" method="post">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter Full Name" required>
+     
+      
+      <label for="id">id</label>
+      <input type="email" id="id" name="id" placeholder=" Enter id" required>
+ 
+      
+      <label for="profolioPicturePath"></label>
+      <input type="profolioPicturePath" id="profolioPicturePath" name="profolioPicturePath" placeholder="Enter profolioPicturePath" required>
+        
+      
+      <button type="submit" onclick="window.location.href='developer viewpublishedgames.ftlh'">Save Changes</button>
+     
+    </form>
+
+
 </div>
 </body>
 </html>

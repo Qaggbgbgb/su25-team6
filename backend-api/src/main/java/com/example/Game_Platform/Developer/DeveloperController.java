@@ -3,7 +3,7 @@
 
  import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
  import org.springframework.web.bind.annotation.GetMapping;
  import org.springframework.web.bind.annotation.PathVariable;
@@ -11,25 +11,24 @@ import org.springframework.web.bind.annotation.DeleteMapping;
  import org.springframework.web.bind.annotation.PutMapping;
  import org.springframework.web.bind.annotation.RequestBody;
  import org.springframework.web.bind.annotation.RequestParam;
- import org.springframework.web.bind.annotation.RestController;
+ 
 
  @Controller
  public class DeveloperController {
      @Autowired
  private DeveloperService developerService;
  @GetMapping("/Developers")
-   public Object getAllDevelopers(Model model) {
-     model.addAttribute("developerssList", developerService.getAllDevelopers());
-     return "developer/developer-list";
+   public Object getAllDevelopers() {
+   return developerService.getAllDevelopers();
    }
 
 
 @GetMapping("/Developers/{id}")
-  public Object getDeveloperById(@PathVariable long developer_id, Model model) {
+  public Object getDeveloperById(@PathVariable long developer_id) {
     
     
-    model.addAttribute("developer",developerService.getDeveloperById(developer_id));
-    return "developer/developer-details";
+ 
+    return developerService.getDeveloperById(developer_id);
   }
 
 @GetMapping("/Developers/username")

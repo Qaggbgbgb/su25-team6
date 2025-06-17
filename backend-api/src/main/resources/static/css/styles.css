@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+}
+
+
+nav {
+    height: 4.5rem;
+}
+
+.color {
+    background-color: blue;
+}
+
+/*Home page*/
+.games-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+    justify-items: center; 
+    margin-bottom: 15rem;
+}
+
+.welcome {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+
+@media (max-width: 1010px) {
+    .games-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .games-list {
+        grid-template-columns: 1fr;
+    }
+}
+/*Detail Page*/
+.animal-box {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-box {
+    width: 35%;
+    
+}
+
+.details-sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-header {
+    margin-top: 2rem;
+    text-align: center;
+
+}
+
+/*About Page*/
+.about-h1 {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.about-card-sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about-card {
+    width: 50%;
+}
+
+/*Footer*/
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #81E7AF;
+    border-radius: 8px;
+    margin-top: 10rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: fixed;
+    width: 100%;
+   
+    bottom: 0;
+}
+
+.icon-list {
+    display: flex;
+    gap: .5rem;
+}
+
+.icon {
+    width: 2.7rem;
+}
+
+

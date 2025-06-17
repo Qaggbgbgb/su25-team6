@@ -11,6 +11,7 @@ public class GameService {
     @Autowired
     private GameRepository gameRepository;
 
+
     /**
      * Get all games
      * @return
@@ -45,7 +46,7 @@ public class GameService {
      * @param game
      * @return
      */
-    public Object addGame(Game game) {
+    public Game addGame(Game game) {
         return gameRepository.save(game);
     }
 
@@ -77,4 +78,10 @@ public class GameService {
     public List<Game> getGamesByGameLibraryId(Long gameLibraryId) {
         return gameRepository.getGamesByGameLibraryId(gameLibraryId);
     }
+
+    public List<Game> getGamesByStoreId(Long storeId){
+        return gameRepository.getGamesByStoreId(storeId);
+    }
+
+
 }

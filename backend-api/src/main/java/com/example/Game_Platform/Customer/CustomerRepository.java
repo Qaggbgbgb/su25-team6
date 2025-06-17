@@ -3,6 +3,7 @@
 package com.example.Game_Platform.Customer;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
     
@@ -15,8 +16,9 @@ public interface CustomerRepository  extends JpaRepository<Customer, Long> {
 
     
     List<Customer> findByCustomerId(Long customerId);
-    List<Customer> getCustomerByUserName(String userName);
+    Optional<Customer> getCustomerByUserName(String userName);
     List<Customer> getCustomerByPassword(String password);
+    
 
     @Query(value = "select * from games c where c.gameLibrary_id= ?1", nativeQuery = true)
     List<Customer> getCustomerByGameLibrary(String gameLibrary);

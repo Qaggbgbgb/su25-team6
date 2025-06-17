@@ -1,14 +1,20 @@
 package com.example.Game_Platform.Developer;
 
+import com.example.Game_Platform.GameStore.GameStore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "developers")
+@Table(name = "Developers")
 public class Developer {
 
 @Id
@@ -21,7 +27,10 @@ private String username;
 @Column(nullable = false)
 private String password;
 
-
+@OneToOne()
+  @JoinColumn(name = "storeId", nullable = false)
+  @JsonIgnoreProperties("Developers")
+  private GameStore gameStore;
 
 public Developer(){
 
@@ -61,6 +70,13 @@ public String getPassword(){
 
 public void setPassword(String password){
     this.password=password;
+}
+
+public GameStore getGameStore(){
+    return this.gameStore;
+}
+public void setGameStore(GameStore gameStore){
+    this.gameStore=gameStore;
 }
 
 }

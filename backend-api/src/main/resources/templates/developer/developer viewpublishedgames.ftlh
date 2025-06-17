@@ -2,6 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+ 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Figma Export</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,13 +30,35 @@
   <div style="width: 609px; height: 278px; left: 135px; top: 293px; position: absolute; overflow: hidden">
     <div style="width: 716px; height: 407px; left: 0px; top: -65px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">Game Store<br/></div>
   </div>
-  <img style="width: 270px; height: 337px; left: 135px; top: 581px; position: absolute; border-radius: 20px" src="https://placehold.co/270x337" />
-  <div style="width: 264px; height: 49px; left: 164px; top: 925px; position: absolute; color: black; font-size: 50px; font-family: Inter; font-weight: 400; word-wrap: break-word">${games.name}</div>
-  <img style="width: 612px; height: 337px; left: 446px; top: 581px; position: absolute; border-radius: 28px" src="https://placehold.co/612x337" />
-  <div style="width: 305px; height: 67px; left: 646px; top: 925px; position: absolute; color: black; font-size: 50px; font-family: Inter; font-weight: 400; word-wrap: break-word">${games.name}</div>
-  <img style="width: 331px; height: 337px; left: 1090px; top: 581px; position: absolute; border-radius: 23px" src="https://placehold.co/331x337" />
-  <div style="width: 224px; height: 52px; left: 1169px; top: 925px; position: absolute; color: black; font-size: 50px; font-family: Inter; font-weight: 400; word-wrap: break-word">${games.name}</div>
-  <div style="width: 1168px; height: 75px; left: 135px; top: 496px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">Here are your published games:</div>
+  <div class="container" style="margin-top: 600px;display: flex">
+    <h1>Here are your published games:</h1>
+    <a href="/gameStore/createForm" class="btn btn-outline-primary" style="float:right;">Publish New Game</a>
+
+    <form action="/games/gameName">
+        <input type="text" name="key" placeholder="Search By Name &#128270;">
+    </form>
+
+    <!-- Games Table -->
+    <table class="table table-striped rounded-3 overflow-hidden">
+        <tr>
+            <th>gameId</th>
+            <th>gameName</th>
+            <th>profolioPicturePath</th>
+        </tr>
+        <#list gameList as game>
+        <tr>
+            <td>
+                <a href="/games/${game.gameId?c}" style="color:#000000">${game.gameId?c}</a>
+            </td>
+            <td>${game.gameName}</td>
+            <td>
+                <a href="/games/profolioPicturePath/${game.profolioPicturePath}" style="color:#000000">${game.profolioPicturePath}</a>
+            </td>
+        </tr>
+        </#list>
+    </table>
+
 </div>
+  </div>
 </body>
 </html>

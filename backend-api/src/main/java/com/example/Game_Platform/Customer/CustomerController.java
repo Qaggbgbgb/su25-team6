@@ -2,6 +2,7 @@ package com.example.Game_Platform.Customer;
 
 import java.lang.ProcessBuilder.Redirect.Type;
 import java.security.Principal;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -22,6 +23,7 @@ import com.example.Game_Platform.Game.GameService;
 import com.example.Game_Platform.GameLibrary.GameLibrary;
 import com.example.Game_Platform.GameLibrary.GameLibraryRepository;
 import com.example.Game_Platform.GameLibrary.GameLibraryService;
+import com.example.Game_Platform.Time.TimeService;
 
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -66,6 +68,27 @@ public class CustomerController {
     //       return "customer-home";
     //  }
 
+
+    @Autowired
+    private TimeService timeService;
+
+
+//     /**
+//      * 
+//      * @param model
+//      * @return
+//      */
+//    @GetMapping("/clock")
+//    public String showTime(Model model) {
+
+//     //  timeService.getTime("America/New_York").getHour();
+//        model.addAttribute("hour", timeService.getTime("America/New_York").getHour());
+//        model.addAttribute("minute", timeService.getTime("America/New_York").getMinute());
+//        model.addAttribute("seconds", timeService.getTime("America/New_York").getSeconds());
+//        return "customer-home";
+//    }
+
+
     /**
      * Enpoint to get all customers
      * 
@@ -73,10 +96,51 @@ public class CustomerController {
      */
     @GetMapping("/customers")
     public String getCustomerHome( Model model) {
+           model.addAttribute("hour", timeService.getTime("America/New_York").getHour());
+       model.addAttribute("minute", timeService.getTime("America/New_York").getMinute());
+       model.addAttribute("seconds", timeService.getTime("America/New_York").getSeconds());
+      
     model.addAttribute("gamesList", gameService.getAllGames());
     model.addAttribute("title", "All Customers");
     return "customer-home";
 }
+
+    /**
+     * Customer rate game
+     * @param model
+     * @param gameId
+     * @return
+     */
+    @PostMapping("/customer/rate/{gameId}")
+    public Object rateGames(@RequestParam int inputRating, Model model, Principal principal, @PathVariable Long gameId) {
+        String username = principal.getName();
+        Customer customer = customerRepository.getCustomerByUserName(username)
+            .orElseThrow(() -> new RuntimeException("Customer not found"));
+
+        Game game = gameService.getGameById(gameId);
+
+        int newTotal = game.getTotalRating() + inputRating;
+        int newCount = game.getCounter() + 1;
+
+        game.setTotalRating(newTotal);
+        game.setCounter(newCount);
+        game.setRating(newTotal / newCount);
+    
+        int actualRating = game.getRating();
+        System.out.println("Count = " + newCount);
+        System.out.println("Total = " + newTotal);
+        gameRepository.save(game);
+               model.addAttribute("hour", timeService.getTime("America/New_York").getHour());
+       model.addAttribute("minute", timeService.getTime("America/New_York").getMinute());
+       model.addAttribute("seconds", timeService.getTime("America/New_York").getSeconds());
+      
+        model.addAttribute("gamesList", gameService.getAllGames());
+        model.addAttribute("title", "All Customers");
+        // model.addAttribute("gameRating",game.getRating());
+        return "customer-home";
+    }
+    
+
 
  
     // /**
@@ -163,7 +227,10 @@ public class CustomerController {
     Customer customer = customerRepository.getCustomerByUserName(username)
             .orElseThrow(() -> new RuntimeException("Customer not found"));
 
-    
+    model.addAttribute("hour", timeService.getTime("America/New_York").getHour());
+       model.addAttribute("minute", timeService.getTime("America/New_York").getMinute());
+       model.addAttribute("seconds", timeService.getTime("America/New_York").getSeconds());
+      
     model.addAttribute("value", value);
     model.addAttribute("customersGames", 
             customer.getGameLibrary().getGames());
@@ -191,6 +258,7 @@ public class CustomerController {
             gameLibrary.getGames().add(addGame);
         }
 
+        
         gameLibraryRepository.save(gameLibrary);
 
         return "redirect:/customers";
@@ -230,15 +298,61 @@ public class CustomerController {
         for (Game games : customerGames) {
            if (games.getGameName().equals(name)) {
             value = true;
+                   model.addAttribute("hour", timeService.getTime("America/New_York").getHour());
+       model.addAttribute("minute", timeService.getTime("America/New_York").getMinute());
+       model.addAttribute("seconds", timeService.getTime("America/New_York").getSeconds());
+      
             model.addAttribute("value", value);
             model.addAttribute("customersGames", gameRepository.getGameByGameName(name));
             return "customer-library";
            } else {
             value = false;
+                   model.addAttribute("hour", timeService.getTime("America/New_York").getHour());
+       model.addAttribute("minute", timeService.getTime("America/New_York").getMinute());
+       model.addAttribute("seconds", timeService.getTime("America/New_York").getSeconds());
+      
             model.addAttribute("value", value);
             model.addAttribute("noGames", "Game not in Library"); 
         }         
-        } return "customer-library";          
+        } 
+
+        return "customer-library";          
+    }
+
+
+
+    /**
+     * Delete Game From Library
+     * @param gameId
+     * @return
+     */
+    @PostMapping("/customers/delete-game/{gameId}")
+    public String deleteGameFromLibrary(@PathVariable Long gameId, Principal principal) {
+        String username = principal.getName();
+
+      
+        Customer customer = customerRepository.getCustomerByUserName(username).orElse(null);
+        if (customer == null) {
+        return "redirect:/error";
+        }
+        GameLibrary gameLibrary = customer.getGameLibrary();
+         
+        if (gameLibrary == null || gameLibrary.getGames() == null) {
+        return "redirect:/error"; }
+
+        Game deleteGame = gameRepository.findById(gameId).orElse(null);
+        if (deleteGame == null) {
+        return "redirect:/error"; 
+        }
+     
+        
+        if (gameLibrary.getGames().contains(deleteGame)) {
+            gameLibrary.getGames().remove(deleteGame);
+            gameLibraryRepository.save(gameLibrary);
+           
+        } 
+        
+        return "redirect:/customers";
     }
 
 }

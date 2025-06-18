@@ -105,4 +105,6 @@ public class Customer {
     public void setRole(String role) {
         this.role = role;
     }
+
+    
 }

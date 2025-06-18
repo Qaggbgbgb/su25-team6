@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.Game_Platform.Customer.CustomerRepository;
 
+import ch.qos.logback.core.model.processor.PhaseIndicator;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -127,6 +129,8 @@ public class GameController {
     }
 
 
+    
+
     // /**
     //  * Endpoint to get game by gameId
     //  * @param gameId
@@ -150,4 +154,17 @@ public class GameController {
 //         return gameService.getGamesByGameLibraryId(gameLibraryId);
 //     }
     
+    // /**
+    //  * @param gameId
+    //  * @return
+    //  */
+    // @GetMapping("/games/delete/{gameId}}")
+    // public Object deletBird(@PathVariable Long gameId) {
+    //     gameService.deleteGameById(gameId);
+    //     return "redirect:/customers";
+        
+    // }
+    
+
+
 }

@@ -8,6 +8,7 @@ import com.example.Game_Platform.GameLibrary.GameLibrary;
 // import com.example.Game_Platform.GameStore.GameStore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,8 +25,11 @@ public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long gameId;
-    private String profilePicturePath;
-
+    private String profilePicturePath; 
+    private  Integer rating = 0;
+     private Integer counter = 0;
+    private Integer totalRating = 0;
+   
     
     private String gameName;
 
@@ -34,6 +38,8 @@ public class Game {
     @JsonIgnoreProperties("games")
     private List<GameLibrary> gameLibrary;
 
+
+     
     // @ManyToOne
     // @JoinColumn(name = "storeId", nullable = false)
     // @JsonIgnoreProperties("games")
@@ -45,11 +51,14 @@ public class Game {
     }
 
     // GameStore gameStore, Game Store 
-     public Game(Long gameId, String gameName, List<GameLibrary> gameLibrary, String profilePicturePath) {
+     public Game(Long gameId, String gameName, List<GameLibrary> gameLibrary, String profilePicturePath, int rating, int counter, int totalRating) {
         this.gameId = gameId;
         this.gameName = gameName; 
         this.gameLibrary = gameLibrary;
         this.profilePicturePath = profilePicturePath;
+        this.rating = rating;
+        this.counter = counter;
+        this.totalRating = totalRating;
     }
 
     /*
@@ -71,10 +80,12 @@ public class Game {
     //     this.profilePicturePath = profilePicturePath;
     // }
 
-     public Game( String gameName, List<GameLibrary> gameLibrary, String profilePicturePath) {
+     public Game( String gameName, List<GameLibrary> gameLibrary, String profilePicturePath, int rating, int counter) {
         this.gameName = gameName;
         this.gameLibrary = gameLibrary;
         this.profilePicturePath = profilePicturePath;
+        this.rating = rating;
+        this.counter = counter;
     }
 
     // public Game( String gameName, GameStore gameStore, String profilePicturePath) {
@@ -83,10 +94,12 @@ public class Game {
     //     this.profilePicturePath = profilePicturePath;
     // }
 
-    public Game( String gameName, Long gameId, String profilePicturePath) {
+    public Game( String gameName, Long gameId, String profilePicturePath, int rating, int counter) {
         this.gameName = gameName;
         this.gameId = gameId;
         this.profilePicturePath = profilePicturePath;
+        this.rating = rating;
+        this.counter = counter;
     }
 
     public Game( String gameName) {
@@ -134,6 +147,29 @@ public class Game {
     //     this.gameStore=gameStore;
     // }
    
+    public int getRating(){
+        return this.rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public int getCounter() {
+        return this.counter;
+    }
+    
+    public void setCounter(int counter) {
+        this.counter = counter;
+    }
+
+    public int getTotalRating() {
+        return this.totalRating;
+    }
+
+    public void setTotalRating(int totalRating ) {
+        this.totalRating = totalRating;
+    }
 
 }
 

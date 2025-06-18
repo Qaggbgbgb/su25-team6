@@ -33,6 +33,13 @@
           </li>
 
         </ul>
+        </ul>
+        
+            <li class="nav-item">
+                <span>Current Time</span>
+              
+    <span id="clocks" >${hour!"--"}:${minute!"--"}:${seconds!"--"}</span>
+            </li>
 
       </div>
     </div>
@@ -55,10 +62,11 @@
 
   <div class="card-body">
     <h5 class="card-title" >${customerGames.gameName}</h5>
-    
-    <a href="" class="btn btn-primary">Game Added</a>
-   
+    <form action="/customers/delete-game/${customerGames.gameId}" method="post" >
+     <button type="submit" class="btn btn-danger">Remove Game</button>
+    </form>
   </div>
+
 </div>
 </#list> 
 <#else>

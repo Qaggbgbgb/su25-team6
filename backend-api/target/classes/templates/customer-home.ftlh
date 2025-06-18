@@ -27,75 +27,114 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/customers">Home</a>
           </li>
-           <#if Session.SPRING_SECURITY_CONTEXT??>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/customers/library">Game Library</a>
-          </li>
+          <#if Session.SPRING_SECURITY_CONTEXT??>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/customers/library">Game Library</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/logout">Log Out</a>
+            </li>
+            <#else>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/customers/Login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/customers/signUp">Sign Up</a>
+              </li>
+          </#if>
+        
          
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/logout">Log Out</a>
-          </li>
-          <#else>
-           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/customers/Login">Login</a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/customers/signUp">Sign Up</a>
-          </li>
-          </#if> 
-       
-          
-          </ul>
+              
         </ul>
+        
+            <li class="nav-item">
+                <span>Current Time</span>
+              
+    <span id="clock" >${hour!"--"}:${minute!"--"}:${seconds!"--"}</span>
+            </li>
+        
+            
+            
 
       </div>
     </div>
   </nav>
- <section class="welcome">
-  <h1>Available Games</h1>
-
-  <form action="/games/name" class="d-flex mt-3 justify-content-center" role="search" style="gap: 2rem;">
-    <input name="name" class="form-control" type="text" placeholder="Search by Name" aria-label="Search" style="max-width: 300px;">
-    <button class="btn btn-outline-success" type="submit">Search</button>
-  </form>
-</section>
-
-
-<section class="games-list">
-  <#list gamesList as games>
-    <div class="card" style="width: 18rem; margin: auto;">
-      <img src="${games.profilePicturePath}" class="card-img-top" alt="..." style="height: 200px; object-fit: cover;">
-      <div class="card-body text-center">
-        <h5 class="card-title">${games.gameName}</h5>
-        <a href="/customers/add-game/${games.gameId}" class="btn btn-primary">Add Game</a>
-      </div>
-    </div>
-  </#list>
-  <div class="container mt-4">
-  <div class="card" style="width: 30rem;">
-    <div class="card-header">
-      <h5 class="mb-0">Chat Box</h5> 
-    </div>
-    <form action="/chat/update" method="post" >
-    <div class="card-body">
-      
-      <div class="border p-2 mb-3" style="height: 200px; overflow-y: auto; background-color: #f8f9fa; white-space: pre-wrap;">
-        ${allChats!""}
-      </div>
-      <textarea class="form-control mb-2" name="input" rows="3" placeholder="Type your message here..." required></textarea>
-
-      <input type="hidden" name="chatId" value="2">
-       <button type="submit" class="btn btn-primary" style="width: 10rem;">Send Chat</button>
+  <section class="welcome">
+    <a class="home-title" href="/customers"><h1 >Available Games</h1></a>
     
-    </div>
-    </form>
-  </div>
-</div>
-</section>
-<section>
-  
 
-</section>
+
+    <form action="/games/name" class="d-flex mt-3 justify-content-center" role="search" style="gap: 2rem;">
+      <input name="name" class="form-control" type="text" placeholder="Search by Name" aria-label="Search"
+        style="max-width: 300px;">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </section>
+
+
+  <section class="games-list">
+    <#list gamesList as games>
+      <div class="card" style="width: 18rem; margin: auto;">
+        <img src="${games.profilePicturePath}" class="card-img-top" alt="..." style="height: 200px; object-fit: cover;">
+       
+        <div class="card-body text-center">
+          <h5  class="card-title">${games.gameName}</h5>
+          <#if Session.SPRING_SECURITY_CONTEXT??>
+          <form action="/customer/rate/${games.gameId}" method="post">
+          <select name="inputRating" style="margin-bottom: .8rem;" class="form-select" aria-label="Default select example">
+            <option style="margin-bottom: 1rem;" selected>Rate the Game</option>
+            <option  value="1">⭐️</option>
+            <option value="2">⭐️⭐️</option>
+            <option value="3">⭐️⭐️⭐️</option>
+             <option  value="4">⭐️⭐️⭐️⭐️</option>
+            <option  value="5">⭐️⭐️⭐️⭐️⭐️</option>
+          </select>
+              <button type="submit" class="btn btn-primary" style="width: 6.5rem; margin: .5rem; ">Rating : ${games.rating! "No rating"}</button>
+          </form>  
+             <a href="/customers/add-game/${games.gameId}" class="btn btn-primary">Add Game</a>
+          </#if>
+        
+
+          <a href="/customers/add-game/${games.gameId}" style="display: none;" class="btn btn-primary">Featured Games</a>
+          
+          
+          <a href="/customers/add-game/${games.gameId}"  class="btn btn-primary">Featured Games</a>
+          
+         
+        </div>
+      </div>
+    </#list>
+
+   
+  </section>
+  <section>
+ <#if Session.SPRING_SECURITY_CONTEXT??>
+      <div class="container mt-4">
+        <div class="card" style="width: 30rem; margin-bottom: 9rem;">
+          <div class="card-header">
+            <h5 class="mb-0">Chat Box</h5>
+          </div>
+          <form action="/chat/update" method="post">
+            <div class="card-body">
+
+              <div class="border p-2 mb-3"
+                style="height: 200px; overflow-y: auto; background-color: #f8f9fa; white-space: pre-wrap;">
+                ${allChats!""}
+              </div>
+              <textarea class="form-control mb-2" name="input" rows="3" placeholder="Type your message here..."
+                required></textarea>
+
+              <input type="hidden" name="chatId" value="2">
+              <button type="submit" class="btn btn-primary" style="width: 10rem;">Send Chat</button>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </#if>
+
+  </section>
 
   <footer>
     <h4>Follow Us</h4>
@@ -107,9 +146,8 @@
 
     </div> -->
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-    crossorigin="anonymous"></script>
+ 
+
   <!-- <script src="script.js" defer></script> -->
 </body>
 

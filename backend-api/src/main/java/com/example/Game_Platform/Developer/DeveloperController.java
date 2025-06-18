@@ -47,7 +47,12 @@ import com.example.Game_Platform.GameStore.GameStoreService;
         model.addAttribute("developer", developerService.getDeveloperById(developer_id));
     return "developerhome";
   }
-
+@GetMapping("/Developers/gamestore/{developer_id}")
+  public Object getGameStore(@PathVariable long developer_id, Model model) {
+        model.addAttribute("developer", developerService.getDeveloperById(developer_id));
+        model.addAttribute("gameStore",gameStoreService.getGameStoreByDeveloperId(developer_id));
+    return "developer gamestore basic";
+  }
 
 @GetMapping("/Developers/{id}")
   public Object getDeveloperById(@PathVariable long developer_id) {
@@ -56,11 +61,13 @@ import com.example.Game_Platform.GameStore.GameStoreService;
   }
 
 @PostMapping("/Developers/login")
-  public Object getDevelopersByUsername(@RequestParam String username) {
+  public Object getDevelopersByUsername(@RequestParam String username,Model model) {
     Developer developer= developerService.getDeveloperByUsername(username);
     if ( username != null) {
+      model.addAttribute("developer", developerService.getDeveloperByUsername(username));
       return "redirect:/Developer/developerhome/" + developer.getDeveloperID();
     } else {
+
       return "redirect:/Developers/login";
     }
 

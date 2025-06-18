@@ -14,11 +14,11 @@
 <div style="width: 1440px; height: 1000px; position: relative; background: #537ADD; overflow: hidden">
   <div style="width: 1440px; height: 184px; left: 0px; top: 0px; position: absolute; background: #5DE285; overflow: hidden">
     <div style="width: 591px; left: 769px; top: 56px; position: absolute; justify-content: flex-end; align-items: center; gap: 48px; display: inline-flex">
-      <div style="width: 87px; height: 30px; color: black; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word"><a href="developer-list.ftlh" target="_blank">Profile</a></div>
+      <div style="width: 87px; height: 30px; color: black; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">Profile</div>
       <div style="width: 64px; height: 30px; position: relative">
         <div style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">review</div>
       </div>
-      <div style="justify-content: center; display: flex; flex-direction: column; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word"><a href="developer gamestore basic.ftlh" target="_blank">Store</a></div>
+      <div style="justify-content: center; display: flex; flex-direction: column; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word"><a href="/Developers/gamestore/{developer_id}" target="_blank">Store</a></div>
       <div style="padding-left: 24px; padding-right: 24px; padding-top: 14px; padding-bottom: 14px; box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05); border-radius: 8px; justify-content: center; align-items: center; gap: 8px; display: flex">
         <div style="width: 71px; height: 28px; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 16px; font-family: Roboto; font-weight: 500; line-height: 24px; letter-spacing: 0.15px; word-wrap: break-word">services</div>
       </div>
@@ -33,10 +33,10 @@
 <div style="width: 229px; height: 106px; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 24px; font-family: Inter; font-weight: 400; line-height: 36px; word-wrap: break-word">Hello, user ${developer.username}</div>
 
     <div style="padding-left: 32px; padding-right: 32px; padding-top: 20px; padding-bottom: 20px; background: black; box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05); border-radius: 8px; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
-      <div style="width: 147px; height: 33px; justify-content: center; display: flex; flex-direction: column; color: white; font-size: 24px; font-family: Inter; font-weight: 400; line-height: 36px; word-wrap: break-word"><a href="developer login.ftlh" target="_blank">Log Out</a></div>
+      <div style="width: 147px; height: 33px; justify-content: center; display: flex; flex-direction: column; color: white; font-size: 24px; font-family: Inter; font-weight: 400; line-height: 36px; word-wrap: break-word"><a href="/Developers/login" target="_blank">Log Out</a></div>
     </div>
   </div>
-  <div style="width: 496px; height: 452px; left: 923px; top: 481px; position: absolute; overflow: hidden; border-radius: 32px; background-image: url(https://placehold.co/496x452)">
+  <div style="width: 496px; height: 452px; left: 923px; top: 481px; position: absolute; overflow: hidden; border-radius: 32px; background-image: url(images/game1.png)">
     <div style="width: 100px; height: 100px; left: 198px; top: 176px; position: absolute"></div>
   </div>
   <div style="width: 1102px; height: 160px; left: 317px; top: 247px; position: absolute; background: white; overflow: hidden; border-radius: 21px">

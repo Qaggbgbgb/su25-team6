@@ -26,4 +26,5 @@ This application would be a nice place to gather and enjoy games. Welcome every 
      view games uploaded and update a game.  
      2.Login and Signup - able to create an account
 
-
+##  How to Run
+Just create an account and use all the functionalities.

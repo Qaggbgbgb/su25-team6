@@ -32,11 +32,9 @@
   </div>
   <div class="container" style="margin-top: 600px;display: flex">
     <h1>Here are your published games:</h1>
-    <a href="/games/createForm" class="btn btn-outline-primary" style="float:right;">Publish New Game</a>
+    <a href="/Developers/gamestore/createForm" class="btn btn-outline-primary" style="float:right;">Publish New Game</a>
 
-    <form action="/games/gameName">
-        <input type="text" name="key" placeholder="Search By Name &#128270;">
-    </form>
+    
 
     <!-- Games Table -->
     <table class="table table-striped rounded-3 overflow-hidden">
@@ -57,7 +55,7 @@
             </td>
             <td>
                <a href="/developer/gamestore/updateForm/${game.gameId?c}" class="btn btn-primary">Edit
-            Student</a>
+            Game</a>
             </td>
         </tr>
         </#list>

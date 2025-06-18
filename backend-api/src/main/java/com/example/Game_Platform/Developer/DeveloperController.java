@@ -32,20 +32,20 @@ import com.example.Game_Platform.GameStore.GameStoreService;
 
 @GetMapping("/Developers/login")
   public Object showLogInPage() {
-    return "developer/developer login";
+    return "developer login";
   }
 
 @GetMapping("/Developers/signup")
   public Object showDeveloperCreateForm(Model model) {
     model.addAttribute("developer", new Developer());
-    return "developer/developerSignup";
+    return "developerSignup";
   }
 
 
 @GetMapping("/Developers/developerhome/{developer_id}")
   public Object getDeveloperhome(@PathVariable long developer_id, Model model) {
         model.addAttribute("developer", developerService.getDeveloperById(developer_id));
-    return "developer/developerhome";
+    return "developerhome";
   }
 
 
@@ -69,7 +69,9 @@ import com.example.Game_Platform.GameStore.GameStoreService;
 
 @PostMapping("/Developers")
   public Object addDeveloper(@RequestBody Developer developer) {
-    return developerService.addDeveloper(developer);
+    Developer newDeveloper=developerService.addDeveloper(developer);
+
+     return "redirect:/Developers/developerhome/{developer_id}" +newDeveloper.getDeveloperID();
   }
 
 @PutMapping("/Developers/{id}")
@@ -97,7 +99,7 @@ import com.example.Game_Platform.GameStore.GameStoreService;
     Game game = new Game();
     model.addAttribute("game", game);
     model.addAttribute("title", "publish new games");
-    return "developer/developer publishgames";
+    return "developer publishgames";
   }
 
   @GetMapping("/Developers/gamestore/updateForm/{gameId}")

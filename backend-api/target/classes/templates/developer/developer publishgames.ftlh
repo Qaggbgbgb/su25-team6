@@ -22,25 +22,27 @@
     <div style="left: 80px; top: 67px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word">Game Platform</div>
   </div>
   <div style="width: 609px; height: 442px; left: 152px; top: 293px; position: absolute; overflow: hidden">
-    
-    <form action="/students" method="post">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" placeholder="Enter Full Name" required>
+    <div class="container" style="margin-top: 15px;" >
+    <h1>publish a game</h1>
+    <form id= new-game action="/games" method="post" enctype="multipart/form-data">
+      
+      <input type="text" id="name" name="name" placeholder="Enter Full Name" required/>
      
       
-      <label for="id">id</label>
-      <input type="email" id="id" name="id" placeholder=" Enter id" required>
+ 
+      <input type="text" id="id" name="id" placeholder=" Enter id" required/>
  
       
-      <label for="profolioPicturePath"></label>
-      <input type="profolioPicturePath" id="profolioPicturePath" name="profolioPicturePath" placeholder="Enter profolioPicturePath" required>
+      <input type="text" id="profilePicturePath" name="profilePicturePath" placeholder="Enter profilePicturePath" required />
+
+      <input type="file" id="game image" name="game image" placeholder="gameimage" required/>
         
       
       <button type="submit" onclick="window.location.href='developer viewpublishedgames.ftlh'">Save Changes</button>
-     
+      <a href="developer gamestore basic.ftlh" class="btn btn-outline-danger" >Cancel</a>
     </form>
 
-
+    </div>
 </div>
 </body>
 </html>

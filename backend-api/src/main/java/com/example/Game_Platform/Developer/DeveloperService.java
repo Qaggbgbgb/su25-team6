@@ -21,8 +21,8 @@ public Developer getDeveloperById(@PathVariable long developer_id) {
     return developerRepository.findById(developer_id).orElse(null);
   }
 
-public Object getDevelopersByUsername(String username) {
-    return developerRepository.getDevelopersByUsername(username);
+public Developer getDeveloperByUsername(String username) {
+    return developerRepository.getDeveloperByUsername(username);
   }
 
 public Developer addDeveloper(Developer developer) {
@@ -37,8 +37,8 @@ public void deleteDeveloper(Long developer_id) {
     developerRepository.deleteById(developer_id);
   }
 
-public List<Developer> getDevelopersByStoreId(Long storeId){
-        return developerRepository.getDevelopersByStoreId(storeId);
+public Developer getDeveloperByStoreId(Long storeId){
+        return developerRepository.getDeveloperByStoreId(storeId);
     }
 
 }

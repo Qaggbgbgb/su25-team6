@@ -32,7 +32,7 @@
   </div>
   <div class="container" style="margin-top: 600px;display: flex">
     <h1>Here are your published games:</h1>
-    <a href="/gameStore/createForm" class="btn btn-outline-primary" style="float:right;">Publish New Game</a>
+    <a href="/games/createForm" class="btn btn-outline-primary" style="float:right;">Publish New Game</a>
 
     <form action="/games/gameName">
         <input type="text" name="key" placeholder="Search By Name &#128270;">
@@ -44,15 +44,20 @@
             <th>gameId</th>
             <th>gameName</th>
             <th>profolioPicturePath</th>
+            <th>edit games</th>
         </tr>
         <#list gameList as game>
         <tr>
             <td>
-                <a href="/games/${game.gameId?c}" style="color:#000000">${game.gameId?c}</a>
+                <a href="/games/${game.gameId?c}" style="color:#000000">${games.gameId?c}</a>
             </td>
-            <td>${game.gameName}</td>
+            <td>${games.gameName}</td>
             <td>
-                <a href="/games/profolioPicturePath/${game.profolioPicturePath}" style="color:#000000">${game.profolioPicturePath}</a>
+                <a href="/games/profolioPicturePath/${game.profolioPicturePath}" style="color:#000000">${games.profolioPicturePath}</a>
+            </td>
+            <td>
+               <a href="/developer/gamestore/updateForm/${game.gameId?c}" class="btn btn-primary">Edit
+            Student</a>
             </td>
         </tr>
         </#list>

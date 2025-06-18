@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Figma Export</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,11 +26,22 @@
     </div>
     <div style="left: 80px; top: 67px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word">Game Platform</div>
   </div>
-  <div style="width: 609px; height: 442px; left: 135px; top: 293px; position: absolute; overflow: hidden">
-    <div style="width: 716px; height: 211px; left: 0px; top: -32px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">gamestore:${gamestore.storeId}</div>
-    <div style="width: 588px; height: 192px; left: 21px; top: 231px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">         </div>
+  <div style="width: 609px; height: 442px; left: 152px; top: 293px; position: absolute; overflow: hidden">
+    <div class="container" style="margin-top: 15px;">
+    <h1>update a game</h1>
+    <img src="/images/${(game.profilePicturePath)!'game1.png'}" class="card-img-top"
+      style="height: 100px; width: 100px;" alt="picture">
+    <form id="new-game" action="/games/update/${game.gameId?c}" method="post" enctype="multipart/form-data">
+      <input type="text" id="gameId" name="gameId" value="${game.gameId?c}" readonly />
+      <input type="text" id="name" name="name" value="${game.gameName}" placeholder="Name" />
+      
+      <input type="text" id="profilePicturePath" name="profilePicturePath" value="${(game.profilePicturePath)}" readonly />
+      <input type="file" id="picture" name="picture" />
+      <button type="submit" class="btn btn-primary">Save</button>
+      <a href="/Developers/games/{developer_id}" class="btn btn-outline-danger">Cancel</a>
+    </form>
+    </div>
   </div>
-  <div style="width: 525px; height: 216px; left: 822px; top: 500px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">view your published games</div>
-</div>
+  </div>
 </body>
 </html>

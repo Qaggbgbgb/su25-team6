@@ -15,12 +15,9 @@ This application would be a nice place to gather and enjoy games. Welcome every 
 ## App Functions 
 1. Customer (the user with the customer role):
     1. Create/modify customer profile - Create / Modify Profile.
-    2. View available services - 
-    View available games for purchase. 
+    2. View available games for purchase. 
     View and add input to chat functions.
-    Modify views and settings(dark mode).
-    3. Subscribe to available services - Ability to purchase games, add-ons and subscribe to services of the software.
-    4. Write reviews for subscribed services -Users can rate a game based on a star based method, and comment.
+    4. View time from API
 2. Provider (the user with the provider role):
      1.Create services - Ability to add games
      view games uploaded and update a game.  

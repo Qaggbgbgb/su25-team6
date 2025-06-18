@@ -20,7 +20,7 @@ Table of Contents
 ## Revision History
 | Name | Date    | Reason For Changes  | Version   |
 | ---- | ------- | ------------------- | --------- |
-|      |         |                     |           |
+| TZ   | 06/18   |  update information |  2.0      |
 |      |         |                     |           |
 |      |         |                     |           |
 

@@ -38,7 +38,7 @@ Table of Contents
 | Name     | Date    | Reason For Changes  | Version   |
 | -------- | ------- | ------------------- | --------- |
 |T.Z, J.W  | 5/26/27 | Initial SRS         |  1.0      |
-|          |         |                     |           |
+|T.Z       | 06/18/25| change SRS          |  2.0      |
 |          |         |                     |           |
 
 ## 1. Introduction

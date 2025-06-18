@@ -55,13 +55,12 @@ game library.
 #### 2.2.2 Actor: Developer
 ##### 2.2.2.1 publish games 
 A game developer can publish games in Game Store.
-##### 2.2.2.2 publish services
-A game developer can publish services in Services.
-##### 2.2.2.3 reply in reviews
-A game developer can write reviews to reply to the users.
-##### 2.2.1.4 sign up for the platform
+
+##### 2.2.2.2 sign up for the platform
 A game developer can create an account and log in to view their profile.
 
+##### 2.2.2.3 view published games
+A game developer can view games published.
 
 ## 3. UML Class Diagram
 ![UML Class Diagram](https://github.com/Qaggbgbgb/su25-team6/blob/main/object%20oriented%20design/class-diagram.png)

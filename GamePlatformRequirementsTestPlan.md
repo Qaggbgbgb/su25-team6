@@ -18,8 +18,7 @@
 3. C2 adds game to game library and deletes games.
 
 #### 4. Customer: Write review
-1. C2 log in and views their subscriptions.
-2. C2 writes a comment in the chat.
+1. C2 writes a comment in the chat.
 
 #### 5. Customer: Rates Games
 1. C1 logs in and and modifies games.

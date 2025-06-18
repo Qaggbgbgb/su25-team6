@@ -30,7 +30,7 @@
     <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
       <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.75); font-size: 24px; font-family: Inter; font-weight: 400; line-height: 36px; word-wrap: break-word">Developer HOME</div>
     </div>
-<div style="width: 229px; height: 106px; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 24px; font-family: Inter; font-weight: 400; line-height: 36px; word-wrap: break-word">Hello, user ${username}</div>
+<div style="width: 229px; height: 106px; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 24px; font-family: Inter; font-weight: 400; line-height: 36px; word-wrap: break-word">Hello, user ${developer.username}</div>
 
     <div style="padding-left: 32px; padding-right: 32px; padding-top: 20px; padding-bottom: 20px; background: black; box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05); border-radius: 8px; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
       <div style="width: 147px; height: 33px; justify-content: center; display: flex; flex-direction: column; color: white; font-size: 24px; font-family: Inter; font-weight: 400; line-height: 36px; word-wrap: break-word"><a href="developer login.ftlh" target="_blank">Log Out</a></div>

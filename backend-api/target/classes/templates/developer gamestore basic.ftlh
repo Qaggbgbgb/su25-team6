@@ -23,9 +23,9 @@
   </div>
   <div style="width: 609px; height: 442px; left: 135px; top: 293px; position: absolute; overflow: hidden">
     <div style="width: 716px; height: 211px; left: 0px; top: -32px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">gamestore:${gamestore.storeId}</div>
-    <div style="width: 588px; height: 192px; left: 21px; top: 231px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">         </div>
+    <div style="width: 588px; height: 192px; left: 21px; top: 231px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">    <a href="developer publishgames.ftlh" target="_blank">publish a game</a>     </div>
   </div>
-  <div style="width: 525px; height: 216px; left: 822px; top: 500px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word">view your published games</div>
+  <div style="width: 525px; height: 216px; left: 822px; top: 500px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 64px; font-family: Inter; font-weight: 500; line-height: 96px; word-wrap: break-word"><a href="developer viewpublishedgames.ftlh" target="_blank">view games you have published</a></div>
 </div>
 </body>
 </html>

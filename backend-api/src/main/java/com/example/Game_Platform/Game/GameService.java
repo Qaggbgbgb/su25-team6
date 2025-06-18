@@ -1,16 +1,23 @@
 package com.example.Game_Platform.Game;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class GameService {
     
     @Autowired
     private GameRepository gameRepository;
-
+    private static final String UPLOAD_DIR = "src/main/resources/static/images/";
 
     /**
      * Get all games
@@ -46,28 +53,81 @@ public class GameService {
      * @param game
      * @return
      */
-    public Game addGame(Game game) {
-        return gameRepository.save(game);
-    }
-
+    
     /**
      * Update a game
      * @param game
      * @return
      */
-    public Object updateGame(Game game) {
-        return gameRepository.save(game);
+    public Game addGame(Game game, MultipartFile profilePicture) {
+    Game newGame = gameRepository.save(game);
+    String originalFileName = profilePicture.getOriginalFilename();
+
+    try {
+      if (originalFileName != null && originalFileName.contains(".")) {
+        String fileExtension = originalFileName.substring(originalFileName.lastIndexOf(".") + 1);
+        String fileName = String.valueOf(newGame.getGameId()) + "." + fileExtension;
+        Path filePath = Paths.get(UPLOAD_DIR + fileName);
+
+        InputStream inputStream = profilePicture.getInputStream();
+
+        Files.createDirectories(Paths.get(UPLOAD_DIR));// Ensure directory exists
+        Files.copy(inputStream, filePath,
+            StandardCopyOption.REPLACE_EXISTING);// Save file
+        newGame.setProfilePicturePath(fileName);
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
     }
 
-    /**
-     * 
-     * @param gameId
-     * @return
-     */
+    return gameRepository.save(newGame);
+  }
 
-    public void deleteGameById(Long gameId) {
-        gameRepository.deleteById(gameId);
+  /**
+   * Method to update a student
+   *
+   * @param studentId The ID of the student to update
+   * @param student   The updated student information
+   */
+  public Game updateGame(Long gameId, Game game, MultipartFile profilePicture) {
+    String originalFileName = profilePicture.getOriginalFilename();
+
+    try {
+      if (originalFileName != null && originalFileName.contains(".")) {
+        String fileExtension = originalFileName.substring(originalFileName.lastIndexOf(".") + 1);
+        String fileName = String.valueOf(gameId) + "." + fileExtension;
+        Path filePath = Paths.get(UPLOAD_DIR + fileName);
+
+        InputStream inputStream = profilePicture.getInputStream();
+        Files.deleteIfExists(filePath);
+        Files.copy(inputStream, filePath,
+            StandardCopyOption.REPLACE_EXISTING);// Save file
+        game.setProfilePicturePath(fileName);
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
     }
+    return gameRepository.save(game);
+  }
+
+  /**
+   * Method to delete a student
+   *
+   * @param studentId The ID of the student to delete
+   */
+  public void deleteGame(Long gameId) {
+    Game game = gameRepository.findById(gameId).orElse(null);
+    if (game == null) {
+      return; // Student not found, nothing to delete
+    }
+    Path filePath = Paths.get(UPLOAD_DIR + game.getProfilePicturePath());
+    try {
+      Files.deleteIfExists(filePath);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    gameRepository.deleteById(gameId);
+  }
 
     /**
      * 

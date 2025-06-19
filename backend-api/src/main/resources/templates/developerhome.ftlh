@@ -18,7 +18,7 @@
       <div style="width: 64px; height: 30px; position: relative">
         <div style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">review</div>
       </div>
-      <div style="justify-content: center; display: flex; flex-direction: column; color: black; font-size: 20px; font-family: Inter; font-weight: 500; line-height: 30px; word-wrap: break-word"><a href="/Developers/gamestore/{developer_id}" target="_blank">Store</a></div>
+     <a href="/Developers/gamestore/{developer_id}" target="_blank">Store</a>
       <div style="padding-left: 24px; padding-right: 24px; padding-top: 14px; padding-bottom: 14px; box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05); border-radius: 8px; justify-content: center; align-items: center; gap: 8px; display: flex">
         <div style="width: 71px; height: 28px; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 16px; font-family: Roboto; font-weight: 500; line-height: 24px; letter-spacing: 0.15px; word-wrap: break-word">services</div>
       </div>

@@ -112,7 +112,14 @@ public class CustomerController {
      * @return
      */
     @PostMapping("/customer/rate/{gameId}")
-    public Object rateGames(@RequestParam int inputRating, Model model, Principal principal, @PathVariable Long gameId) {
+    public Object rateGames(@RequestParam(required = false) Integer inputRating, Model model, Principal principal, @PathVariable Long gameId) {
+
+    if (inputRating == null || inputRating < 1 || inputRating > 5) {
+        model.addAttribute("error", "Please select a valid rating.");
+        model.addAttribute("gamesList", gameService.getAllGames());
+        model.addAttribute("title", "All Customers");
+        return "customer-home";
+    }
         String username = principal.getName();
         Customer customer = customerRepository.getCustomerByUserName(username)
             .orElseThrow(() -> new RuntimeException("Customer not found"));
@@ -130,16 +137,18 @@ public class CustomerController {
         System.out.println("Count = " + newCount);
         System.out.println("Total = " + newTotal);
         gameRepository.save(game);
-               model.addAttribute("hour", timeService.getTime("America/New_York").getHour());
-       model.addAttribute("minute", timeService.getTime("America/New_York").getMinute());
-       model.addAttribute("seconds", timeService.getTime("America/New_York").getSeconds());
+    //            model.addAttribute("hour", timeService.getTime("America/New_York").getHour());
+    //    model.addAttribute("minute", timeService.getTime("America/New_York").getMinute());
+    //    model.addAttribute("seconds", timeService.getTime("America/New_York").getSeconds());
       
         model.addAttribute("gamesList", gameService.getAllGames());
         model.addAttribute("title", "All Customers");
-        // model.addAttribute("gameRating",game.getRating());
+        model.addAttribute("gameRating",game.getRating());
         return "customer-home";
     }
     
+
+
 
 
  

@@ -13,6 +13,9 @@ public class Time {
     private int sec;
 
 
+    public Time() {
+        
+    }
     public String getDateTime() {
         return dateTime;
     }

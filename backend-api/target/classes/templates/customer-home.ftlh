@@ -48,12 +48,7 @@
               
         </ul>
         
-            <li class="nav-item">
-                <span>Current Time</span>
-              
-    <span id="clock" >${hour!"--"}:${minute!"--"}:${seconds!"--"}</span>
-            </li>
-        
+          
             
             
 
@@ -83,11 +78,11 @@
           <#if Session.SPRING_SECURITY_CONTEXT??>
           <form action="/customer/rate/${games.gameId}" method="post">
           <select name="inputRating" style="margin-bottom: .8rem;" class="form-select" aria-label="Default select example">
-            <option style="margin-bottom: 1rem;" selected>Rate the Game</option>
+            <option value="" style="margin-bottom: 1rem;" selected>Rate the Game</option>
             <option  value="1">⭐️</option>
             <option value="2">⭐️⭐️</option>
             <option value="3">⭐️⭐️⭐️</option>
-             <option  value="4">⭐️⭐️⭐️⭐️</option>
+            <option  value="4">⭐️⭐️⭐️⭐️</option>
             <option  value="5">⭐️⭐️⭐️⭐️⭐️</option>
           </select>
               <button type="submit" class="btn btn-primary" style="width: 6.5rem; margin: .5rem; ">Rating : ${games.rating! "No rating"}</button>

@@ -23,7 +23,6 @@ public class TimeService {
         // Disabled actual API call to prevent slowing down the app
         // String url = "https://timeapi.io/api/Time/current/zone?timeZone=" + timezone;
         // return restTemplate.getForObject(url, Time.class);
-
         // Return mock data
         Time mockTime = new Time();
         mockTime.setHour(0);

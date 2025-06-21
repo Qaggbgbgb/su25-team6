@@ -1,12 +1,15 @@
 
 package com.example.Game_Platform.Game;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.Game_Platform.Customer.CustomerRepository;
 
@@ -36,9 +39,9 @@ public class GameController {
     //  */
     // @GetMapping("/games")
     // public Object getAllGames(Model model) {
-    //     model.addAttribute("gamesList", gameService.getAllGames());
+    //     model.addAttribute("gameList", gameService.getAllGames());
     //     model.addAttribute("title", "All Games");
-    //     return "customer-home";
+    //     return "developer viewpublishedgames";
     // }
 
 
@@ -86,8 +89,7 @@ public class GameController {
         
     }
 
-
-
+    
 
 
     // /**
@@ -96,12 +98,11 @@ public class GameController {
     //  * @param game
     //  * @return
     //  */
-    // @PutMapping("/games/{gameId}")
-    // public Game updateGame(@PathVariable Long gameId, @RequestBody Game game) {
-    //     game.setGameId(gameId);
-    //     gameService.updateGame(game);
-    //     return gameService.getGameById(gameId);
-    // }
+    @PostMapping("/games/update/{gameId}")
+  public Object updateGame(@PathVariable Long gameId,  Game game, @RequestParam MultipartFile picture) {
+    gameService.updateGame(gameId, game, picture);
+    return "redirect:/Developers/games/{developer_id}" + gameId;
+  }
 
 
     // /**
@@ -109,11 +110,12 @@ public class GameController {
     //  * @param gameId
     //  * @return
     //  */
-    // @DeleteMapping("/games/{gameId}")
-    // public Object deleteGame(@PathVariable Long gameId) {
-    //     gameService.deleteGameById(gameId);
-    //     return gameService.getAllGames();
-    // }
+    @GetMapping("/games/delete/{gameId}")
+  public Object deleteGame(@PathVariable Long gameId) {
+    gameService.deleteGame(gameId);
+    return "redirect:/Developers/games/{developer_id}";
+  }
+
 
 
 
@@ -124,9 +126,11 @@ public class GameController {
      * @return
      */
     @PostMapping("/games")
-    public Object addGame(@RequestBody Game game) {
-        return gameService.addGame(game);
-    }
+  public Object addGame(Game game, @RequestParam MultipartFile picture) {
+    // return studentService.addStudent(student, picture);
+    Game newGame = gameService.addGame(game, picture);
+    return "redirect:/Developers/games/{developer_id}" + newGame.getGameId();
+  }
 
 
     

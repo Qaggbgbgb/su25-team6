@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.example.Game_Platform.GameLibrary.GameLibrary;
 //Commented out becuase GameStore is not ready
-// import com.example.Game_Platform.GameStore.GameStore;
+import com.example.Game_Platform.GameStore.GameStore;
 // import com.example.Game_Platform.GameStore.GameStore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -67,12 +67,12 @@ public class Game {
      * method below is simply a duplicate method.
      */
 
-    // public Game(Long gameId, String gameName, GameStore gameStore, String profilePicturePath) {
-    //     this.gameId = gameId;
-    //     this.gameName = gameName; 
-    //     this.gameStore = gameStore;
-    //     this.profilePicturePath = profilePicturePath;
-    // }
+    public Game(Long gameId, String gameName, GameStore gameStore, String profilePicturePath) {
+        this.gameId = gameId;
+        this.gameName = gameName; 
+        this.gameStore = gameStore;
+        this.profilePicturePath = profilePicturePath;
+    }
     // public Game(Long gameId, String gameName, List<GameLibrary> gameLibrary, String profilePicturePath) {
     //     this.gameId = gameId;
     //     this.gameName = gameName; 
@@ -88,11 +88,11 @@ public class Game {
         this.counter = counter;
     }
 
-    // public Game( String gameName, GameStore gameStore, String profilePicturePath) {
-    //     this.gameName = gameName;
-    //     this.gameStore = gameStore;
-    //     this.profilePicturePath = profilePicturePath;
-    // }
+    public Game( String gameName, GameStore gameStore, String profilePicturePath) {
+        this.gameName = gameName;
+        this.gameStore = gameStore;
+        this.profilePicturePath = profilePicturePath;
+    }
 
     public Game( String gameName, Long gameId, String profilePicturePath, int rating, int counter) {
         this.gameName = gameName;
@@ -139,13 +139,13 @@ public class Game {
         this.profilePicturePath = profilePicturePath;
     }
 
-    // public GameStore getGameStore(){
-    //     return this.gameStore;
-    // }
+    public GameStore getGameStore(){
+        return this.gameStore;
+    }
     
-    // public void setGameStore(GameStore gameStore){
-    //     this.gameStore=gameStore;
-    // }
+    public void setGameStore(GameStore gameStore){
+        this.gameStore=gameStore;
+    }
    
     public int getRating(){
         return this.rating;
